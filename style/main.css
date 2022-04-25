@@ -1,0 +1,50 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #c8ffc8;
+}
+
+.wrapper,
+#main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper {
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#main-container {
+  width: 300px;
+  height: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#main-container button,
+#main-container input {
+  margin-bottom: 10px;
+  height: 2.3em;
+}
+
+#main-container input {
+  width: 20%;
+  text-align: center;
+  font-size: 1.3em;
+}
+/*# sourceMappingURL=main.css.map */

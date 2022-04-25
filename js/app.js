@@ -1,7 +1,7 @@
 import { verbs } from '../data/verbs.js';
 
-console.log(verbs);
 const generateVerbsButton = document.querySelector('#generate-verbs-button');
+const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 
 const returnVerbsLength = () => {
 	let counter = 0;
@@ -11,12 +11,19 @@ const returnVerbsLength = () => {
 	return counter;
 };
 
-const randomiseVerbs = (number) => {
+const showRandomisedVerbs = (totalNumberOfVerbs, wantedNumberOfVerbs) => {
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];
+	let verbsPerWeek = wantedNumberOfVerbs * 7;
 
-	while (arrayOfRandomNumbers.length < 7) {
-		let randomNumber = Math.floor(Math.random() * number);
+	if (wantedNumberOfVerbs > totalNumberOfVerbs) {
+		let errorMessage = 'Wanted number of verbs must be smaller than total number of verbs!';
+		console.error(errorMessage);
+		return;
+	}
+
+	while (arrayOfRandomNumbers.length < wantedNumberOfVerbs) {
+		let randomNumber = Math.floor(Math.random() * totalNumberOfVerbs);
 		arrayWithDuplicates.push(randomNumber);
 		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
 	}
@@ -25,7 +32,12 @@ const randomiseVerbs = (number) => {
 	});
 };
 
-generateVerbsButton.addEventListener('click', () => {
+const randomiseVerbs = () => {
 	let verbsCount = returnVerbsLength();
-	randomiseVerbs(verbsCount);
+	let wantedVerbsNumber = +wantedVerbsInput.value;
+	showRandomisedVerbs(verbsCount, wantedVerbsNumber);
+};
+
+generateVerbsButton.addEventListener('click', () => {
+	randomiseVerbs();
 });

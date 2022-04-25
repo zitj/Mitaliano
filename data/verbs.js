@@ -1,6 +1,6 @@
 export const verbs = {
 	0: {
-		name: 'PICK A VERB',
+		name: 'DARE',
 	},
 	1: {
 		name: 'STARE',
