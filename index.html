@@ -11,8 +11,13 @@
 	<body>
 		<div class="wrapper">
 			<div id="main-container">
-				<input id="wanted-verbs-input" type="number" min="0" />
-				<button id="generate-verbs-button">Generate verbs for today</button>
+				<label for="wanted-verbs-input">Insert number here</label>
+				<input name="wanted-verbs-input" id="wanted-verbs-input" type="number" min="0" />
+				<!-- <button id="generate-verbs-button">Get verbs</button> -->
+			</div>
+			<div id="verbs-container">
+				<h2>Verbs to conjugate:</h2>
+				<div id="list-of-verbs"></div>
 			</div>
 		</div>
 	</body>
