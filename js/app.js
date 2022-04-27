@@ -1,6 +1,7 @@
 import { verbs } from '../data/verbs.js';
 import { showList, hideList } from './utilities/list.js';
 import { addHeadingError, removeHeadingError } from './utilities/heading.js';
+import { debounce } from './utilities/debounce.js';
 
 const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 const verbsContainer = document.querySelector('#verbs-container');
@@ -8,16 +9,6 @@ const listOfVerbs = document.querySelector('#list-of-verbs');
 const heading = verbsContainer.children[0];
 
 let randomVerbs = [];
-
-const debounce = (fn, delay) => {
-	let timeout;
-	return function (...args) {
-		clearTimeout(timeout);
-		timeout = setTimeout(() => {
-			fn(...args);
-		}, delay);
-	};
-};
 
 const returnVerbsLength = () => {
 	let counter = 0;

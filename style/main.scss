@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
-@import url('./animations/animations.css');
-
-$dark-green: #025702;
-$background-green: rgb(226, 255, 226);
-$dark-red: #d1525a;
+@import './utilities/animations';
+@import './utilities/variables';
 
 body {
 	padding: 0;
@@ -61,6 +58,10 @@ body {
 		}
 	}
 	#verbs-container {
+		h2 {
+			font-size: 1em;
+			text-align: center;
+		}
 		h2.error {
 			color: $dark-red;
 		}
@@ -81,7 +82,7 @@ body {
 			overflow-x: hidden;
 			background: lighten($background-green, 2%);
 			box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
-			padding: 1em 2em;
+			padding: 0.3em 2em;
 		}
 	}
 }
