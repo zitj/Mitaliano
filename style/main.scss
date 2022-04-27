@@ -68,12 +68,15 @@ body {
 		#list-of-verbs {
 			height: 20vh;
 			border-radius: 10px;
+			opacity: 0;
+			transition: 0.1s ease-in-out;
 			p {
 				font-size: 1.2em;
 				color: $dark-red;
 			}
 		}
 		#list-of-verbs.active {
+			opacity: 1;
 			overflow: scroll;
 			overflow-x: hidden;
 			background: lighten($background-green, 2%);

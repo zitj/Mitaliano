@@ -1,4 +1,6 @@
 import { verbs } from '../data/verbs.js';
+import { showList, hideList } from './utilities/list.js';
+import { addHeadingError, removeHeadingError } from './utilities/heading.js';
 
 const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 const verbsContainer = document.querySelector('#verbs-container');
@@ -27,11 +29,12 @@ const returnVerbsLength = () => {
 
 const renderVerbs = () => {
 	let content = ``;
+
 	randomVerbs.forEach((verb) => {
 		content += `<p>${verb}</p>`;
 	});
-	listOfVerbs.innerHTML = content;
-	listOfVerbs.classList.add('active');
+
+	showList(listOfVerbs, content);
 };
 
 const showRandomisedVerbs = (totalNumberOfVerbs, wantedNumberOfVerbs) => {
@@ -40,15 +43,12 @@ const showRandomisedVerbs = (totalNumberOfVerbs, wantedNumberOfVerbs) => {
 	randomVerbs = [];
 
 	if (wantedNumberOfVerbs > totalNumberOfVerbs) {
-		let errorMessage = `Number must be smaller than ${totalNumberOfVerbs}`;
-		heading.innerHTML = errorMessage;
-		listOfVerbs.innerHTML = '';
-		heading.classList.add('error');
-		listOfVerbs.classList.remove('active');
+		addHeadingError(heading, totalNumberOfVerbs);
+		hideList(listOfVerbs);
 		return;
 	}
-	heading.classList.remove('error');
-	heading.innerHTML = 'Verbs to conjugate:';
+
+	removeHeadingError(heading);
 
 	while (arrayOfRandomNumbers.length < wantedNumberOfVerbs) {
 		let randomNumber = Math.floor(Math.random() * totalNumberOfVerbs);
@@ -73,8 +73,7 @@ wantedVerbsInput.addEventListener(
 	debounce((e) => {
 		if (e.target.value === '') {
 			heading.innerHTML = '';
-			listOfVerbs.innerHTML = '';
-			listOfVerbs.classList.remove('active');
+			hideList(listOfVerbs);
 			return;
 		}
 		randomiseVerbs();

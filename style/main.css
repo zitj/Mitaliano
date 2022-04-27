@@ -88,6 +88,9 @@ body {
 .wrapper #verbs-container #list-of-verbs {
   height: 20vh;
   border-radius: 10px;
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
 }
 
 .wrapper #verbs-container #list-of-verbs p {
@@ -96,6 +99,7 @@ body {
 }
 
 .wrapper #verbs-container #list-of-verbs.active {
+  opacity: 1;
   overflow: scroll;
   overflow-x: hidden;
   background: #ecffec;
