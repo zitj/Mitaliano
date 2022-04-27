@@ -45,7 +45,6 @@ const showRandomisedVerbs = (totalNumberOfVerbs, wantedNumberOfVerbs) => {
 	arrayOfRandomNumbers.forEach((number) => {
 		randomVerbs.push(verbs[number].name);
 	});
-	console.log(randomVerbs);
 };
 
 const randomiseVerbs = () => {
@@ -54,13 +53,13 @@ const randomiseVerbs = () => {
 	showRandomisedVerbs(verbsCount, wantedVerbsNumber);
 };
 
-// generateVerbsButton.addEventListener('click', () => {
-// 	randomiseVerbs();
-// });
-
 wantedVerbsInput.addEventListener(
 	'keyup',
 	debounce((e) => {
+		if (e.target.value === '') {
+			heading.innerHTML = ' ';
+			return;
+		}
 		randomiseVerbs();
 	}, 500)
 );

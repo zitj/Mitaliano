@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
+@import url("./animations/animations.css");
 body {
   padding: 0;
   margin: 0;
-  background: #deffde;
+  background: #e2ffe2;
   color: #025702;
   font-family: 'Poppins', sans-serif;
 }
@@ -11,7 +12,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100vh;
+  height: 60vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -42,14 +43,16 @@ body {
           justify-content: center;
 }
 
-.wrapper #main-container input {
-  margin-bottom: 10px;
-}
-
 .wrapper #main-container label {
-  margin-bottom: 10px;
   font-size: 0.9em;
   opacity: 0.8;
+}
+
+.wrapper #main-container img {
+  width: 30px;
+  -webkit-animation: slowly-up-and-down 1.7s ease-in-out infinite;
+          animation: slowly-up-and-down 1.7s ease-in-out infinite;
+  margin-bottom: 10px;
 }
 
 .wrapper #main-container input {
@@ -58,5 +61,21 @@ body {
   font-size: 1.3em;
   padding: 0.3em;
   outline: none;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
+          box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
+  color: #025702;
+}
+
+.wrapper #main-container input::-webkit-outer-spin-button,
+.wrapper #main-container input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.wrapper #main-container input[type='number'] {
+  -moz-appearance: textfield;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,35 @@
+@-webkit-keyframes slowly-up-and-down {
+  0% {
+    opacity: 0.4;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  100% {
+    opacity: 0.4;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes slowly-up-and-down {
+  0% {
+    opacity: 0.4;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  100% {
+    opacity: 0.4;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+/*# sourceMappingURL=animations.css.map */
