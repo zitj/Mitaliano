@@ -12,7 +12,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 60vh;
+  height: 100vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -23,6 +23,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2em 3em;
 }
 
 .wrapper #main-container {
@@ -57,6 +58,7 @@ body {
 
 .wrapper #main-container input {
   width: 20%;
+  background: #f1fff1;
   text-align: center;
   font-size: 1.3em;
   padding: 0.3em;
@@ -77,5 +79,28 @@ body {
 
 .wrapper #main-container input[type='number'] {
   -moz-appearance: textfield;
+}
+
+.wrapper #verbs-container h2.error {
+  color: #d1525a;
+}
+
+.wrapper #verbs-container #list-of-verbs {
+  height: 20vh;
+  border-radius: 10px;
+}
+
+.wrapper #verbs-container #list-of-verbs p {
+  font-size: 1.2em;
+  color: #d1525a;
+}
+
+.wrapper #verbs-container #list-of-verbs.active {
+  overflow: scroll;
+  overflow-x: hidden;
+  background: #ecffec;
+  -webkit-box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
+          box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
+  padding: 1em 2em;
 }
 /*# sourceMappingURL=main.css.map */

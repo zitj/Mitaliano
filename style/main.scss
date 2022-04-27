@@ -2,21 +2,24 @@
 @import url('./animations/animations.css');
 
 $dark-green: #025702;
+$background-green: rgb(226, 255, 226);
+$dark-red: #d1525a;
 
 body {
 	padding: 0;
 	margin: 0;
-	background: rgb(226, 255, 226);
+	background: $background-green;
 	color: $dark-green;
 	font-family: 'Poppins', sans-serif;
 }
 
 .wrapper {
 	display: flex;
-	height: 60vh;
+	height: 100vh;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 2em 3em;
 
 	#main-container {
 		display: flex;
@@ -37,6 +40,7 @@ body {
 		}
 		input {
 			width: 20%;
+			background: lighten($background-green, 3%);
 			text-align: center;
 			font-size: 1.3em;
 			padding: 0.3em;
@@ -54,6 +58,27 @@ body {
 		}
 		input[type='number'] {
 			-moz-appearance: textfield;
+		}
+	}
+	#verbs-container {
+		h2.error {
+			color: $dark-red;
+		}
+
+		#list-of-verbs {
+			height: 20vh;
+			border-radius: 10px;
+			p {
+				font-size: 1.2em;
+				color: $dark-red;
+			}
+		}
+		#list-of-verbs.active {
+			overflow: scroll;
+			overflow-x: hidden;
+			background: lighten($background-green, 2%);
+			box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+			padding: 1em 2em;
 		}
 	}
 }
