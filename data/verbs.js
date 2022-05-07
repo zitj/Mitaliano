@@ -223,4 +223,10 @@ export const verbs = {
 	221: { name: 'INGRANDIRE' },
 	222: { name: 'COCCOLARE' },
 	223: { name: 'PROCURARE' },
+	224: { name: 'TRASCORRARE' },
+	225: { name: 'ACCOMPAGNARE' },
+	225: { name: 'ACCOMPAGNARE' },
+	226: { name: 'PROSEGUIRE' },
+	227: { name: 'NASCONDERE' },
+	228: { name: 'INTERFERIRE' },
 };
