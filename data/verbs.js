@@ -228,4 +228,8 @@ export const verbs = {
 	226: { name: 'PROSEGUIRE' },
 	227: { name: 'NASCONDERE' },
 	228: { name: 'INTERFERIRE' },
+	229: { name: 'RIFUGIARE' },
+	230: { name: 'RACCHIUDERE' },
+	231: { name: 'INCASSARE' },
+	232: { name: 'POSSEDERE' },
 };
