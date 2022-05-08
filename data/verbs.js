@@ -232,4 +232,5 @@ export const verbs = {
 	230: { name: 'RACCHIUDERE' },
 	231: { name: 'INCASSARE' },
 	232: { name: 'POSSEDERE' },
+	233: { name: 'EVITARE' },
 };
