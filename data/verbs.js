@@ -233,4 +233,11 @@ export const verbs = {
 	231: { name: 'INCASSARE' },
 	232: { name: 'POSSEDERE' },
 	233: { name: 'EVITARE' },
+	234: { name: 'SEMBRARE' },
+	235: { name: 'RICARICARE' },
+	236: { name: 'SUPPORTARE' },
+	237: { name: 'CARICARE' },
+	238: { name: 'GESTIRE' },
+	239: { name: 'AVVIARE' },
+	240: { name: 'SCARICARE' },
 };
