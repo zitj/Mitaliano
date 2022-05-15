@@ -242,4 +242,7 @@ export const verbs = {
 	240: { name: 'SCARICARE' },
 	241: { name: 'ADDORMENTARE' },
 	242: { name: 'POSIZIONARE' },
+	243: { name: 'AMMIRARE' },
+	244: { name: 'PERCORRERE' },
+	245: { name: 'SPACCARE' },
 };
