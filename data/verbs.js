@@ -247,4 +247,7 @@ export const verbs = {
 	245: { name: 'SPACCARE' },
 	246: { name: 'RAGGIUNGERE' },
 	247: { name: 'ANNOIARE' },
+	248: { name: 'ADOTTARE' },
+	249: { name: 'SOSTITUIRE' },
+	250: { name: 'AUGURARE' },
 };
