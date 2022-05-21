@@ -250,4 +250,6 @@ export const verbs = {
 	248: { name: 'ADOTTARE' },
 	249: { name: 'SOSTITUIRE' },
 	250: { name: 'AUGURARE' },
+	251: { name: 'SUPERARE' },
+	252: { name: 'EMOZIONARE' },
 };
