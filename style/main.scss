@@ -71,9 +71,20 @@ body {
 			border-radius: 10px;
 			opacity: 0;
 			transition: 0.1s ease-in-out;
-			p {
+			a {
+				display: block;
+				margin: 0.4em 0;
 				font-size: 1.2em;
 				color: $dark-red;
+				transition: 0.1s ease-in-out;
+				&:hover {
+					opacity: 0.65;
+				}
+				&.visited,
+				&:active {
+					text-decoration: line-through;
+					opacity: 0.8;
+				}
 			}
 		}
 		#list-of-verbs.active {

@@ -22,7 +22,7 @@ const renderVerbs = () => {
 	let content = ``;
 
 	randomVerbs.forEach((verb) => {
-		content += `<p>${verb}</p>`;
+		content += `<a class="link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${verb}'  target="_blank">${verb}</a>`;
 	});
 
 	showList(listOfVerbs, content);
@@ -70,3 +70,10 @@ wantedVerbsInput.addEventListener(
 		randomiseVerbs();
 	}, 500)
 );
+
+document.addEventListener('click', (e) => {
+	let elementClicked = e.path[0];
+	if (elementClicked.className === 'link') {
+		elementClicked.classList.add('visited');
+	}
+});

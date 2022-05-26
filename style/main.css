@@ -132,9 +132,22 @@ body {
   transition: 0.1s ease-in-out;
 }
 
-.wrapper #verbs-container #list-of-verbs p {
+.wrapper #verbs-container #list-of-verbs a {
+  display: block;
+  margin: 0.4em 0;
   font-size: 1.2em;
   color: #d1525a;
+  -webkit-transition: 0.1s ease-in-out;
+  transition: 0.1s ease-in-out;
+}
+
+.wrapper #verbs-container #list-of-verbs a:hover {
+  opacity: 0.65;
+}
+
+.wrapper #verbs-container #list-of-verbs a.visited, .wrapper #verbs-container #list-of-verbs a:active {
+  text-decoration: line-through;
+  opacity: 0.8;
 }
 
 .wrapper #verbs-container #list-of-verbs.active {
