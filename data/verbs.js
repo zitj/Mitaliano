@@ -255,4 +255,11 @@ export const verbs = {
 	253: { name: 'APPREZZARE' },
 	254: { name: 'ACCETTARE' },
 	255: { name: 'SCAPPARE' },
+	256: { name: 'RAFORZZARE' },
+	257: { name: 'CONSIDERARE' },
+	258: { name: 'RICONSIDERARE' },
+	259: { name: 'RENDERE' },
+	260: { name: 'ABITUARE' },
+	261: { name: 'BLOCCARE' },
+	262: { name: 'MIGLIORARE' },
 };
