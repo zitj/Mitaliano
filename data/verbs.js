@@ -262,4 +262,8 @@ export const verbs = {
 	260: { name: 'ABITUARE' },
 	261: { name: 'BLOCCARE' },
 	262: { name: 'MIGLIORARE' },
+	263: { name: 'CONFEZIONARE' },
+	264: { name: 'DEPOSITARE' },
+	265: { name: 'MANIPOLARE' },
+	266: { name: 'CONTENERE' },
 };
