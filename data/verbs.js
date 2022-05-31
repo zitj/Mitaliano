@@ -266,4 +266,6 @@ export const verbs = {
 	264: { name: 'DEPOSITARE' },
 	265: { name: 'MANIPOLARE' },
 	266: { name: 'CONTENERE' },
+	267: { name: 'INSEGUIRE' },
+	268: { name: 'ATTRARRE' },
 };
