@@ -268,4 +268,7 @@ export const verbs = {
 	266: { name: 'CONTENERE' },
 	267: { name: 'INSEGUIRE' },
 	268: { name: 'ATTRARRE' },
+	269: { name: 'SEGNALARE' },
+	270: { name: 'BATTERE' },
+	271: { name: 'BUTTARE' },
 };
