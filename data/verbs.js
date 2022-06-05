@@ -274,4 +274,6 @@ export const verbs = {
 	272: { name: 'DANZARE' },
 	273: { name: 'COMPRENDERE' },
 	274: { name: 'DISCUTERE' },
+	275: { name: 'PARALIZZARE' },
+	276: { name: 'EMULARE' },
 };
