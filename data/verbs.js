@@ -271,4 +271,7 @@ export const verbs = {
 	269: { name: 'SEGNALARE' },
 	270: { name: 'BATTERE' },
 	271: { name: 'BUTTARE' },
+	272: { name: 'DANZARE' },
+	273: { name: 'COMPRENDERE' },
+	274: { name: 'DISCUTERE' },
 };
