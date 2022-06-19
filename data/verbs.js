@@ -276,4 +276,12 @@ export const verbs = {
 	274: { name: 'DISCUTERE' },
 	275: { name: 'PARALIZZARE' },
 	276: { name: 'EMULARE' },
+	277: { name: 'ALLUNGARE' },
+	278: { name: 'SOVRASTARE' },
+	279: { name: 'SUPERARE' },
+	280: { name: 'BASARE' },
+	281: { name: 'DISTANZIARE' },
+	282: { name: 'AMBIRE' },
+	283: { name: 'GUARIRE' },
+	284: { name: 'SPEGNERE' },
 };
