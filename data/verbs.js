@@ -284,4 +284,7 @@ export const verbs = {
 	282: { name: 'AMBIRE' },
 	283: { name: 'GUARIRE' },
 	284: { name: 'SPEGNERE' },
+	285: { name: 'SPULCIARE' },
+	286: { name: 'BLATERARE' },
+	287: { name: 'CAUSARE' },
 };
