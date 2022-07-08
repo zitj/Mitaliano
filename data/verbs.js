@@ -288,4 +288,9 @@ export const verbs = {
 	286: { name: 'BLATERARE' },
 	287: { name: 'CAUSARE' },
 	288: { name: 'SOFFOCARE' },
+	289: { name: 'PRESUMIRE' },
+	290: { name: 'TINGERE' },
+	291: { name: 'PUZZARE' },
+	292: { name: 'EMANARE' },
+	293: { name: 'TENDERE' },
 };
