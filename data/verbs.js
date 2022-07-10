@@ -293,4 +293,7 @@ export const verbs = {
 	291: { name: 'PUZZARE' },
 	292: { name: 'EMANARE' },
 	293: { name: 'TENDERE' },
+	294: { name: 'FIORIRE' },
+	295: { name: 'RESPIRARE' },
+	296: { name: 'DISTURBARE' },
 };
