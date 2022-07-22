@@ -305,4 +305,5 @@ export const verbs = {
 	303: { name: 'TRATTARE' },
 	304: { name: 'MIAGOLARE' },
 	305: { name: 'ARRABBIARE' },
+	306: { name: 'RACONTARE' },
 };
