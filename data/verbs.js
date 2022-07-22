@@ -296,4 +296,12 @@ export const verbs = {
 	294: { name: 'FIORIRE' },
 	295: { name: 'RESPIRARE' },
 	296: { name: 'DISTURBARE' },
+	297: { name: 'IMPEDIRE' },
+	298: { name: 'SCAVARE' },
+	299: { name: 'ESCLAMARE' },
+	300: { name: 'TOLLERARE' },
+	301: { name: 'INSISTERE' },
+	302: { name: 'ABBAIARE' },
+	303: { name: 'TRATTARE' },
+	304: { name: 'MIAGOLARE' },
 };
