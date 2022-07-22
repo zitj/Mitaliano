@@ -306,4 +306,7 @@ export const verbs = {
 	304: { name: 'MIAGOLARE' },
 	305: { name: 'ARRABBIARE' },
 	306: { name: 'RACONTARE' },
+	307: { name: 'SOSPIRARE' },
+	308: { name: 'IGNORARE' },
+	309: { name: 'SALTARE' },
 };
