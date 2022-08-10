@@ -309,4 +309,8 @@ export const verbs = {
 	307: { name: 'SOSPIRARE' },
 	308: { name: 'IGNORARE' },
 	309: { name: 'SALTARE' },
+	310: { name: 'RINNOVARE' },
+	311: { name: 'RESTAURARE' },
+	312: { name: 'RISTRUTTURARE' },
+	313: { name: 'EVITARE' },
 };
