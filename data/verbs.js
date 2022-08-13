@@ -313,4 +313,9 @@ export const verbs = {
 	311: { name: 'RESTAURARE' },
 	312: { name: 'RISTRUTTURARE' },
 	313: { name: 'EVITARE' },
+	314: { name: 'PICCHIARE' },
+	315: { name: 'GRATTARE' },
+	316: { name: 'LAMENTARE' },
+	317: { name: 'PIALLARE' },
+	318: { name: 'SOLLETICARE' },
 };
