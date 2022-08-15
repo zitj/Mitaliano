@@ -319,4 +319,7 @@ export const verbs = {
 	317: { name: 'PIALLARE' },
 	318: { name: 'SOLLETICARE' },
 	319: { name: 'CONFONDERE' },
+	320: { name: 'PREVALERE' },
+	321: { name: 'SPEDIRE' },
+	322: { name: 'CONIUGARE' },
 };
