@@ -318,4 +318,5 @@ export const verbs = {
 	316: { name: 'LAMENTARE' },
 	317: { name: 'PIALLARE' },
 	318: { name: 'SOLLETICARE' },
+	319: { name: 'CONFONDERE' },
 };
