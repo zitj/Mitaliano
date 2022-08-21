@@ -322,4 +322,12 @@ export const verbs = {
 	320: { name: 'PREVALERE' },
 	321: { name: 'SPEDIRE' },
 	322: { name: 'CONIUGARE' },
+	323: { name: 'REGALARE' },
+	324: { name: 'MUOVERE' },
+	325: { name: 'SOMIGLIARE' },
+	326: { name: 'PARERE' },
+	327: { name: 'AFFERRARE' },
+	328: { name: 'ZOPPICARE' },
+	329: { name: 'GRAFFIARE' },
+	330: { name: 'MORDERE' },
 };
