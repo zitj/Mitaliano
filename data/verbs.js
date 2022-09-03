@@ -330,4 +330,6 @@ export const verbs = {
 	328: { name: 'ZOPPICARE' },
 	329: { name: 'GRAFFIARE' },
 	330: { name: 'MORDERE' },
+	331: { name: 'CONTENDERE' },
+	332: { name: 'SPUNTERE' },
 };
