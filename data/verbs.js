@@ -332,4 +332,9 @@ export const verbs = {
 	330: { name: 'MORDERE' },
 	331: { name: 'CONTENDERE' },
 	332: { name: 'SPUNTERE' },
+	333: { name: 'CURARE' },
+	334: { name: 'RISPARMIARE' },
+	335: { name: 'RINUNCIARE' },
+	336: { name: 'AGIRE' },
+	337: { name: 'SPRECARE' },
 };
