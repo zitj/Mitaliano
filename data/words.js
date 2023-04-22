@@ -7,7 +7,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'raccolta' },
 		plural: { article: 'le', word: 'raccolte' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
 	},
 	1: {
 		word: 'regno',
@@ -17,7 +18,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'regno' },
 		plural: { article: 'i', word: 'regni' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	2: {
 		word: 'confini',
@@ -27,7 +29,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'confine' },
 		plural: { article: 'i', word: 'confini' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	3: {
 		word: 'bussola',
@@ -37,7 +40,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'bussola' },
 		plural: { article: 'le', word: 'bussole' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
 	},
 	4: {
 		word: 'impazzita',
@@ -47,7 +51,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '/', word: '/' },
 		plural: { article: '/', word: '/' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	5: {
 		word: 'cerchio',
@@ -57,7 +62,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'cerchio' },
 		plural: { article: 'i', word: 'cherchi' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	6: {
 		word: 'cavalieri',
@@ -67,7 +73,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'cavaliere' },
 		plural: { article: 'i', word: 'cavalieri' },
-		gender: 'maschile', //next
+		gender: 'maschile',
+		infinitive: '', //next
 	},
 	7: {
 		word: 'Mi rendo conto',
@@ -77,7 +84,8 @@ export const words = {
 		type: 'phrase',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	8: {
 		word: 'tenacia',
@@ -87,7 +95,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'tenacia' },
 		plural: { article: 'le', word: 'tenacie' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
 	},
 	9: {
 		word: 'devozione',
@@ -97,7 +106,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'devozione' },
 		plural: { article: 'i', word: 'devozioni' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	10: {
 		word: 'sella',
@@ -108,7 +118,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'sella' },
 		plural: { article: 'le', word: 'selle' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
 	},
 	11: {
 		word: 'Mi sono accorto',
@@ -119,7 +130,8 @@ export const words = {
 		type: 'phrase',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	12: {
 		word: 'bastava',
@@ -130,7 +142,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	13: {
 		word: 'impiegati',
@@ -141,7 +154,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	14: {
 		word: 'deboli',
@@ -151,7 +165,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	15: {
 		word: 'sgualcite',
@@ -161,7 +176,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	16: {
 		word: 'macchiate',
@@ -171,7 +187,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	17: {
 		word: 'trascorse',
@@ -181,7 +198,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	18: {
 		word: 'scoraggiamento',
@@ -191,7 +209,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'lo', word: 'scoraggiamento' },
 		plural: { article: 'gli', word: 'scoraggiamenti' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	19: {
 		word: 'comportamento',
@@ -201,7 +220,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'comportamento' },
 		plural: { article: 'i', word: 'comportamenti' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	20: {
 		word: 'partenza',
@@ -211,7 +231,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'partenza' },
 		plural: { article: 'le', word: 'partenze' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
 	},
 	21: {
 		word: 'vaghi',
@@ -221,7 +242,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	22: {
 		word: 'ingiallite',
@@ -231,7 +253,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	23: {
 		word: 'insoliti',
@@ -241,7 +264,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	24: {
 		word: 'stravolto',
@@ -251,7 +275,8 @@ export const words = {
 		type: 'adjective',
 		singular: { article: '', word: '' },
 		plural: { article: '', word: '' },
-		gender: '/', //next
+		gender: '/',
+		infinitive: '', //next
 	},
 	25: {
 		word: 'praterie',
@@ -261,7 +286,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'prato' },
 		plural: { article: 'le', word: 'praterie' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	26: {
 		word: 'boschi',
@@ -271,7 +297,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'il', word: 'bosco' },
 		plural: { article: 'i', word: 'boschi' },
-		gender: 'M', //next
+		gender: 'M',
+		infinitive: '', //next
 	},
 	27: {
 		word: 'pietra',
@@ -281,7 +308,8 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'pietra' },
 		plural: { article: 'le', word: 'pietre' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
 	},
 	28: {
 		word: 'querce',
@@ -291,6 +319,40 @@ export const words = {
 		type: 'noun',
 		singular: { article: 'la', word: 'quercia' },
 		plural: { article: 'le', word: 'querce' },
-		gender: 'F', //next
+		gender: 'F',
+		infinitive: '', //next
+	},
+	29: {
+		word: 'ignote',
+		translation: 'nepoznate',
+		context: 'Ma penso solo alle terre ignote verso cui mi dirigo.',
+		source: 'I sette messaggeri',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	30: {
+		word: 'scomparirà',
+		translation: 'nestati',
+		context: 'Domenico scomparirà nella direzione oposta.',
+		source: 'I sette messaggeri',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'scomparire', //next
+	},
+	31: {
+		word: 'rimpiango',
+		translation: 'žalim',
+		context: "Da un po' di tempo rimpiango più le gioe lasciate.",
+		source: 'I sette messaggeri',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'rimpiangere', //next
 	},
 };
