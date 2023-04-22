@@ -339,4 +339,5 @@ export const verbs = {
 	337: { name: 'SPRECARE' },
 	338: { name: 'RIPROGRAMMARE' },
 	339: { name: 'INTERPELLARE' },
+	340: { name: 'INCITARE' },
 };
