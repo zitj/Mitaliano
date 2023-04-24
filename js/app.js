@@ -7,6 +7,11 @@ const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 const verbsContainer = document.querySelector('#verbs-container');
 const listOfVerbs = document.querySelector('#list-of-verbs');
 const heading = verbsContainer.children[0];
+const navigationLinks = document.querySelectorAll('.navigation-link');
+const sections = document.querySelectorAll('section');
+
+const VERBS = 'verbs-section-link';
+const WORDS = 'words-section-link';
 
 let randomVerbs = [];
 
@@ -71,9 +76,29 @@ wantedVerbsInput.addEventListener(
 	}, 500)
 );
 
+const resetClassListFor = (elements) => {
+	elements.forEach((element) => {
+		element.classList.remove('visited');
+		element.classList.remove('hide');
+	});
+};
+
 document.addEventListener('click', (e) => {
-	let elementClicked = e.path[0];
-	if (elementClicked.className === 'link') {
+	let elementClicked = e.target;
+	let className = elementClicked.className;
+
+	if (className === 'link') {
 		elementClicked.classList.add('visited');
+	}
+	if (className === 'navigation-link') {
+		resetClassListFor(navigationLinks);
+		resetClassListFor(sections);
+		elementClicked.classList.add('visited');
+		if (elementClicked.id === WORDS) {
+			document.querySelector('#verbs-section').classList.add('hide');
+		}
+		if (elementClicked.id === VERBS) {
+			document.querySelector('#words-section').classList.add('hide');
+		}
 	}
 });

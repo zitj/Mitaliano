@@ -13,21 +13,26 @@
 		<header>
 			<div class="logo"></div>
 			<nav>
-				<span>Verbs</span>
-				<span>Words</span>
+				<span class="navigation-link visited" id="verbs-section-link">Verbs</span>
+				<span class="navigation-link" id="words-section-link">Words</span>
 			</nav>
 		</header>
 
 		<div class="wrapper">
-			<div id="main-container">
-				<label for="wanted-verbs-input">Insert number here</label>
-				<img src="./img/icons8-arrow-64.png" alt="arrow-down" />
-				<input name="wanted-verbs-input" id="wanted-verbs-input" type="number" min="0" />
-			</div>
-			<div id="verbs-container">
-				<h2></h2>
-				<div id="list-of-verbs"></div>
-			</div>
+			<section id="verbs-section">
+				<div id="main-container">
+					<label for="wanted-verbs-input">Insert number here</label>
+					<img src="./img/icons8-arrow-64.png" alt="arrow-down" />
+					<input name="wanted-verbs-input" id="wanted-verbs-input" type="number" min="0" />
+				</div>
+				<div id="verbs-container">
+					<h2></h2>
+					<div id="list-of-verbs"></div>
+				</div>
+			</section>
+			<section id="words-section" class="hide">
+				<h1>THIS IS WORD SECTION</h1>
+			</section>
 		</div>
 	</body>
 </html>
