@@ -21,7 +21,7 @@ const switchingSections = (section, ...elements) => {
 	if (section.id === WORDS) {
 		verbSection.classList.add('hide');
 		randomiseWords(listOfWords, randomWords);
-		wrapper.style.height = '180vh';
+		wrapper.style.height = 'auto';
 	}
 	if (section.id === VERBS) {
 		wordSection.classList.add('hide');

@@ -17,7 +17,6 @@ const showRandomisedWords = (totalNumberOfWords, listOfWords, randomWords) => {
 		arrayWithDuplicates.push(randomNumber);
 		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
 	}
-
 	arrayOfRandomNumbers.forEach((number) => {
 		randomWords.push(words[number]);
 	});
