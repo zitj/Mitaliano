@@ -10,6 +10,35 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+header {
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0px 0px 2px rgba(110, 110, 110, 0.348);
+	background: rgba(255, 255, 255, 0.351);
+	nav {
+		display: flex;
+		justify-content: space-around;
+		padding: 1em;
+		span {
+			display: flex;
+			padding: 0em 1em;
+			cursor: pointer;
+			&:hover {
+				opacity: 0.7;
+			}
+			&:active {
+				color: $dark-red;
+				opacity: 1;
+			}
+			&.visited {
+				text-decoration: underline;
+				text-underline-offset: 5px;
+				color: $dark-red;
+			}
+		}
+	}
+}
+
 .wrapper {
 	display: flex;
 	height: 60vh;

@@ -314,7 +314,7 @@ export const words = {
 	28: {
 		word: 'querce',
 		translation: 'hrastovi',
-		context: 'Le querce sotto cui andavo a giocare da bambino.',
+		context: `Le querce sotto cui andavo a giocare da bambino.`,
 		source: 'I sette messaggeri',
 		type: 'noun',
 		singular: { article: 'la', word: 'quercia' },
