@@ -83,6 +83,22 @@ const resetClassListFor = (elements) => {
 	});
 };
 
+const switchingSections = (section) => {
+	let verbSection = document.querySelector('#verbs-section');
+	let wordSection = document.querySelector('#words-section');
+
+	resetClassListFor(navigationLinks);
+	resetClassListFor(sections);
+	section.classList.add('visited');
+
+	if (section.id === WORDS) {
+		verbSection.classList.add('hide');
+	}
+	if (section.id === VERBS) {
+		wordSection.classList.add('hide');
+	}
+};
+
 document.addEventListener('click', (e) => {
 	let elementClicked = e.target;
 	let className = elementClicked.className;
@@ -91,14 +107,6 @@ document.addEventListener('click', (e) => {
 		elementClicked.classList.add('visited');
 	}
 	if (className === 'navigation-link') {
-		resetClassListFor(navigationLinks);
-		resetClassListFor(sections);
-		elementClicked.classList.add('visited');
-		if (elementClicked.id === WORDS) {
-			document.querySelector('#verbs-section').classList.add('hide');
-		}
-		if (elementClicked.id === VERBS) {
-			document.querySelector('#words-section').classList.add('hide');
-		}
+		switchingSections(elementClicked);
 	}
 });
