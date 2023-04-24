@@ -207,4 +207,39 @@ header nav span.visited {
           box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
   padding: 0.3em 2em;
 }
+
+.wrapper #list-of-words {
+  display: none;
+}
+
+.wrapper #list-of-words.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper #list-of-words h2 {
+  margin: 0;
+}
+
+.wrapper #list-of-words .card {
+  background: rgba(255, 255, 255, 0.351);
+  padding: 2.5em 3em;
+  width: 100%;
+  width: 250px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 3px 5px rgba(110, 110, 110, 0.348);
+          box-shadow: 0px 3px 5px rgba(110, 110, 110, 0.348);
+  margin-bottom: 2.5em;
+}
+
+.wrapper #list-of-words .card .context-word {
+  color: #d1525a;
+  font-style: normal;
+  font-weight: 600;
+}
 /*# sourceMappingURL=main.css.map */

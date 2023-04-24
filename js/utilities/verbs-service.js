@@ -1,27 +1,10 @@
 import { showList, hideList } from './list.js';
 import { verbs } from '../../data/verbs.js';
 import { removeHeadingError, addHeadingError } from './heading.js';
-
-const returnVerbsLength = (verbsArray) => {
-	let counter = 0;
-	for (let verb in verbsArray) {
-		counter++;
-	}
-	return counter;
-};
-
-const returnListWithContent = (randomVerbs) => {
-	let content = ``;
-
-	randomVerbs.forEach((verb) => {
-		content += `<a class="link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${verb}'  target="_blank">${verb}</a>`;
-	});
-
-	return content;
-};
+import { returnObjectLength, returnContent } from './shared-service.js';
 
 const renderVerbs = (listOfVerbs, randomVerbs) => {
-	let content = returnListWithContent(randomVerbs);
+	let content = returnContent(randomVerbs, 'verbs');
 	showList(listOfVerbs, content);
 };
 
@@ -51,7 +34,7 @@ const showRandomisedVerbs = (totalNumberOfVerbs, wantedNumberOfVerbs, listOfVerb
 };
 
 const randomiseVerbs = (listOfVerbs, heading, randomVerbs, wantedVerbsInput) => {
-	let verbsCount = returnVerbsLength(verbs);
+	let verbsCount = returnObjectLength(verbs);
 	let wantedVerbsNumber = +wantedVerbsInput.value;
 	showRandomisedVerbs(verbsCount, wantedVerbsNumber, listOfVerbs, heading, randomVerbs);
 };

@@ -258,7 +258,7 @@ export const words = {
 	},
 	23: {
 		word: 'insoliti',
-		translation: 'požutele',
+		translation: 'neobični',
 		context: 'Modi da dire insoliti e sentimenti che non riuscivo più a capire.',
 		source: 'I sette messaggeri',
 		type: 'adjective',

@@ -129,4 +129,28 @@ header {
 			padding: 0.3em 2em;
 		}
 	}
+	#list-of-words {
+		display: none;
+		&.active {
+			display: flex;
+			flex-direction: column;
+		}
+		h2 {
+			margin: 0;
+		}
+		.card {
+			background: rgba(255, 255, 255, 0.351);
+			padding: 2.5em 3em;
+			width: 100%;
+			width: 250px;
+			border-radius: 8px;
+			box-shadow: 0px 3px 5px rgba(110, 110, 110, 0.348);
+			margin-bottom: 2.5em;
+			.context-word {
+				color: $dark-red;
+				font-style: normal;
+				font-weight: 600;
+			}
+		}
+	}
 }
