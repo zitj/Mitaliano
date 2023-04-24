@@ -1,9 +1,18 @@
-export const showList = (list, content) => {
+const showList = (list, content) => {
 	list.innerHTML = content;
 	list.classList.add('active');
 };
 
-export const hideList = (list) => {
+const hideList = (list) => {
 	list.innerHTML = '';
 	list.classList.remove('active');
 };
+
+const resetClassListFor = (elements) => {
+	elements.forEach((element) => {
+		element.classList.remove('visited');
+		element.classList.remove('hide');
+	});
+};
+
+export { showList, hideList, resetClassListFor };
