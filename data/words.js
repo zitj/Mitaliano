@@ -77,7 +77,7 @@ export const words = {
 		infinitive: '', //next
 	},
 	7: {
-		word: 'Mi rendo conto',
+		word: 'mi rendo conto',
 		translation: 'shvatam',
 		context: 'Ma adesso mi rendo conto che sono pochi',
 		source: 'I sette messaggeri',

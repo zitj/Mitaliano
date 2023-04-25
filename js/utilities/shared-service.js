@@ -12,7 +12,9 @@ const createContent = (type, element) => {
 
 	let content = ``;
 	if (type === VERBS) {
-		content = `<a class="link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${element}'  target="_blank">${element}</a>`;
+		content = `
+            <a class="link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${element}'  target="_blank">${element}</a>
+        `;
 	}
 	if (type === WORDS) {
 		let context = element.context.replace(element.word, `<span class="context-word">${element.word}</span>`);
@@ -21,7 +23,7 @@ const createContent = (type, element) => {
             <div class="card">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
-                <div class="translation">${element.translation}</div>
+                <button>Reveal translation</button>
             </div>
         `;
 	}
