@@ -1,8 +1,7 @@
 import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
-import { randomiseVerbs } from './utilities/verbs-service.js';
 import { switchingSections } from './utilities/section-switcher.js';
-import { randomiseWords } from './utilities/words-service.js';
+import { randomiseVerbs } from './services/verbs-service.js';
 
 const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 const verbsContainer = document.querySelector('#verbs-container');

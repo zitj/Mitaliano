@@ -1,5 +1,5 @@
 import { resetClassListFor } from './list.js';
-import { randomiseWords } from './words-service.js';
+import { randomiseWords } from '../services/words-service.js';
 
 const switchingSections = (section, ...elements) => {
 	let wrapper = document.querySelector('.wrapper');

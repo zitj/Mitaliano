@@ -1,6 +1,6 @@
-import { showList, hideList } from './list.js';
+import { showList, hideList } from '../utilities/list.js';
 import { verbs } from '../../data/verbs.js';
-import { removeHeadingError, addHeadingError } from './heading.js';
+import { removeHeadingError, addHeadingError } from '../utilities/heading.js';
 import { returnObjectLength, returnContent } from './shared-service.js';
 
 const renderVerbs = (listOfVerbs, randomVerbs) => {

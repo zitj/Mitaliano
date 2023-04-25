@@ -1,5 +1,5 @@
 import { returnContent, returnObjectLength } from './shared-service.js';
-import { showList } from './list.js';
+import { showList } from '../utilities/list.js';
 import { words } from '../../data/words.js';
 
 const renderWords = (listOfWords, randomWords) => {
