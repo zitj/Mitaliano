@@ -1,3 +1,4 @@
-1. See what functions are similar in verbs-service and words-service if possible create those same methods that would be more dinamic in shared-service.
-2. Add logic when clicked on button 'Reveal translation' to show translation.
-3. Add swiper.js
+1. Reorganize file structure
+2. See what functions are similar in verbs-service and words-service if possible create those same methods that would be more dinamic in shared-service.
+3. Add logic when clicked on button 'Reveal translation' to show translation.
+4. Add swiper.js
