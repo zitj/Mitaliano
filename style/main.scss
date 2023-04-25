@@ -146,10 +146,47 @@ header {
 			border-radius: 8px;
 			box-shadow: 0px 3px 5px rgba(110, 110, 110, 0.348);
 			margin-bottom: 2.5em;
+			position: relative;
+
 			.context-word {
 				color: $dark-red;
 				font-style: normal;
 				font-weight: 600;
+				color: $dark-red;
+			}
+			.translation-button {
+				padding: 0;
+				border: none;
+				background: none;
+				color: $dark-red;
+				text-decoration: underline;
+				text-underline-offset: 2px;
+				cursor: pointer;
+			}
+			.translation-word {
+				font-weight: 500;
+				margin: 0;
+			}
+			.context,
+			.context-word,
+			.translation-word {
+				font-style: italic;
+			}
+			.context-word,
+			.translation-button,
+			.translation-word {
+				color: $dark-red;
+			}
+			#next-btn {
+				position: absolute;
+				background: none;
+				border: none;
+				font-size: 2em;
+				padding: 0.25em 0.4em;
+				border-radius: 50%;
+				color: $dark-green;
+				bottom: 5%;
+				right: 5%;
 			}
 		}
 	}

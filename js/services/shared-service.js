@@ -18,7 +18,7 @@ const createContent = (type, element) => {
 	let content = ``;
 	if (type === VERBS) {
 		content = `
-            <a class="link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${element}'  target="_blank">${element}</a>
+            <a class="verb-link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${element}'  target="_blank">${element}</a>
         `;
 	}
 	if (type === WORDS) {
@@ -28,7 +28,9 @@ const createContent = (type, element) => {
             <div class="card">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
-                <button>Reveal translation</button>
+                <button class="translation-button">Show translation</button>
+				<p class="translation-word hide">${element.translation}</p>
+				<button id="next-btn">&rarr;</button>
             </div>
         `;
 	}
@@ -83,7 +85,7 @@ const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow,
 const randomise = (type, list, randomElements) => {
 	const verbsInput = document.querySelector('#wanted-verbs-input');
 	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
-	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 5;
+	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
 	showRandomisedElements(type, totalNumberOfElements, wantedNumberToShow, list, randomElements);
 };
 

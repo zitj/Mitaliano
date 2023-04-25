@@ -235,11 +235,52 @@ header nav span.visited {
   -webkit-box-shadow: 0px 3px 5px rgba(110, 110, 110, 0.348);
           box-shadow: 0px 3px 5px rgba(110, 110, 110, 0.348);
   margin-bottom: 2.5em;
+  position: relative;
 }
 
 .wrapper #list-of-words .card .context-word {
   color: #d1525a;
   font-style: normal;
   font-weight: 600;
+  color: #d1525a;
+}
+
+.wrapper #list-of-words .card .translation-button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #d1525a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.wrapper #list-of-words .card .translation-word {
+  font-weight: 500;
+  margin: 0;
+}
+
+.wrapper #list-of-words .card .context,
+.wrapper #list-of-words .card .context-word,
+.wrapper #list-of-words .card .translation-word {
+  font-style: italic;
+}
+
+.wrapper #list-of-words .card .context-word,
+.wrapper #list-of-words .card .translation-button,
+.wrapper #list-of-words .card .translation-word {
+  color: #d1525a;
+}
+
+.wrapper #list-of-words .card #next-btn {
+  position: absolute;
+  background: none;
+  border: none;
+  font-size: 2em;
+  padding: 0.25em 0.4em;
+  border-radius: 50%;
+  color: #025702;
+  bottom: 5%;
+  right: 5%;
 }
 /*# sourceMappingURL=main.css.map */

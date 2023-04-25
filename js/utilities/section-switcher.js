@@ -21,11 +21,11 @@ const switchingSections = (section, ...elements) => {
 	if (section.id === WORDS) {
 		verbSection.classList.add('hide');
 		randomise('words', listOfWords, randomWords);
-		wrapper.style.height = 'auto';
+		// wrapper.style.height = 'auto';
 	}
 	if (section.id === VERBS) {
 		wordSection.classList.add('hide');
-		wrapper.style.height = '60vh';
+		// wrapper.style.height = '60vh';
 	}
 };
 

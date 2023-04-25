@@ -9,7 +9,9 @@ const listOfVerbs = document.querySelector('#list-of-verbs');
 const heading = verbsContainer.children[0];
 const navigationLinks = document.querySelectorAll('.navigation-link');
 const sections = document.querySelectorAll('section');
+const listOfWords = document.querySelector('#list-of-words');
 
+let randomWords = [];
 let randomVerbs = [];
 
 wantedVerbsInput.addEventListener(
@@ -28,10 +30,19 @@ document.addEventListener('click', (e) => {
 	let elementClicked = e.target;
 	let className = elementClicked.className;
 
-	if (className === 'link') {
+	if (className === 'verb-link') {
 		elementClicked.classList.add('visited');
 	}
 	if (className === 'navigation-link') {
 		switchingSections(elementClicked, navigationLinks, sections);
+	}
+	if (className === 'translation-button') {
+		let nextSibling = e.srcElement.nextElementSibling;
+		elementClicked.classList.add('hide');
+		nextSibling.classList.remove('hide');
+	}
+
+	if (elementClicked.id === 'next-btn') {
+		randomise('words', listOfWords, randomWords);
 	}
 });
