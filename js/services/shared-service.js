@@ -1,10 +1,12 @@
-import { showList } from '../utilities/list.js';
+import { showList, hideList } from '../utilities/list.js';
 import { verbs } from '../../data/verbs.js';
 import { words } from '../../data/words.js';
 import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
 
 const VERBS = 'verbs';
 const WORDS = 'words';
+
+let lastWordNumber;
 
 const returnObjectLength = (object) => {
 	let counter = 0;
@@ -25,7 +27,7 @@ const createContent = (type, element) => {
 		let context = element.context.replace(element.word, `<span class="context-word">${element.word}</span>`);
 
 		content += `
-            <div class="card">
+            <div class="card" >
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
                 <button class="translation-button">Show translation</button>
@@ -62,7 +64,7 @@ const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow,
 	if (type === VERBS) {
 		let heading = document.querySelector('#verbs-heading');
 		if (wantedNumberToShow > totalNumberOfElements) {
-			addHeadingError(heading, totalNumberOfVerbs);
+			addHeadingError(heading, totalNumberOfElements);
 			hideList(list);
 			return;
 		}
@@ -71,13 +73,17 @@ const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow,
 
 	while (arrayOfRandomNumbers.length < wantedNumberToShow) {
 		let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
-		arrayWithDuplicates.push(randomNumber);
+		if (randomNumber !== lastWordNumber) arrayWithDuplicates.push(randomNumber);
+
 		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
 	}
 
 	arrayOfRandomNumbers.forEach((number) => {
 		if (type === VERBS) randomElements.push(verbs[number].name);
-		if (type === WORDS) randomElements.push(words[number]);
+		if (type === WORDS) {
+			lastWordNumber = number;
+			randomElements.push(words[number]);
+		}
 	});
 	render(type, list, randomElements);
 };

@@ -1,7 +1,7 @@
 import { resetClassListFor } from './list.js';
 import { randomise } from '../services/shared-service.js';
 
-const switchingSections = (section, ...elements) => {
+const switchSections = (section, ...elements) => {
 	let wrapper = document.querySelector('.wrapper');
 	let verbSection = document.querySelector('#verbs-section');
 	let wordSection = document.querySelector('#words-section');
@@ -21,12 +21,10 @@ const switchingSections = (section, ...elements) => {
 	if (section.id === WORDS) {
 		verbSection.classList.add('hide');
 		randomise('words', listOfWords, randomWords);
-		// wrapper.style.height = 'auto';
 	}
 	if (section.id === VERBS) {
 		wordSection.classList.add('hide');
-		// wrapper.style.height = '60vh';
 	}
 };
 
-export { switchingSections };
+export { switchSections };

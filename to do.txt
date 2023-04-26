@@ -1,1 +1,1 @@
-1. Create logic so that the same word can not be show twice in a row.
+

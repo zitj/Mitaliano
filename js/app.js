@@ -1,6 +1,6 @@
 import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
-import { switchingSections } from './utilities/section-switcher.js';
+import { switchSections } from './utilities/section-switcher.js';
 import { randomise } from './services/shared-service.js';
 
 const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
@@ -26,23 +26,22 @@ wantedVerbsInput.addEventListener(
 	}, 500)
 );
 
-document.addEventListener('click', (e) => {
-	let elementClicked = e.target;
+const showTranslation = (button) => {
+	let translation = button.srcElement.nextElementSibling;
+	button.target.classList.add('hide');
+	translation.classList.remove('hide');
+};
+
+const clickLogic = (element) => {
+	let elementClicked = element.target;
 	let className = elementClicked.className;
 
-	if (className === 'verb-link') {
-		elementClicked.classList.add('visited');
-	}
-	if (className === 'navigation-link') {
-		switchingSections(elementClicked, navigationLinks, sections);
-	}
-	if (className === 'translation-button') {
-		let nextSibling = e.srcElement.nextElementSibling;
-		elementClicked.classList.add('hide');
-		nextSibling.classList.remove('hide');
-	}
+	if (className === 'verb-link') elementClicked.classList.add('visited');
+	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
+	if (className === 'translation-button') showTranslation(element);
+	if (elementClicked.id === 'next-btn') randomise('words', listOfWords, randomWords);
+};
 
-	if (elementClicked.id === 'next-btn') {
-		randomise('words', listOfWords, randomWords);
-	}
+document.addEventListener('click', (element) => {
+	clickLogic(element);
 });
