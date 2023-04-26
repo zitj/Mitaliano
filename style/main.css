@@ -273,6 +273,7 @@ header nav span.visited {
 }
 
 .wrapper #list-of-words .card #next-btn {
+  cursor: pointer;
   position: absolute;
   background: none;
   border: none;
