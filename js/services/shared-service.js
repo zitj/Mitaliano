@@ -27,7 +27,7 @@ const createContent = (type, element) => {
 		let context = element.context.replace(element.word, `<span class="context-word">${element.word}</span>`);
 
 		content += `
-            <div class="card" >
+            <div class="card">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
                 <button class="translation-button">Show translation</button>

@@ -39,7 +39,17 @@ const clickLogic = (element) => {
 	if (className === 'verb-link') elementClicked.classList.add('visited');
 	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
 	if (className === 'translation-button') showTranslation(element);
-	if (elementClicked.id === 'next-btn') randomise('words', listOfWords, randomWords);
+	if (elementClicked.id === 'next-btn') {
+		let card = elementClicked.parentElement;
+		card.classList.add('outro');
+		card.addEventListener('animationend', (event) => {
+			card.classList.remove('outro');
+			card.classList.add('intro');
+			setTimeout(() => {
+				randomise('words', listOfWords, randomWords);
+			}, 120);
+		});
+	}
 };
 
 document.addEventListener('click', (element) => {

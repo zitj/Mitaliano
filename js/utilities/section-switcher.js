@@ -2,7 +2,6 @@ import { resetClassListFor } from './list.js';
 import { randomise } from '../services/shared-service.js';
 
 const switchSections = (section, ...elements) => {
-	let wrapper = document.querySelector('.wrapper');
 	let verbSection = document.querySelector('#verbs-section');
 	let wordSection = document.querySelector('#words-section');
 
@@ -21,6 +20,11 @@ const switchSections = (section, ...elements) => {
 	if (section.id === WORDS) {
 		verbSection.classList.add('hide');
 		randomise('words', listOfWords, randomWords);
+		let card = document.querySelector('.card');
+		card.classList.add('intro');
+		card.addEventListener('animationend', (event) => {
+			card.classList.remove('intro');
+		});
 	}
 	if (section.id === VERBS) {
 		wordSection.classList.add('hide');
