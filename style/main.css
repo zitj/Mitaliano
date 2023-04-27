@@ -323,8 +323,8 @@ header nav span.visited {
 }
 
 .wrapper #list-of-words .card.intro {
-  -webkit-animation: scale-in 0.18s ease-in;
-          animation: scale-in 0.18s ease-in;
+  -webkit-animation: scale-in 0.2s ease-in;
+          animation: scale-in 0.2s ease-in;
 }
 
 .wrapper #list-of-words .card.outro {
