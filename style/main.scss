@@ -178,6 +178,7 @@ header {
 				color: $dark-red;
 			}
 			#next-btn {
+				animation: slowly-left-to-right 2s ease-in-out infinite;
 				cursor: pointer;
 				position: absolute;
 				background: none;
