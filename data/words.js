@@ -355,4 +355,115 @@ export const words = {
 		gender: '/',
 		infinitive: 'rimpiangere', //next
 	},
+	32: {
+		word: 'Talmente',
+		translation: 'tako',
+		context: 'Talmente noioso da essere evitato da tutti.',
+		source: 'Un uomo noioso',
+		type: 'adverb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	33: {
+		word: 'perfino',
+		translation: 'čak',
+		context:
+			'Gli amici, i genitori, i fratelli, i nonni, gli zii e perfino il nipotino di tre anni dicono che è noioso.',
+		source: 'Un uomo noioso',
+		type: 'adverb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	34: {
+		word: 'francobolli',
+		translation: 'markice (poštanske)',
+		context: 'Catalogare e mettere in ordine i suoi francobolli.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'francobollo' },
+		plural: { article: 'i', word: 'francobolli' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	35: {
+		word: 'compenso',
+		translation: 'naknada',
+		context: 'Ma in compenso ha un lavoro formidabile.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'compenso' },
+		plural: { article: 'i', word: 'compensi' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	36: {
+		word: 'formidabile',
+		translation: 'strašno',
+		context: 'Ma in compenso ha un lavoro formidabile.',
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	37: {
+		word: 'contabile',
+		translation: 'računovođa',
+		context: 'Fa il contabile.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'contabile' },
+		plural: { article: 'i', word: 'contabili' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	38: {
+		word: 'sottrarre',
+		translation: 'oduzimati',
+		context: 'Sommare e sottrare numeri.',
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'sottrare', //next
+	},
+	39: {
+		word: 'appassionante',
+		translation: 'uzbudljivo',
+		context: 'Potete immaginare un lavoro più intrigante, appassionante e interessante di questo?',
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	40: {
+		word: 'favolosa',
+		translation: 'sjajna',
+		context: 'Inizia a parlare con passione della sua favolosa collezione di francobolli',
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	41: {
+		word: 'si addormentano',
+		translation: 'se uspavaju',
+		context: 'Quelli che restano, si addormentano.',
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'addormentarsi', //next
+	},
 };
