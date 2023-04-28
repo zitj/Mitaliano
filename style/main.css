@@ -102,8 +102,8 @@
             transform: translateX(0px) rotate(0deg);
   }
   100% {
-    -webkit-transform: translateX(2000px) rotate(360deg);
-            transform: translateX(2000px) rotate(360deg);
+    -webkit-transform: translateX(1000px) rotate(360deg);
+            transform: translateX(1000px) rotate(360deg);
   }
 }
 
@@ -113,8 +113,8 @@
             transform: translateX(0px) rotate(0deg);
   }
   100% {
-    -webkit-transform: translateX(2000px) rotate(360deg);
-            transform: translateX(2000px) rotate(360deg);
+    -webkit-transform: translateX(1000px) rotate(360deg);
+            transform: translateX(1000px) rotate(360deg);
   }
 }
 
@@ -140,6 +140,19 @@ header {
   -webkit-box-shadow: 0px 0px 2px rgba(110, 110, 110, 0.348);
           box-shadow: 0px 0px 2px rgba(110, 110, 110, 0.348);
   background: rgba(255, 255, 255, 0.351);
+}
+
+header .logo {
+  position: relative;
+  padding: 0.5em;
+}
+
+header .logo img {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  width: 40px;
+  height: 24px;
 }
 
 header nav {

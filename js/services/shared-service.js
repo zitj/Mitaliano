@@ -30,7 +30,7 @@ const createContent = (type, element) => {
             <div class="card">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
-                <button class="translation-button">Show translation</button>
+                <button class="translation-button">Prikaži prevod</button>
 				<p class="translation-word hide">${element.translation}</p>
 				<button id="next-btn">&rarr;</button>
             </div>
