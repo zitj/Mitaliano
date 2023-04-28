@@ -466,4 +466,74 @@ export const words = {
 		gender: '/',
 		infinitive: 'addormentarsi', //next
 	},
+	42: {
+		word: 'preside',
+		translation: 'direktor',
+		context: 'Dopo due minutti i presenti, compresi i maestri, il preside e il bidello si sono addormentati.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'preside' },
+		plural: { article: 'i', word: 'presidi' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	43: {
+		word: 'bidello',
+		translation: 'domar',
+		context: 'Dopo due minutti i presenti, compresi i maestri, il preside e il bidello si sono addormentati.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'bidello' },
+		plural: { article: 'i', word: 'bidell' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	44: {
+		word: 'tasso',
+		translation: 'stopa',
+		context:
+			'Mi diverte guardare tutti quei numeri... il tasso di rendimento interno... la partita doppia... gli ammortamenti e gli accantonamenti... e poi sopratutto mi piacciono i calcoli... ',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'tasso' },
+		plural: { article: 'i', word: 'tassi' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	45: {
+		word: 'rendimento',
+		translation: 'prinos',
+		context:
+			'Mi diverte guardare tutti quei numeri... il tasso di rendimento interno... la partita doppia... gli ammortamenti e gli accantonamenti... e poi sopratutto mi piacciono i calcoli... ',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'rendimento' },
+		plural: { article: 'i', word: 'rendimenti' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	46: {
+		word: 'ammortamenti',
+		translation: 'amortizacije',
+		context:
+			'Mi diverte guardare tutti quei numeri... il tasso di rendimento interno... la partita doppia... gli ammortamenti e gli accantonamenti... e poi sopratutto mi piacciono i calcoli... ',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'ammortamento' },
+		plural: { article: 'gli', word: 'ammortamenti' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	47: {
+		word: 'accantonamenti',
+		translation: 'odredbe',
+		context:
+			'Mi diverte guardare tutti quei numeri... il tasso di rendimento interno... la partita doppia... gli ammortamenti e gli accantonamenti... e poi sopratutto mi piacciono i calcoli... ',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'accantonamento' },
+		plural: { article: 'gli', word: 'accantonamenti' },
+		gender: 'M',
+		infinitive: '', //next
+	},
 };
