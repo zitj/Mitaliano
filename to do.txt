@@ -1,3 +1,2 @@
-1. Add animation for arrow on cards.
-2. Add animation for cards.
-3. Add logo to the left corner.
+1. Add logo to the left corner.
+2. Add new words.
