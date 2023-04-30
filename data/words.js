@@ -425,7 +425,7 @@ export const words = {
 	38: {
 		word: 'sottrarre',
 		translation: 'oduzimati',
-		context: 'Sommare e sottrare numeri.',
+		context: 'Sommare e sottrarre numeri.',
 		source: 'Un uomo noioso',
 		type: 'verb',
 		singular: { article: '', word: '' },
