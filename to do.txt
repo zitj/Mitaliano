@@ -1,2 +1,3 @@
-1. Add logo to the left corner.
-2. Add new words.
+1. Add new words
+2. Change words section to return array of words
+3. Add proverbs section
