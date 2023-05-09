@@ -536,4 +536,94 @@ export const words = {
 		gender: 'M',
 		infinitive: '', //next
 	},
+	48: {
+		word: 'sbadigliano',
+		translation: 'prozevaju',
+		context: 'Ma le persone si sbadigliano e si annoiano.',
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'sbadigliare', //next
+	},
+	49: {
+		word: 'deluso',
+		translation: 'razočaran',
+		context: 'Lorenzo e molto deluso. Non può diventare famoso con la sua colezione.',
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	50: {
+		word: 'imbattibile',
+		translation: 'nepobediv',
+		context: "Secondo me c'è un solo campo dove sei imbattibile e nessuno può reggere il confronto.",
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	51: {
+		word: 'reggere',
+		translation: 'držati',
+		context: "Secondo me c'è un solo campo dove sei imbattibile e nessuno può reggere il confronto.",
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'reggere', //next
+	},
+	52: {
+		word: 'confronto',
+		translation: 'poređenje',
+		context: "Secondo me c'è un solo campo dove sei imbattibile e nessuno può reggere il confronto.",
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'il', word: 'confronto' },
+		plural: { article: 'i', word: 'confronti' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	53: {
+		word: 'trasmette',
+		translation: 'prenosi',
+		context: "Alcuni giorni dopo la televisione locale trasmette l'intervista all'uomo più noioso del mondo.",
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'trasmettere', //next
+	},
+	54: {
+		word: 'Orgogliosa',
+		translation: 'ponosna',
+		context:
+			"Orgogliosa dice: 'Quando Lorenzo ha iniziato la scuola elementare, mi sono accorta subito del suo straordinario talento.'",
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	55: {
+		word: 'straordinario',
+		translation: 'izvanredan',
+		context:
+			"Orgogliosa dice: 'Quando Lorenzo ha iniziato la scuola elementare, mi sono accorta subito del suo straordinario talento.'",
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
 };

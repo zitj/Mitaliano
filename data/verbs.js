@@ -340,4 +340,9 @@ export const verbs = {
 	338: { name: 'RIPROGRAMMARE' },
 	339: { name: 'INTERPELLARE' },
 	340: { name: 'INCITARE' },
+	341: { name: 'TRACCIARE' },
+	342: { name: 'ORIGLIARE' },
+	343: { name: 'SBADIGLIARE' },
+	344: { name: 'REGGERE' },
+	344: { name: 'TRASMETTERE' },
 };
