@@ -626,4 +626,116 @@ export const words = {
 		gender: '/',
 		infinitive: '', //next
 	},
+	56: {
+		word: 'prodigio',
+		translation: 'talenat',
+		context: 'Mio figlio è stato un bambino prodigio sin dalla più tenera età',
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: 'il', word: 'prodigio' },
+		plural: { article: 'i', word: 'prodigi' },
+		gender: 'M',
+		infinitive: '', //next
+	},
+	57: {
+		word: 'tenera',
+		translation: 'osetljive',
+		context: 'Mio figlio è stato un bambino prodigio sin dalla più tenera età...',
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	58: {
+		word: 'gabbia',
+		translation: 'kavez',
+		context:
+			'Si è avvicinato alla gabbia del leone ed ha cantato una filastrocca. Dopo pochi istanti il leone e sbattuto a terra del sonno.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'la', word: 'gabbia' },
+		plural: { article: 'le', word: 'gabbie' },
+		gender: 'F',
+		infinitive: '', //next
+	},
+	59: {
+		word: 'filastrocca',
+		translation: 'pesmica za decu',
+		context:
+			'Si è avvicinato alla gabbia del leone ed ha cantato una filastrocca. Dopo pochi istanti il leone e sbattuto a terra del sonno.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'la', word: 'filastrocca' },
+		plural: { article: 'le', word: 'filastrocche' },
+		gender: 'F',
+		infinitive: '', //next
+	},
+	60: {
+		word: 'truccatrice',
+		translation: 'šminkerka',
+		context: 'Tutti si addormentano, anche la giornalista, i cineoperatori e la truccatrice',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'la', word: 'truccatrice' },
+		plural: { article: 'le', word: 'truccatrici' },
+		gender: 'F',
+		infinitive: '', //next
+	},
+	61: {
+		word: 'barzellette',
+		translation: 'vicevi, šale',
+		context: 'Racconta barzellette o legge le previsioni del tempo.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'la', word: 'barzelletta' },
+		plural: { article: 'le', word: 'barzellette' },
+		gender: 'F',
+		infinitive: '', //next
+	},
+	62: {
+		word: 'previsioni',
+		translation: 'prognoza',
+		context: 'Racconta barzellette o legge le previsioni del tempo.',
+		source: 'Un uomo noioso',
+		type: 'noun',
+		singular: { article: 'la', word: 'previsione' },
+		plural: { article: 'le', word: 'previsioni' },
+		gender: 'F',
+		infinitive: '', //next
+	},
+	63: {
+		word: 'profondamente',
+		translation: 'duboko',
+		context: 'Il risultato è sempre lo stesso: gli spettatori si addormentano profondamente.',
+		source: 'Un uomo noioso',
+		type: 'adjective',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: '', //next
+	},
+	64: {
+		word: 'soffre',
+		translation: 'pati (patiti)',
+		context: 'Nessuno soffre più di insonnia e di stress.',
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'soffrire', //next
+	},
+	65: {
+		word: 'accarezza',
+		translation: 'miluje',
+		context: 'Saluta tutti, stringe le mani e accarezza la testa ai bambini. Firma tanti autografi.',
+		source: 'Un uomo noioso',
+		type: 'verb',
+		singular: { article: '', word: '' },
+		plural: { article: '', word: '' },
+		gender: '/',
+		infinitive: 'accarezzare', //next
+	},
 };

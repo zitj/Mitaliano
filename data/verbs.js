@@ -344,5 +344,8 @@ export const verbs = {
 	342: { name: 'ORIGLIARE' },
 	343: { name: 'SBADIGLIARE' },
 	344: { name: 'REGGERE' },
-	344: { name: 'TRASMETTERE' },
+	345: { name: 'TRASMETTERE' },
+	346: { name: 'SVANIRE' },
+	347: { name: 'SOFFRIRE' },
+	348: { name: 'ACCAREZZARE' },
 };
