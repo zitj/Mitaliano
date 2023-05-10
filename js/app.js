@@ -47,9 +47,6 @@ const clickLogic = (element) => {
 			randomise('words', listOfWords, randomWords);
 		});
 	}
-	if (elementClicked.className === 'card') {
-		console.log(element);
-	}
 };
 
 document.addEventListener('click', (event) => {

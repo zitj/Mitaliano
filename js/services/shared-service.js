@@ -5,6 +5,7 @@ import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
 
 const VERBS = 'verbs';
 const WORDS = 'words';
+const showTranslationBtnContent = 'Mostra traduzione';
 
 let lastWordNumber;
 
@@ -30,7 +31,7 @@ const createContent = (type, element) => {
             <div class="card">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
-                <button class="translation-button">Prikaži prevod</button>
+                <button class="translation-button">${showTranslationBtnContent}</button>
 				<p class="translation-word hide">${element.translation}</p>
 				<button id="next-btn">&rarr;</button>
             </div>
