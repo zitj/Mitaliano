@@ -8,6 +8,10 @@ const WORDS = 'words';
 const showTranslationBtnContent = 'Mostra traduzione';
 
 let lastWordNumber;
+let objectWithNumbersOfKnownWords = {};
+
+let numberOfCardsPassed = 0;
+let numberOfTotalWords = 0;
 
 const returnObjectLength = (object) => {
 	let counter = 0;
@@ -31,8 +35,8 @@ const createContent = (type, element) => {
             <div class="card">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
-                <button class="translation-button">${showTranslationBtnContent}</button>
-				<p class="translation-word hide">${element.translation}</p>
+                <button class="translation-button" id=${element.id}>${showTranslationBtnContent}</button>
+				<p class="translation-word hide" >${element.translation}</p>
 				<button id="next-btn">&rarr;</button>
             </div>
         `;
@@ -74,8 +78,12 @@ const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow,
 
 	while (arrayOfRandomNumbers.length < wantedNumberToShow) {
 		let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
-		if (randomNumber !== lastWordNumber) arrayWithDuplicates.push(randomNumber);
-
+		if (Object.keys(objectWithNumbersOfKnownWords).length == Object.keys(words).length) {
+			objectWithNumbersOfKnownWords = {};
+		}
+		if (randomNumber !== lastWordNumber && objectWithNumbersOfKnownWords[randomNumber] == undefined) {
+			arrayWithDuplicates.push(randomNumber);
+		}
 		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
 	}
 
@@ -83,9 +91,16 @@ const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow,
 		if (type === VERBS) randomElements.push(verbs[number].name);
 		if (type === WORDS) {
 			lastWordNumber = number;
+			objectWithNumbersOfKnownWords[number] = { word: words[number].word };
+			console.log(objectWithNumbersOfKnownWords);
+			words[number].id = number;
 			randomElements.push(words[number]);
 		}
 	});
+	numberOfCardsPassed = Object.keys(objectWithNumbersOfKnownWords).length;
+	numberOfTotalWords = Object.keys(words).length;
+	document.querySelector('#word-counter').innerHTML = `${numberOfCardsPassed} / ${numberOfTotalWords}`;
+	console.log(numberOfCardsPassed, ' / ', numberOfTotalWords);
 	render(type, list, randomElements);
 };
 
@@ -95,5 +110,9 @@ const randomise = (type, list, randomElements) => {
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
 	showRandomisedElements(type, totalNumberOfElements, wantedNumberToShow, list, randomElements);
 };
+
+// const returnNumberOfCardsPassed = (passedCards, totalCards) => {
+// 	return `${passedCards} / ${totalCards}`;
+// };
 
 export { returnObjectLength, render, randomise };
