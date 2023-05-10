@@ -305,11 +305,21 @@ header nav span.visited {
   padding: 0.3em 2em;
 }
 
-.wrapper #list-of-words {
+.wrapper #words-section #word-counter {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 30%;
+  text-align: center;
+}
+
+.wrapper #words-section #list-of-words {
   display: none;
 }
 
-.wrapper #list-of-words.active {
+.wrapper #words-section #list-of-words.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -319,11 +329,11 @@ header nav span.visited {
           flex-direction: column;
 }
 
-.wrapper #list-of-words h2 {
+.wrapper #words-section #list-of-words h2 {
   margin: 0;
 }
 
-.wrapper #list-of-words .card {
+.wrapper #words-section #list-of-words .card {
   background: rgba(255, 255, 255, 0.351);
   padding: 2.5em 3em;
   width: 100%;
@@ -335,24 +345,24 @@ header nav span.visited {
   position: relative;
 }
 
-.wrapper #list-of-words .card.intro {
+.wrapper #words-section #list-of-words .card.intro {
   -webkit-animation: scale-in 0.2s ease-in;
           animation: scale-in 0.2s ease-in;
 }
 
-.wrapper #list-of-words .card.outro {
+.wrapper #words-section #list-of-words .card.outro {
   -webkit-animation: throw-away-to-right 0.2s ease-out;
           animation: throw-away-to-right 0.2s ease-out;
 }
 
-.wrapper #list-of-words .card .context-word {
+.wrapper #words-section #list-of-words .card .context-word {
   color: #d1525a;
   font-style: normal;
   font-weight: 600;
   color: #d1525a;
 }
 
-.wrapper #list-of-words .card .translation-button {
+.wrapper #words-section #list-of-words .card .translation-button {
   padding: 0;
   border: none;
   background: none;
@@ -362,24 +372,24 @@ header nav span.visited {
   cursor: pointer;
 }
 
-.wrapper #list-of-words .card .translation-word {
+.wrapper #words-section #list-of-words .card .translation-word {
   font-weight: 500;
   margin: 0;
 }
 
-.wrapper #list-of-words .card .context,
-.wrapper #list-of-words .card .context-word,
-.wrapper #list-of-words .card .translation-word {
+.wrapper #words-section #list-of-words .card .context,
+.wrapper #words-section #list-of-words .card .context-word,
+.wrapper #words-section #list-of-words .card .translation-word {
   font-style: italic;
 }
 
-.wrapper #list-of-words .card .context-word,
-.wrapper #list-of-words .card .translation-button,
-.wrapper #list-of-words .card .translation-word {
+.wrapper #words-section #list-of-words .card .context-word,
+.wrapper #words-section #list-of-words .card .translation-button,
+.wrapper #words-section #list-of-words .card .translation-word {
   color: #d1525a;
 }
 
-.wrapper #list-of-words .card #next-btn {
+.wrapper #words-section #list-of-words .card #next-btn {
   -webkit-animation: slowly-left-to-right 2s ease-in-out infinite;
           animation: slowly-left-to-right 2s ease-in-out infinite;
   cursor: pointer;
@@ -400,7 +410,7 @@ header nav span.visited {
   user-select: none;
 }
 
-.wrapper #list-of-words .card #next-btn:focus {
+.wrapper #words-section #list-of-words .card #next-btn:focus {
   outline: none !important;
 }
 /*# sourceMappingURL=main.css.map */

@@ -60,11 +60,21 @@ const render = (type, list, randomElements) => {
 	showList(list, content);
 };
 
-const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow, list, randomElements) => {
+const showRandomisedElements = (
+	type,
+	totalNumberOfElements,
+	wantedNumberToShow,
+	list,
+	randomElements,
+	sectionSwitched
+) => {
+	let cardCounter = document.querySelector('#word-counter');
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];
 
 	randomElements = [];
+
+	if (sectionSwitched) objectWithNumbersOfKnownWords = {};
 
 	if (type === VERBS) {
 		let heading = document.querySelector('#verbs-heading');
@@ -92,23 +102,21 @@ const showRandomisedElements = (type, totalNumberOfElements, wantedNumberToShow,
 		if (type === WORDS) {
 			lastWordNumber = number;
 			objectWithNumbersOfKnownWords[number] = { word: words[number].word };
-			console.log(objectWithNumbersOfKnownWords);
 			words[number].id = number;
 			randomElements.push(words[number]);
 		}
 	});
 	numberOfCardsPassed = Object.keys(objectWithNumbersOfKnownWords).length;
 	numberOfTotalWords = Object.keys(words).length;
-	document.querySelector('#word-counter').innerHTML = `${numberOfCardsPassed} / ${numberOfTotalWords}`;
-	console.log(numberOfCardsPassed, ' / ', numberOfTotalWords);
+	cardCounter.innerHTML = `${numberOfCardsPassed} / ${numberOfTotalWords}`;
 	render(type, list, randomElements);
 };
 
-const randomise = (type, list, randomElements) => {
+const randomise = (type, list, randomElements, sectionSwitched) => {
 	const verbsInput = document.querySelector('#wanted-verbs-input');
 	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
-	showRandomisedElements(type, totalNumberOfElements, wantedNumberToShow, list, randomElements);
+	showRandomisedElements(type, totalNumberOfElements, wantedNumberToShow, list, randomElements, sectionSwitched);
 };
 
 // const returnNumberOfCardsPassed = (passedCards, totalCards) => {

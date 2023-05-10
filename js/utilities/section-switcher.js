@@ -19,7 +19,7 @@ const switchSections = (section, ...elements) => {
 
 	if (section.id === WORDS) {
 		verbSection.classList.add('hide');
-		randomise('words', listOfWords, randomWords);
+		randomise('words', listOfWords, randomWords, true);
 		let card = document.querySelector('.card');
 		card.classList.add('intro');
 		card.addEventListener('animationend', (event) => {

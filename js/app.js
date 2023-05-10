@@ -44,7 +44,7 @@ const clickLogic = (element) => {
 		card.classList.add('outro');
 		card.addEventListener('animationend', (event) => {
 			card.classList.remove('outro');
-			randomise('words', listOfWords, randomWords);
+			randomise('words', listOfWords, randomWords, false);
 		});
 	}
 };
