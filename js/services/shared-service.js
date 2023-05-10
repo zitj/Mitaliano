@@ -7,11 +7,11 @@ const VERBS = 'verbs';
 const WORDS = 'words';
 const showTranslationBtnContent = 'Mostra traduzione';
 
-let lastWordNumber;
-let objectWithNumbersOfKnownWords = {};
+const cardCounter = document.querySelector('#word-counter');
+const heading = document.querySelector('#verbs-heading');
 
-let numberOfCardsPassed = 0;
-let numberOfTotalWords = 0;
+let lastWordNumber;
+let passedWords = {};
 
 const returnObjectLength = (object) => {
 	let counter = 0;
@@ -60,67 +60,74 @@ const render = (type, list, randomElements) => {
 	showList(list, content);
 };
 
-const showRandomisedElements = (
-	type,
-	totalNumberOfElements,
-	wantedNumberToShow,
-	list,
-	randomElements,
-	sectionSwitched
-) => {
-	let cardCounter = document.querySelector('#word-counter');
-	let arrayWithDuplicates = [];
-	let arrayOfRandomNumbers = [];
-
-	randomElements = [];
-
-	if (sectionSwitched) objectWithNumbersOfKnownWords = {};
-
-	if (type === VERBS) {
-		let heading = document.querySelector('#verbs-heading');
-		if (wantedNumberToShow > totalNumberOfElements) {
-			addHeadingError(heading, totalNumberOfElements);
-			hideList(list);
-			return;
-		}
-		removeHeadingError(heading);
-	}
-
-	while (arrayOfRandomNumbers.length < wantedNumberToShow) {
-		let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
-		if (Object.keys(objectWithNumbersOfKnownWords).length == Object.keys(words).length) {
-			objectWithNumbersOfKnownWords = {};
-		}
-		if (randomNumber !== lastWordNumber && objectWithNumbersOfKnownWords[randomNumber] == undefined) {
-			arrayWithDuplicates.push(randomNumber);
-		}
-		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
-	}
-
+const returnRandomElements = (arrayOfRandomNumbers, type) => {
+	let randomElements = [];
 	arrayOfRandomNumbers.forEach((number) => {
 		if (type === VERBS) randomElements.push(verbs[number].name);
 		if (type === WORDS) {
 			lastWordNumber = number;
-			objectWithNumbersOfKnownWords[number] = { word: words[number].word };
 			words[number].id = number;
+			passedWords[number] = words[number];
 			randomElements.push(words[number]);
 		}
 	});
-	numberOfCardsPassed = Object.keys(objectWithNumbersOfKnownWords).length;
-	numberOfTotalWords = Object.keys(words).length;
-	cardCounter.innerHTML = `${numberOfCardsPassed} / ${numberOfTotalWords}`;
-	render(type, list, randomElements);
+	return randomElements;
+};
+
+const setCardCounter = (passedCards, totalCards, cardCounter) => {
+	cardCounter.innerHTML = `${passedCards} / ${totalCards}`;
+};
+
+const showHeadingError = (heading, totalNumberOfElements, list) => {
+	addHeadingError(heading, totalNumberOfElements);
+	hideList(list);
+};
+
+const showRandomisedElements = (modifier) => {
+	let arrayWithDuplicates = [];
+	let arrayOfRandomNumbers = [];
+	modifier.randomElements = [];
+
+	if (modifier.sectionSwitched) passedWords = {};
+	if (modifier.type === VERBS) {
+		if (modifier.wantedNumberToShow > modifier.totalNumberOfElements) {
+			showHeadingError(heading, modifier.totalNumberOfElements, modifier.list);
+			return;
+		}
+		removeHeadingError(heading);
+	}
+	while (arrayOfRandomNumbers.length < modifier.wantedNumberToShow) {
+		let randomNumber = Math.floor(Math.random() * modifier.totalNumberOfElements);
+		if (Object.keys(passedWords).length == Object.keys(words).length) {
+			passedWords = {};
+		}
+		if (randomNumber !== lastWordNumber && passedWords[randomNumber] == undefined) {
+			arrayWithDuplicates.push(randomNumber);
+		}
+		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
+	}
+	modifier.randomElements = returnRandomElements(arrayOfRandomNumbers, modifier.type);
+	setCardCounter(Object.keys(passedWords).length, Object.keys(words).length, cardCounter);
+	render(modifier.type, modifier.list, modifier.randomElements);
+};
+
+const test = (obj) => {
+	console.log(obj);
 };
 
 const randomise = (type, list, randomElements, sectionSwitched) => {
 	const verbsInput = document.querySelector('#wanted-verbs-input');
 	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
-	showRandomisedElements(type, totalNumberOfElements, wantedNumberToShow, list, randomElements, sectionSwitched);
+	let modifier = {
+		type,
+		totalNumberOfElements,
+		wantedNumberToShow,
+		list,
+		randomElements,
+		sectionSwitched,
+	};
+	showRandomisedElements(modifier);
 };
-
-// const returnNumberOfCardsPassed = (passedCards, totalCards) => {
-// 	return `${passedCards} / ${totalCards}`;
-// };
 
 export { returnObjectLength, render, randomise };
