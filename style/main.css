@@ -244,7 +244,7 @@ header nav span.visited {
   font-size: 1.3em;
   padding: 0.3em;
   outline: none;
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
   border: none;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
@@ -314,7 +314,20 @@ header nav span.visited {
   left: 0;
   right: 0;
   text-align: center;
-  top: 11.5%;
+  top: 9%;
+}
+
+.wrapper #words-section #filter .filter-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .wrapper #words-section #filter label {
@@ -322,13 +335,13 @@ header nav span.visited {
 }
 
 .wrapper #words-section #filter select {
-  width: 30%;
+  width: 60%;
   background: #f1fff1;
   text-align: center;
   font-size: 1em;
   padding: 0.3em;
   outline: none;
-  margin-bottom: 10px;
+  margin: 1% 20%;
   border: none;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;

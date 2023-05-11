@@ -2,6 +2,7 @@ import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
 import { randomise } from './services/shared-service.js';
+import { insertFilters } from './utilities/filters.js';
 
 const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 const verbsContainer = document.querySelector('#verbs-container');
@@ -10,6 +11,7 @@ const heading = verbsContainer.children[0];
 const navigationLinks = document.querySelectorAll('.navigation-link');
 const sections = document.querySelectorAll('section');
 const listOfWords = document.querySelector('#list-of-words');
+const lecturesFilter = document.querySelector('#filter-lectures');
 
 let randomWords = [];
 let randomVerbs = [];
@@ -52,3 +54,5 @@ const clickLogic = (element) => {
 document.addEventListener('click', (event) => {
 	clickLogic(event);
 });
+
+insertFilters(lecturesFilter);

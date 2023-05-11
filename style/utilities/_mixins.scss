@@ -13,14 +13,14 @@
 	}
 }
 
-@mixin stylize-input($width, $padding, $font-size) {
+@mixin stylize-input($width, $padding, $font-size, $margin) {
 	width: $width;
 	background: lighten($background-green, 3%);
 	text-align: center;
 	font-size: $font-size;
 	padding: $padding;
 	outline: none;
-	margin-bottom: 10px;
+	margin: $margin;
 	border: none;
 	border-radius: 10px;
 	box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
