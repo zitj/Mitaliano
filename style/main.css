@@ -124,6 +124,8 @@ body {
   background: #e2ffe2;
   color: #025702;
   font-family: 'Poppins', sans-serif;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .hide {
@@ -305,14 +307,24 @@ header nav span.visited {
   padding: 0.3em 2em;
 }
 
+.wrapper #words-section #filter {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 11.5%;
+}
+
 .wrapper #words-section #word-counter {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  bottom: 30%;
   text-align: center;
+  bottom: 30%;
 }
 
 .wrapper #words-section #list-of-words {
