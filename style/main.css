@@ -317,6 +317,25 @@ header nav span.visited {
   top: 11.5%;
 }
 
+.wrapper #words-section #filter label {
+  margin-right: 0.3em;
+}
+
+.wrapper #words-section #filter select {
+  width: 30%;
+  background: #f1fff1;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.3em;
+  outline: none;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
+          box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px #f3fef3;
+  color: #025702;
+}
+
 .wrapper #words-section #word-counter {
   position: absolute;
   margin-left: auto;

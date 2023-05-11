@@ -12,3 +12,17 @@
 		bottom: $bottom;
 	}
 }
+
+@mixin stylize-input($width, $padding, $font-size) {
+	width: $width;
+	background: lighten($background-green, 3%);
+	text-align: center;
+	font-size: $font-size;
+	padding: $padding;
+	outline: none;
+	margin-bottom: 10px;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+	color: $dark-green;
+}
