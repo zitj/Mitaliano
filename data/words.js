@@ -216,7 +216,7 @@ export const words = {
 		word: 'comportamento',
 		translation: 'ponašanje',
 		context: 'Il suo comportamento e cativo',
-		source: 'unknown',
+		source: 'Freestyle',
 		type: 'noun',
 		singular: { article: 'il', word: 'comportamento' },
 		plural: { article: 'i', word: 'comportamenti' },

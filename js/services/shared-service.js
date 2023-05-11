@@ -5,6 +5,7 @@ import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
 
 const VERBS = 'verbs';
 const WORDS = 'words';
+
 const showTranslationBtnContent = 'Mostra traduzione';
 
 const cardCounter = document.querySelector('#word-counter');
@@ -12,6 +13,16 @@ const heading = document.querySelector('#verbs-heading');
 
 let lastWordNumber;
 let passedWords = {};
+
+const returnArrayOfLectures = () => {
+	let arrayOfLectures = [];
+	for (let number in words) {
+		arrayOfLectures.push(words[number].source);
+	}
+	arrayOfLectures = [...new Set(arrayOfLectures)];
+	console.log(arrayOfLectures);
+	return arrayOfLectures;
+};
 
 const returnObjectLength = (object) => {
 	let counter = 0;
@@ -128,6 +139,7 @@ const randomise = (type, list, randomElements, sectionSwitched) => {
 		sectionSwitched,
 	};
 	showRandomisedElements(modifier);
+	returnArrayOfLectures(words);
 };
 
-export { returnObjectLength, render, randomise };
+export { returnObjectLength, render, randomise, returnArrayOfLectures };
