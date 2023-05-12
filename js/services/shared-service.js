@@ -15,7 +15,7 @@ let lastWordNumber;
 let passedWords = {};
 
 const returnArrayOfLectures = () => {
-	let arrayOfLectures = [];
+	let arrayOfLectures = ['Nessun filtro selezionato'];
 	for (let number in words) {
 		arrayOfLectures.push(words[number].source);
 	}
@@ -120,10 +120,6 @@ const showRandomisedElements = (modifier) => {
 	modifier.randomElements = returnRandomElements(arrayOfRandomNumbers, modifier.type);
 	setCardCounter(Object.keys(passedWords).length, Object.keys(words).length, cardCounter);
 	render(modifier.type, modifier.list, modifier.randomElements);
-};
-
-const test = (obj) => {
-	console.log(obj);
 };
 
 const randomise = (type, list, randomElements, sectionSwitched) => {

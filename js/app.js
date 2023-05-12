@@ -37,6 +37,7 @@ const showTranslation = (button) => {
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
+	let elementType = elementClicked.nodeName;
 
 	if (className === 'verb-link') elementClicked.classList.add('visited');
 	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
@@ -48,6 +49,12 @@ const clickLogic = (element) => {
 			card.classList.remove('outro');
 			randomise('words', listOfWords, randomWords, false);
 		});
+	}
+	if (elementType === 'SELECT') {
+		console.log(element);
+		let filter = elementClicked.selectedOptions[0].innerHTML;
+		console.log(filter);
+		randomise('words', listOfWords, randomWords, false);
 	}
 };
 
