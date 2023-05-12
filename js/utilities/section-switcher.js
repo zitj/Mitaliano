@@ -1,6 +1,8 @@
 import { resetClassListFor } from './list.js';
 import { randomise } from '../services/shared-service.js';
 
+const wrapper = document.querySelector('.wrapper');
+
 const switchSections = (section, ...elements) => {
 	let verbSection = document.querySelector('#verbs-section');
 	let wordSection = document.querySelector('#words-section');
@@ -18,7 +20,9 @@ const switchSections = (section, ...elements) => {
 	section.classList.add('visited');
 
 	if (section.id === WORDS) {
+		wrapper.style.height = '85vh';
 		verbSection.classList.add('hide');
+		wordSection.classList.add('show');
 		randomise('words', listOfWords, randomWords, true);
 		let card = document.querySelector('.card');
 		card.classList.add('intro');
@@ -27,6 +31,8 @@ const switchSections = (section, ...elements) => {
 		});
 	}
 	if (section.id === VERBS) {
+		wrapper.style.height = '60vh';
+		wordSection.classList.remove('show');
 		wordSection.classList.add('hide');
 	}
 };

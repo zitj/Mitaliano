@@ -146,7 +146,7 @@ header {
 	}
 	#words-section {
 		#filter {
-			@include positioned-element($top: 9%);
+			@include positioned-element($top: 13%);
 			.filter-wrapper {
 				display: flex;
 				justify-content: center;
@@ -156,11 +156,11 @@ header {
 				margin-right: 0.5em;
 			}
 			select {
-				@include stylize-input(60%, 0.3em, 1em, 1% 20%);
+				@include stylize-input(250px, 0.3em, 1em, 1% auto);
 			}
 		}
 		#word-counter {
-			@include positioned-element($bottom: 30%);
+			@include positioned-element($bottom: 10%);
 		}
 		#list-of-words {
 			display: none;
