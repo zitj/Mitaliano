@@ -20,7 +20,7 @@ const switchSections = (section, ...elements) => {
 	section.classList.add('visited');
 
 	if (section.id === WORDS) {
-		wrapper.style.height = '85vh';
+		wrapper.style.height = '70vh';
 		verbSection.classList.add('hide');
 		wordSection.classList.add('show');
 		randomise('words', listOfWords, randomWords, true);
