@@ -1,3 +1,3 @@
-1. Add new verbs
-2. Continue writting logic for filters
-3. Center content for words section
+1. Finish logic for filters
+2. Refactor code 
+3. Add new verbs/words
