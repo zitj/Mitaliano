@@ -180,7 +180,16 @@ header nav span.visited {
   box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
   padding: 0.3em 2em;
 }
-.wrapper #words-section #filter-lectures {
+.wrapper #words-section #filter {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 13%;
+}
+.wrapper #words-section #filter #filter-lectures {
   width: 250px;
   background: #f1fff1;
   text-align: center;
@@ -196,18 +205,24 @@ header nav span.visited {
   display: flex;
   justify-content: space-evenly;
 }
-.wrapper #words-section #filter-lectures #arrow {
+.wrapper #words-section #filter #filter-lectures #arrow {
   transform: rotate(90deg);
   font-weight: 600;
 }
-.wrapper #words-section #filter {
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
+.wrapper #words-section #filter #filter-options {
+  background: red;
+  width: 250px;
+  background: #f1fff1;
   text-align: center;
-  top: 13%;
+  font-size: 1em;
+  padding: 0.3em;
+  outline: none;
+  margin: 1% auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+  color: #025702;
+  z-index: 100;
 }
 .wrapper #words-section #filter .filter-wrapper {
   display: flex;

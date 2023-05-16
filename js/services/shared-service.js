@@ -20,7 +20,6 @@ const returnArrayOfLectures = () => {
 		arrayOfLectures.push(words[number].source);
 	}
 	arrayOfLectures = [...new Set(arrayOfLectures)];
-	console.log(arrayOfLectures);
 	return arrayOfLectures;
 };
 

@@ -13,9 +13,17 @@ const sections = document.querySelectorAll('section');
 const listOfWords = document.querySelector('#list-of-words');
 const lecturesFilter = document.querySelector('#filter-lectures');
 const textFilter = document.querySelector('#filter-text');
+const filterOptions = document.querySelector('#filter-options');
 
 let randomWords = [];
 let randomVerbs = [];
+
+let isFilterClicked = false;
+let filterElementsIDs = {
+	'filter-lectures': true,
+	arrow: true,
+	'filter-text': true,
+};
 
 wantedVerbsInput.addEventListener(
 	'keyup',
@@ -44,6 +52,10 @@ const clickLogic = (element) => {
 	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
 	if (className === 'translation-button') showTranslation(element);
 	if (elementClicked.id === 'next-btn') {
+		if (isFilterClicked) {
+			filterOptions.classList.add('hide');
+			isFilterClicked = !isFilterClicked;
+		}
 		let card = elementClicked.parentElement;
 		card.classList.add('outro');
 		card.addEventListener('animationend', (event) => {
@@ -51,11 +63,14 @@ const clickLogic = (element) => {
 			randomise('words', listOfWords, randomWords, false);
 		});
 	}
-	if (elementType === 'SELECT') {
-		console.log(element);
-		let filter = elementClicked.value;
-		console.log(filter);
-		randomise('words', listOfWords, randomWords, false);
+	if (filterElementsIDs[elementClicked.id]) {
+		isFilterClicked = !isFilterClicked;
+		if (isFilterClicked) {
+			filterOptions.classList.remove('hide');
+		} else {
+			filterOptions.classList.add('hide');
+		}
+		// randomise('words', listOfWords, randomWords, false);
 	}
 };
 
