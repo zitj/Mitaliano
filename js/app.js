@@ -12,6 +12,7 @@ const navigationLinks = document.querySelectorAll('.navigation-link');
 const sections = document.querySelectorAll('section');
 const listOfWords = document.querySelector('#list-of-words');
 const lecturesFilter = document.querySelector('#filter-lectures');
+const textFilter = document.querySelector('#filter-text');
 
 let randomWords = [];
 let randomVerbs = [];
@@ -52,7 +53,7 @@ const clickLogic = (element) => {
 	}
 	if (elementType === 'SELECT') {
 		console.log(element);
-		let filter = elementClicked.selectedOptions[0].innerHTML;
+		let filter = elementClicked.value;
 		console.log(filter);
 		randomise('words', listOfWords, randomWords, false);
 	}
@@ -62,4 +63,4 @@ document.addEventListener('click', (event) => {
 	clickLogic(event);
 });
 
-insertFilters(lecturesFilter);
+insertFilters(lecturesFilter, textFilter);
