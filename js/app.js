@@ -11,7 +11,6 @@ const heading = verbsContainer.children[0];
 const navigationLinks = document.querySelectorAll('.navigation-link');
 const sections = document.querySelectorAll('section');
 const listOfWords = document.querySelector('#list-of-words');
-const lecturesFilter = document.querySelector('#filter-lectures');
 const textFilter = document.querySelector('#filter-text');
 const filterOptions = document.querySelector('#filter-options');
 
@@ -78,4 +77,4 @@ document.addEventListener('click', (event) => {
 	clickLogic(event);
 });
 
-insertFilters(lecturesFilter, textFilter);
+insertFilters(filterOptions, textFilter);

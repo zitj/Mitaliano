@@ -1,3 +1,4 @@
 1. Finish logic for filters
-2. Refactor code 
-3. Add new verbs/words
+2. Restyle filter-options add darker shadow, more padding and align text
+3. Refactor code 
+4. Add new verbs/words
