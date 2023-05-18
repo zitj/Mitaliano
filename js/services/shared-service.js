@@ -15,7 +15,7 @@ let lastWordNumber;
 let passedWords = {};
 
 const returnArrayOfLectures = () => {
-	let arrayOfLectures = ['Nessun filtro selezionato'];
+	let arrayOfLectures = ['Senza filtro'];
 	for (let number in words) {
 		arrayOfLectures.push(words[number].source);
 	}

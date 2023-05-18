@@ -202,6 +202,7 @@ header nav span.visited {
   box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
   color: #025702;
   cursor: pointer;
+  position: relative;
   display: flex;
   justify-content: space-evenly;
 }
@@ -210,7 +211,6 @@ header nav span.visited {
   font-weight: 600;
 }
 .wrapper #words-section #filter #filter-options {
-  background: red;
   width: 250px;
   background: #f1fff1;
   text-align: center;
@@ -223,6 +223,18 @@ header nav span.visited {
   box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
   color: #025702;
   z-index: 100;
+  position: absolute;
+  top: 105%;
+  text-align: left;
+}
+.wrapper #words-section #filter #filter-options .option {
+  margin: 0 0 0.5em 1.5em;
+}
+.wrapper #words-section #filter #filter-options .option:hover {
+  color: #d1525a;
+}
+.wrapper #words-section #filter #filter-options .option:active {
+  color: #025702;
 }
 .wrapper #words-section #filter .filter-wrapper {
   display: flex;

@@ -83,17 +83,6 @@ header {
 			margin-bottom: 10px;
 		}
 		input {
-			// width: 20%;
-			// background: lighten($background-green, 3%);
-			// text-align: center;
-			// font-size: 1.3em;
-			// padding: 0.3em;
-			// outline: none;
-			// margin-bottom: 10px;
-			// border: none;
-			// border-radius: 10px;
-			// box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
-			// color: $dark-green;
 			@include stylize-input(20%, 0.3em, 1.3em, 0 0 10px 0);
 		}
 		input::-webkit-outer-spin-button,
@@ -149,6 +138,7 @@ header {
 			#filter-lectures {
 				@include stylize-input(250px, 0.3em, 1em, 1% auto);
 				cursor: pointer;
+				position: relative;
 				display: flex;
 				justify-content: space-evenly;
 				#arrow {
@@ -157,9 +147,20 @@ header {
 				}
 			}
 			#filter-options {
-				background: red;
 				@include stylize-input(250px, 0.3em, 1em, 1% auto);
 				z-index: 100;
+				position: absolute;
+				top: 105%;
+				text-align: left;
+				.option {
+					margin: 0 0 0.5em 1.5em;
+					&:hover {
+						color: $dark-red;
+					}
+					&:active {
+						color: $dark-green;
+					}
+				}
 			}
 			@include positioned-element($top: 13%);
 			.filter-wrapper {
