@@ -17,8 +17,9 @@ const filterOptions = document.querySelector('#filter-options');
 let randomWords = [];
 let randomVerbs = [];
 
+let filterName = '';
 let isFilterClicked = false;
-let filterElementsIDs = {
+let elementIDsOfFilter = {
 	'filter-lectures': true,
 	arrow: true,
 	'filter-text': true,
@@ -45,7 +46,6 @@ const showTranslation = (button) => {
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
-	let elementType = elementClicked.nodeName;
 
 	if (className === 'verb-link') elementClicked.classList.add('visited');
 	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
@@ -62,14 +62,19 @@ const clickLogic = (element) => {
 			randomise('words', listOfWords, randomWords, false);
 		});
 	}
-	if (filterElementsIDs[elementClicked.id]) {
+	if (elementIDsOfFilter[elementClicked.id]) {
 		isFilterClicked = !isFilterClicked;
 		if (isFilterClicked) {
 			filterOptions.classList.remove('hide');
 		} else {
 			filterOptions.classList.add('hide');
 		}
-		// randomise('words', listOfWords, randomWords, false);
+	}
+	if (className === 'filter-option') {
+		isFilterClicked = !isFilterClicked;
+		filterOptions.classList.add('hide');
+		filterName = elementClicked.innerText;
+		textFilter.innerText = filterName;
 	}
 };
 

@@ -135,25 +135,29 @@ header {
 	}
 	#words-section {
 		#filter {
+			@include remove-blue-color-on-click();
 			#filter-lectures {
+				z-index: 3;
 				@include stylize-input(250px, 0.3em, 1em, 1% auto);
 				cursor: pointer;
 				position: relative;
 				display: flex;
 				justify-content: space-evenly;
 				#arrow {
+					z-index: 3;
 					transform: rotate(90deg);
 					font-weight: 600;
 				}
 			}
 			#filter-options {
 				@include stylize-input(250px, 0.3em, 1em, 1% auto);
-				z-index: 100;
 				position: absolute;
-				top: 105%;
+				top: 120%;
 				text-align: left;
-				.option {
-					margin: 0 0 0.5em 1.5em;
+				z-index: 2;
+				.filter-option {
+					z-index: 2;
+					margin: 0 0 1em 1.5em;
 					&:hover {
 						color: $dark-red;
 					}
@@ -243,13 +247,7 @@ header {
 					color: $dark-green;
 					bottom: 5%;
 					right: 5%;
-					-webkit-tap-highlight-color: transparent;
-					-webkit-touch-callout: none;
-					-webkit-user-select: none;
-					-khtml-user-select: none;
-					-moz-user-select: none;
-					-ms-user-select: none;
-					user-select: none;
+					@include remove-blue-color-on-click();
 					&:focus {
 						outline: none !important;
 					}

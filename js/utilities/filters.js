@@ -5,7 +5,7 @@ const lectures = returnArrayOfLectures();
 const insertFilters = (filter, textFilter) => {
 	lectures.forEach((lecture) => {
 		let option = document.createElement('div');
-		option.classList.add('option');
+		option.classList.add('filter-option');
 		option.innerText = lecture;
 		filter.appendChild(option);
 	});

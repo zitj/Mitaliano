@@ -181,6 +181,11 @@ header nav span.visited {
   padding: 0.3em 2em;
 }
 .wrapper #words-section #filter {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
@@ -190,6 +195,7 @@ header nav span.visited {
   top: 13%;
 }
 .wrapper #words-section #filter #filter-lectures {
+  z-index: 3;
   width: 250px;
   background: #f1fff1;
   text-align: center;
@@ -207,6 +213,7 @@ header nav span.visited {
   justify-content: space-evenly;
 }
 .wrapper #words-section #filter #filter-lectures #arrow {
+  z-index: 3;
   transform: rotate(90deg);
   font-weight: 600;
 }
@@ -222,18 +229,19 @@ header nav span.visited {
   border-radius: 10px;
   box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
   color: #025702;
-  z-index: 100;
   position: absolute;
-  top: 105%;
+  top: 120%;
   text-align: left;
+  z-index: 2;
 }
-.wrapper #words-section #filter #filter-options .option {
-  margin: 0 0 0.5em 1.5em;
+.wrapper #words-section #filter #filter-options .filter-option {
+  z-index: 2;
+  margin: 0 0 1em 1.5em;
 }
-.wrapper #words-section #filter #filter-options .option:hover {
+.wrapper #words-section #filter #filter-options .filter-option:hover {
   color: #d1525a;
 }
-.wrapper #words-section #filter #filter-options .option:active {
+.wrapper #words-section #filter #filter-options .filter-option:active {
   color: #025702;
 }
 .wrapper #words-section #filter .filter-wrapper {
