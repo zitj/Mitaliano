@@ -1,19 +1,11 @@
 import { resetClassListFor } from './list.js';
 import { randomise } from '../services/shared-service.js';
-
-const wrapper = document.querySelector('.wrapper');
-const textFilter = document.querySelector('#filter-text');
+import { DEFAULT_FILTER, WORDS, VERBS, CLASSES } from '../constants.js';
+import { verbSection, wordSection, listOfWords, wrapper } from '../elements/shared.js';
+import { setDefaultFilter } from './filters.js';
 
 const switchSections = (section, ...elements) => {
-	let verbSection = document.querySelector('#verbs-section');
-	let wordSection = document.querySelector('#words-section');
-
-	const listOfWords = document.querySelector('#list-of-words');
 	let randomWords = [];
-
-	const VERBS = 'verbs-section-link';
-	const WORDS = 'words-section-link';
-	const DEFAULT_FILTER = 'Senza filtro';
 
 	elements.forEach((element) => {
 		resetClassListFor(element);
@@ -21,19 +13,19 @@ const switchSections = (section, ...elements) => {
 
 	section.classList.add('visited');
 
-	if (section.id === WORDS) {
+	if (section.id === CLASSES.WORDS_SECTION_LINK) {
 		wrapper.style.height = '76vh';
 		verbSection.classList.add('hide');
 		wordSection.classList.add('show');
-		textFilter.innerHTML = 'Senza filtro';
-		randomise('words', listOfWords, randomWords, true, DEFAULT_FILTER);
+		setDefaultFilter();
+		randomise(WORDS, listOfWords, randomWords, true, DEFAULT_FILTER);
 		let card = document.querySelector('.card');
 		card.classList.add('intro');
 		card.addEventListener('animationend', (event) => {
 			card.classList.remove('intro');
 		});
 	}
-	if (section.id === VERBS) {
+	if (section.id === CLASSES.VERBS_SECTION_LINK) {
 		wrapper.style.height = '60vh';
 		wordSection.classList.remove('show');
 		wordSection.classList.add('hide');

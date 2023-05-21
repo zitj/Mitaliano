@@ -1,11 +1,17 @@
 import { returnArrayOfLectures } from '../services/shared-service.js';
 import { randomise } from '../services/shared-service.js';
 import { DEFAULT_FILTER } from '../constants.js';
+import { textFilter } from '../elements/shared.js';
 
 const lectures = returnArrayOfLectures();
 
 let isFilterClicked = false;
 let filterName = DEFAULT_FILTER;
+
+const setDefaultFilter = () => {
+	filterName = DEFAULT_FILTER;
+	textFilter.innerText = filterName;
+};
 
 const insertFilters = (filter, textFilter) => {
 	lectures.forEach((lecture) => {
@@ -38,4 +44,4 @@ const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, ra
 	randomise('words', listOfWords, randomWords, false, filterName);
 };
 
-export { insertFilters, toggleFilter, chooseFilter, isFilterClicked, filterName };
+export { insertFilters, toggleFilter, chooseFilter, isFilterClicked, filterName, setDefaultFilter };
