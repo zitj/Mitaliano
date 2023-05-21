@@ -795,7 +795,7 @@ export const words = {
 	},
 	71: {
 		word: 'guarigione',
-		translation: 'iscjeljenje',
+		translation: 'isceljenje',
 		context: 'Il processo di guarigione richiede tempo e cura.',
 		source: 'Freestyle',
 		type: 'noun',

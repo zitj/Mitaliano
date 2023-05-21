@@ -43,25 +43,20 @@ const showTranslation = (button) => {
 	translation.classList.remove('hide');
 };
 
-const clickLogic = (element) => {
-	let elementClicked = element.target;
-	let className = elementClicked.className;
-
-	if (className === 'verb-link') elementClicked.classList.add('visited');
-	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
-	if (className === 'translation-button') showTranslation(element);
-	if (elementClicked.id === 'next-btn') {
-		if (isFilterClicked) {
-			filterOptions.classList.add('hide');
-			isFilterClicked = !isFilterClicked;
-		}
-		let card = elementClicked.parentElement;
-		card.classList.add('outro');
-		card.addEventListener('animationend', (event) => {
-			card.classList.remove('outro');
-			randomise('words', listOfWords, randomWords, false, filterName);
-		});
+const nextWord = (elementClicked) => {
+	if (isFilterClicked) {
+		filterOptions.classList.add('hide');
+		isFilterClicked = !isFilterClicked;
 	}
+	let card = elementClicked.parentElement;
+	card.classList.add('outro');
+	card.addEventListener('animationend', (event) => {
+		card.classList.remove('outro');
+		randomise('words', listOfWords, randomWords, false, filterName);
+	});
+};
+
+const toggleFilter = (elementClicked) => {
 	if (elementIDsOfFilter[elementClicked.id]) {
 		isFilterClicked = !isFilterClicked;
 		if (isFilterClicked) {
@@ -70,13 +65,24 @@ const clickLogic = (element) => {
 			filterOptions.classList.add('hide');
 		}
 	}
-	if (className === 'filter-option') {
-		isFilterClicked = !isFilterClicked;
-		filterOptions.classList.add('hide');
-		filterName = elementClicked.innerText;
-		textFilter.innerText = filterName;
-		randomise('words', listOfWords, randomWords, false, filterName);
-	}
+};
+const chooseFilter = (elementClicked) => {
+	isFilterClicked = !isFilterClicked;
+	filterOptions.classList.add('hide');
+	filterName = elementClicked.innerText;
+	textFilter.innerText = filterName;
+	randomise('words', listOfWords, randomWords, false, filterName);
+};
+
+const clickLogic = (element) => {
+	let elementClicked = element.target;
+	let className = elementClicked.className;
+	toggleFilter(elementClicked);
+	if (className === 'verb-link') elementClicked.classList.add('visited');
+	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
+	if (className === 'translation-button') showTranslation(element);
+	if (elementClicked.id === 'next-btn') nextWord(elementClicked);
+	if (className === 'filter-option') chooseFilter(elementClicked);
 };
 
 document.addEventListener('click', (event) => {
