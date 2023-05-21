@@ -738,4 +738,15 @@ export const words = {
 		gender: '/',
 		infinitive: 'accarezzare', //next
 	},
+	66: {
+		word: 'scorciatoia',
+		translation: 'skraćenica',
+		context: 'Ho deciso di prendere la scorciatoia attraverso il parco per arrivare più velocemente.',
+		source: 'Freestyle',
+		type: 'noun',
+		singular: { article: 'la', word: 'scorciatoia' },
+		plural: { article: 'le', word: 'scorciatoie' },
+		gender: 'F',
+		infinitive: '',
+	},
 };

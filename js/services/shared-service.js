@@ -12,7 +12,10 @@ const cardCounter = document.querySelector('#word-counter');
 const heading = document.querySelector('#verbs-heading');
 
 let lastWordNumber;
+let previousFilter = '';
 let passedWords = {};
+let filteredWordsArray = [];
+let filteredWordsObj = {};
 
 const returnArrayOfLectures = () => {
 	let arrayOfLectures = ['Senza filtro'];
@@ -70,15 +73,15 @@ const render = (type, list, randomElements) => {
 	showList(list, content);
 };
 
-const returnRandomElements = (arrayOfRandomNumbers, type) => {
+const returnRandomElements = (arrayOfRandomNumbers, type, source) => {
 	let randomElements = [];
 	arrayOfRandomNumbers.forEach((number) => {
 		if (type === VERBS) randomElements.push(verbs[number].name);
 		if (type === WORDS) {
 			lastWordNumber = number;
-			words[number].id = number;
-			passedWords[number] = words[number];
-			randomElements.push(words[number]);
+			source[number].id = number;
+			passedWords[number] = source[number];
+			randomElements.push(source[number]);
 		}
 	});
 	return randomElements;
@@ -96,6 +99,7 @@ const showHeadingError = (heading, totalNumberOfElements, list) => {
 const showRandomisedElements = (modifier) => {
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];
+
 	modifier.randomElements = [];
 
 	if (modifier.sectionSwitched) passedWords = {};
@@ -106,9 +110,33 @@ const showRandomisedElements = (modifier) => {
 		}
 		removeHeadingError(heading);
 	}
+
+	if (modifier.type === WORDS) {
+		if (modifier.filterName !== previousFilter) {
+			passedWords = {};
+			if (modifier.filterName !== 'Senza filtro') {
+				filteredWordsArray = [];
+				filteredWordsObj = {};
+				for (let wordNum in words) {
+					let word = words[wordNum];
+					if (word.source === modifier.filterName) filteredWordsArray.push(word);
+				}
+				for (let i = 0; i < filteredWordsArray.length; i++) {
+					filteredWordsObj[i] = filteredWordsArray[i];
+				}
+				modifier.totalNumberOfElements = filteredWordsArray.length;
+			} else {
+				filteredWordsObj = words;
+			}
+			previousFilter = modifier.filterName;
+		}
+	}
+
 	while (arrayOfRandomNumbers.length < modifier.wantedNumberToShow) {
-		let randomNumber = Math.floor(Math.random() * modifier.totalNumberOfElements);
-		if (Object.keys(passedWords).length == Object.keys(words).length) {
+		let totalNumberOfElements =
+			modifier.type === WORDS ? Object.keys(filteredWordsObj).length : modifier.totalNumberOfElements;
+		let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
+		if (Object.keys(passedWords).length == Object.keys(filteredWordsObj).length) {
 			passedWords = {};
 		}
 		if (randomNumber !== lastWordNumber && passedWords[randomNumber] == undefined) {
@@ -116,12 +144,12 @@ const showRandomisedElements = (modifier) => {
 		}
 		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
 	}
-	modifier.randomElements = returnRandomElements(arrayOfRandomNumbers, modifier.type);
-	setCardCounter(Object.keys(passedWords).length, Object.keys(words).length, cardCounter);
+	modifier.randomElements = returnRandomElements(arrayOfRandomNumbers, modifier.type, filteredWordsObj);
+	setCardCounter(Object.keys(passedWords).length, Object.keys(filteredWordsObj).length, cardCounter);
 	render(modifier.type, modifier.list, modifier.randomElements);
 };
 
-const randomise = (type, list, randomElements, sectionSwitched) => {
+const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
 	const verbsInput = document.querySelector('#wanted-verbs-input');
 	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
@@ -132,6 +160,7 @@ const randomise = (type, list, randomElements, sectionSwitched) => {
 		list,
 		randomElements,
 		sectionSwitched,
+		filterName,
 	};
 	showRandomisedElements(modifier);
 	returnArrayOfLectures(words);

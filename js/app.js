@@ -17,7 +17,7 @@ const filterOptions = document.querySelector('#filter-options');
 let randomWords = [];
 let randomVerbs = [];
 
-let filterName = '';
+let filterName = 'Senza filtro';
 let isFilterClicked = false;
 let elementIDsOfFilter = {
 	'filter-lectures': true,
@@ -59,7 +59,7 @@ const clickLogic = (element) => {
 		card.classList.add('outro');
 		card.addEventListener('animationend', (event) => {
 			card.classList.remove('outro');
-			randomise('words', listOfWords, randomWords, false);
+			randomise('words', listOfWords, randomWords, false, filterName);
 		});
 	}
 	if (elementIDsOfFilter[elementClicked.id]) {
@@ -75,6 +75,7 @@ const clickLogic = (element) => {
 		filterOptions.classList.add('hide');
 		filterName = elementClicked.innerText;
 		textFilter.innerText = filterName;
+		randomise('words', listOfWords, randomWords, false, filterName);
 	}
 };
 
