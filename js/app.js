@@ -2,23 +2,22 @@ import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
 import { randomise } from './services/shared-service.js';
-import { insertFilters } from './utilities/filters.js';
-
-const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
-const verbsContainer = document.querySelector('#verbs-container');
-const listOfVerbs = document.querySelector('#list-of-verbs');
-const heading = verbsContainer.children[0];
-const navigationLinks = document.querySelectorAll('.navigation-link');
-const sections = document.querySelectorAll('section');
-const listOfWords = document.querySelector('#list-of-words');
-const textFilter = document.querySelector('#filter-text');
-const filterOptions = document.querySelector('#filter-options');
+import { insertFilters, toggleFilter, chooseFilter, isFilterClicked, filterName } from './utilities/filters.js';
+import { WORDS, VERBS, CLASSES } from './constants.js';
+import {
+	wantedVerbsInput,
+	listOfVerbs,
+	heading,
+	navigationLinks,
+	sections,
+	listOfWords,
+	textFilter,
+	filterOptions,
+} from './elements/shared.js';
 
 let randomWords = [];
 let randomVerbs = [];
 
-let filterName = 'Senza filtro';
-let isFilterClicked = false;
 let elementIDsOfFilter = {
 	'filter-lectures': true,
 	arrow: true,
@@ -33,7 +32,7 @@ wantedVerbsInput.addEventListener(
 			hideList(listOfVerbs);
 			return;
 		}
-		randomise('verbs', listOfVerbs, randomVerbs);
+		randomise(VERBS, listOfVerbs, randomVerbs);
 	}, 500)
 );
 
@@ -52,37 +51,22 @@ const nextWord = (elementClicked) => {
 	card.classList.add('outro');
 	card.addEventListener('animationend', (event) => {
 		card.classList.remove('outro');
-		randomise('words', listOfWords, randomWords, false, filterName);
+		randomise(WORDS, listOfWords, randomWords, false, filterName);
 	});
-};
-
-const toggleFilter = (elementClicked) => {
-	if (elementIDsOfFilter[elementClicked.id]) {
-		isFilterClicked = !isFilterClicked;
-		if (isFilterClicked) {
-			filterOptions.classList.remove('hide');
-		} else {
-			filterOptions.classList.add('hide');
-		}
-	}
-};
-const chooseFilter = (elementClicked) => {
-	isFilterClicked = !isFilterClicked;
-	filterOptions.classList.add('hide');
-	filterName = elementClicked.innerText;
-	textFilter.innerText = filterName;
-	randomise('words', listOfWords, randomWords, false, filterName);
 };
 
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
-	toggleFilter(elementClicked);
-	if (className === 'verb-link') elementClicked.classList.add('visited');
-	if (className === 'navigation-link') switchSections(elementClicked, navigationLinks, sections);
-	if (className === 'translation-button') showTranslation(element);
-	if (elementClicked.id === 'next-btn') nextWord(elementClicked);
-	if (className === 'filter-option') chooseFilter(elementClicked);
+	toggleFilter(elementClicked, elementIDsOfFilter, filterOptions);
+
+	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
+	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, navigationLinks, sections);
+	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
+	if (elementClicked.id === CLASSES.NEXT_BUTTON) nextWord(elementClicked);
+	if (className === CLASSES.FILTER_OPTION) {
+		chooseFilter(elementClicked, filterOptions, textFilter, listOfWords, randomWords);
+	}
 };
 
 document.addEventListener('click', (event) => {

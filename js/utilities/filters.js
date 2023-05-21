@@ -1,6 +1,11 @@
 import { returnArrayOfLectures } from '../services/shared-service.js';
+import { randomise } from '../services/shared-service.js';
+import { DEFAULT_FILTER } from '../constants.js';
 
 const lectures = returnArrayOfLectures();
+
+let isFilterClicked = false;
+let filterName = DEFAULT_FILTER;
 
 const insertFilters = (filter, textFilter) => {
 	lectures.forEach((lecture) => {
@@ -12,4 +17,25 @@ const insertFilters = (filter, textFilter) => {
 	textFilter.innerText = lectures[0];
 };
 
-export { insertFilters };
+const toggleFilter = (elementClicked, elementIDsOfFilter, filterOptions) => {
+	if (elementIDsOfFilter[elementClicked.id]) {
+		isFilterClicked = !isFilterClicked;
+		if (isFilterClicked) {
+			filterOptions.classList.remove('hide');
+		} else {
+			filterOptions.classList.add('hide');
+		}
+	} else {
+		isFilterClicked = false;
+		filterOptions.classList.add('hide');
+	}
+};
+const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, randomWords) => {
+	isFilterClicked = false;
+	filterOptions.classList.add('hide');
+	filterName = elementClicked.innerText;
+	textFilter.innerText = filterName;
+	randomise('words', listOfWords, randomWords, false, filterName);
+};
+
+export { insertFilters, toggleFilter, chooseFilter, isFilterClicked, filterName };
