@@ -348,4 +348,6 @@ export const verbs = {
 	346: { name: 'SVANIRE' },
 	347: { name: 'SOFFRIRE' },
 	348: { name: 'ACCAREZZARE' },
+	349: { name: 'ROVINARE' },
+	350: { name: 'SBUFFARE' },
 };
