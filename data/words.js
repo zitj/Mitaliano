@@ -1025,13 +1025,13 @@ export const words = {
 		infinitive: '', //next
 	},
 	92: {
-		word: 'campella',
-		translation: 'rožica',
-		context: 'Ho raccolto una campella per decorare il giardino.',
+		word: 'campanella',
+		translation: 'zvono',
+		context: "La campanella annuncia l'inizio e la fine delle lezioni.",
 		source: 'Freestyle',
 		type: 'noun',
-		singular: { article: 'la', word: 'campella' },
-		plural: { article: 'le', word: 'campelle' },
+		singular: { article: 'la', word: 'campanella' },
+		plural: { article: 'le', word: 'campane' },
 		gender: 'F',
 		infinitive: '', //next
 	},
