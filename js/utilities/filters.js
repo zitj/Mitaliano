@@ -53,24 +53,24 @@ const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, ra
 	randomise('words', listOfWords, randomWords, false, filterName);
 };
 
-const filteringWords = (modifier, words, filterModifier) => {
-	if (modifier.filterName !== filterModifier.previousFilter) {
+const filteringWords = (sectionModifier, words, filterModifier) => {
+	if (sectionModifier.filterName !== filterModifier.previousFilter) {
 		filterModifier.passedWords = {};
-		if (modifier.filterName !== DEFAULT_FILTER) {
+		if (sectionModifier.filterName !== DEFAULT_FILTER) {
 			filterModifier.wordsArray = [];
 			filterModifier.wordsObj = {};
 			for (let wordNum in words) {
 				let word = words[wordNum];
-				if (word.source === modifier.filterName) filterModifier.wordsArray.push(word);
+				if (word.source === sectionModifier.filterName) filterModifier.wordsArray.push(word);
 			}
 			for (let i = 0; i < filterModifier.wordsArray.length; i++) {
 				filterModifier.wordsObj[i] = filterModifier.wordsArray[i];
 			}
-			modifier.totalNumberOfElements = filterModifier.wordsArray.length;
+			sectionModifier.totalNumberOfElements = filterModifier.wordsArray.length;
 		} else {
 			filterModifier.wordsObj = words;
 		}
-		filterModifier.previousFilter = modifier.filterName;
+		filterModifier.previousFilter = sectionModifier.filterName;
 	}
 	return filterModifier;
 };
