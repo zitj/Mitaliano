@@ -7,7 +7,6 @@ import { heading, cardCounter, verbsInput } from '../elements/shared.js';
 import { filteringWords } from '../utilities/filters.js';
 
 let lastWordNumber;
-let previousFilter = '';
 let filterModifier = {
 	previousFilter: '',
 	passedWords: {},
@@ -76,7 +75,9 @@ const returnRandomElements = (arrayOfRandomNumbers, type, source) => {
 	return randomElements;
 };
 
-const setCardCounter = (passedCards, totalCards, cardCounter) => {
+const setCardCounter = (filterModifier, cardCounter) => {
+	let passedCards = Object.keys(filterModifier.passedWords).length;
+	let totalCards = Object.keys(filterModifier.wordsObj).length;
 	cardCounter.innerHTML = `${passedCards} / ${totalCards}`;
 };
 
@@ -88,7 +89,6 @@ const showHeadingError = (heading, totalNumberOfElements, list) => {
 const showRandomisedElements = (sectionModifier) => {
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];
-
 	sectionModifier.randomElements = [];
 
 	if (sectionModifier.sectionSwitched) filterModifier.passedWords = {};
@@ -99,32 +99,36 @@ const showRandomisedElements = (sectionModifier) => {
 		}
 		removeHeadingError(heading);
 	}
-
-	if (sectionModifier.type === WORDS) {
-		filterModifier = filteringWords(sectionModifier, words, filterModifier);
-	}
+	if (sectionModifier.type === WORDS) filterModifier = filteringWords(sectionModifier, words, filterModifier);
 
 	while (arrayOfRandomNumbers.length < sectionModifier.wantedNumberToShow) {
-		let totalNumberOfElements =
-			sectionModifier.type === WORDS
-				? Object.keys(filterModifier.wordsObj).length
-				: sectionModifier.totalNumberOfElements;
-		let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
-		if (Object.keys(filterModifier.passedWords).length == Object.keys(filterModifier.wordsObj).length) {
-			filterModifier.passedWords = {};
-		}
-		if (randomNumber !== lastWordNumber && filterModifier.passedWords[randomNumber] == undefined) {
-			arrayWithDuplicates.push(randomNumber);
-		}
-		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
+		arrayOfRandomNumbers = returnArrayOfRandomNumbers(
+			sectionModifier,
+			filterModifier,
+			arrayOfRandomNumbers,
+			arrayWithDuplicates
+		);
 	}
 	sectionModifier.randomElements = returnRandomElements(arrayOfRandomNumbers, sectionModifier.type, filterModifier);
-	setCardCounter(
-		Object.keys(filterModifier.passedWords).length,
-		Object.keys(filterModifier.wordsObj).length,
-		cardCounter
-	);
+	setCardCounter(filterModifier, cardCounter);
 	render(sectionModifier.type, sectionModifier.list, sectionModifier.randomElements);
+};
+
+const returnArrayOfRandomNumbers = (sectionModifier, filterModifier, arrayOfRandomNumbers, arrayWithDuplicates) => {
+	let totalNumberOfElements =
+		sectionModifier.type === WORDS
+			? Object.keys(filterModifier.wordsObj).length
+			: sectionModifier.totalNumberOfElements;
+	let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
+	if (Object.keys(filterModifier.passedWords).length == Object.keys(filterModifier.wordsObj).length) {
+		filterModifier.passedWords = {};
+	}
+	if (randomNumber !== lastWordNumber && filterModifier.passedWords[randomNumber] == undefined) {
+		arrayWithDuplicates.push(randomNumber);
+	}
+	arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
+
+	return arrayOfRandomNumbers;
 };
 
 const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
