@@ -883,7 +883,7 @@ export const words = {
 	},
 	79: {
 		word: 'postazione',
-		translation: 'radno mjesto',
+		translation: 'radno mesto',
 		context: 'Ho riservato una postazione nel nuovo ufficio.',
 		source: 'Freestyle',
 		type: 'noun',
@@ -928,7 +928,7 @@ export const words = {
 	83: {
 		word: 'sofferenza',
 		translation: 'patnja',
-		context: 'Le persone affrontano molte sofferenze durante la vita.',
+		context: "La sofferenza può essere alleviata con il supporto e l'amore delle persone care.",
 		source: 'Freestyle',
 		type: 'noun',
 		singular: { article: 'la', word: 'sofferenza' },

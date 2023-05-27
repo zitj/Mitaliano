@@ -2,23 +2,24 @@ import { showList, hideList } from '../utilities/list.js';
 import { verbs } from '../../data/verbs.js';
 import { words } from '../../data/words.js';
 import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
-
-const VERBS = 'verbs';
-const WORDS = 'words';
-
-const showTranslationBtnContent = 'Mostra traduzione';
-
-const cardCounter = document.querySelector('#word-counter');
-const heading = document.querySelector('#verbs-heading');
+import { WORDS, VERBS, showTranslationBtnContent, DEFAULT_FILTER } from '../constants.js';
+import { heading, cardCounter, verbsInput } from '../elements/shared.js';
+// import { filterModifier, filteringWords } from '../utilities/filters.js';
 
 let lastWordNumber;
 let previousFilter = '';
+// let filterModifier = {
+// 	previousFilter: '',
+// 	passedWords: {},
+// 	wordsArray: [],
+// 	wordsObj: {},
+// };
 let passedWords = {};
 let filteredWordsArray = [];
 let filteredWordsObj = {};
 
 const returnArrayOfLectures = () => {
-	let arrayOfLectures = ['Senza filtro'];
+	let arrayOfLectures = [DEFAULT_FILTER];
 	for (let number in words) {
 		arrayOfLectures.push(words[number].source);
 	}
@@ -112,9 +113,11 @@ const showRandomisedElements = (modifier) => {
 	}
 
 	if (modifier.type === WORDS) {
+		// filterModifier = filteringWords(modifier, words);
+
 		if (modifier.filterName !== previousFilter) {
 			passedWords = {};
-			if (modifier.filterName !== 'Senza filtro') {
+			if (modifier.filterName !== DEFAULT_FILTER) {
 				filteredWordsArray = [];
 				filteredWordsObj = {};
 				for (let wordNum in words) {
@@ -150,7 +153,6 @@ const showRandomisedElements = (modifier) => {
 };
 
 const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
-	const verbsInput = document.querySelector('#wanted-verbs-input');
 	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
 	let modifier = {
