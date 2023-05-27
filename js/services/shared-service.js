@@ -4,27 +4,15 @@ import { words } from '../../data/words.js';
 import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
 import { WORDS, VERBS, showTranslationBtnContent, DEFAULT_FILTER } from '../constants.js';
 import { heading, cardCounter, verbsInput } from '../elements/shared.js';
-// import { filterModifier, filteringWords } from '../utilities/filters.js';
+import { filteringWords } from '../utilities/filters.js';
 
 let lastWordNumber;
 let previousFilter = '';
-// let filterModifier = {
-// 	previousFilter: '',
-// 	passedWords: {},
-// 	wordsArray: [],
-// 	wordsObj: {},
-// };
-let passedWords = {};
-let filteredWordsArray = [];
-let filteredWordsObj = {};
-
-const returnArrayOfLectures = () => {
-	let arrayOfLectures = [DEFAULT_FILTER];
-	for (let number in words) {
-		arrayOfLectures.push(words[number].source);
-	}
-	arrayOfLectures = [...new Set(arrayOfLectures)];
-	return arrayOfLectures;
+let filterModifier = {
+	previousFilter: '',
+	passedWords: {},
+	wordsArray: [],
+	wordsObj: {},
 };
 
 const returnObjectLength = (object) => {
@@ -80,9 +68,9 @@ const returnRandomElements = (arrayOfRandomNumbers, type, source) => {
 		if (type === VERBS) randomElements.push(verbs[number].name);
 		if (type === WORDS) {
 			lastWordNumber = number;
-			source[number].id = number;
-			passedWords[number] = source[number];
-			randomElements.push(source[number]);
+			source.wordsObj[number].id = number;
+			source.passedWords[number] = source.wordsObj[number];
+			randomElements.push(source.wordsObj[number]);
 		}
 	});
 	return randomElements;
@@ -97,65 +85,52 @@ const showHeadingError = (heading, totalNumberOfElements, list) => {
 	hideList(list);
 };
 
-const showRandomisedElements = (modifier) => {
+const showRandomisedElements = (sectionModifier) => {
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];
 
-	modifier.randomElements = [];
+	sectionModifier.randomElements = [];
 
-	if (modifier.sectionSwitched) passedWords = {};
-	if (modifier.type === VERBS) {
-		if (modifier.wantedNumberToShow > modifier.totalNumberOfElements) {
-			showHeadingError(heading, modifier.totalNumberOfElements, modifier.list);
+	if (sectionModifier.sectionSwitched) filterModifier.passedWords = {};
+	if (sectionModifier.type === VERBS) {
+		if (sectionModifier.wantedNumberToShow > sectionModifier.totalNumberOfElements) {
+			showHeadingError(heading, sectionModifier.totalNumberOfElements, sectionModifier.list);
 			return;
 		}
 		removeHeadingError(heading);
 	}
 
-	if (modifier.type === WORDS) {
-		// filterModifier = filteringWords(modifier, words);
-
-		if (modifier.filterName !== previousFilter) {
-			passedWords = {};
-			if (modifier.filterName !== DEFAULT_FILTER) {
-				filteredWordsArray = [];
-				filteredWordsObj = {};
-				for (let wordNum in words) {
-					let word = words[wordNum];
-					if (word.source === modifier.filterName) filteredWordsArray.push(word);
-				}
-				for (let i = 0; i < filteredWordsArray.length; i++) {
-					filteredWordsObj[i] = filteredWordsArray[i];
-				}
-				modifier.totalNumberOfElements = filteredWordsArray.length;
-			} else {
-				filteredWordsObj = words;
-			}
-			previousFilter = modifier.filterName;
-		}
+	if (sectionModifier.type === WORDS) {
+		filterModifier = filteringWords(sectionModifier, words, filterModifier);
 	}
 
-	while (arrayOfRandomNumbers.length < modifier.wantedNumberToShow) {
+	while (arrayOfRandomNumbers.length < sectionModifier.wantedNumberToShow) {
 		let totalNumberOfElements =
-			modifier.type === WORDS ? Object.keys(filteredWordsObj).length : modifier.totalNumberOfElements;
+			sectionModifier.type === WORDS
+				? Object.keys(filterModifier.wordsObj).length
+				: sectionModifier.totalNumberOfElements;
 		let randomNumber = Math.floor(Math.random() * totalNumberOfElements);
-		if (Object.keys(passedWords).length == Object.keys(filteredWordsObj).length) {
-			passedWords = {};
+		if (Object.keys(filterModifier.passedWords).length == Object.keys(filterModifier.wordsObj).length) {
+			filterModifier.passedWords = {};
 		}
-		if (randomNumber !== lastWordNumber && passedWords[randomNumber] == undefined) {
+		if (randomNumber !== lastWordNumber && filterModifier.passedWords[randomNumber] == undefined) {
 			arrayWithDuplicates.push(randomNumber);
 		}
 		arrayOfRandomNumbers = [...new Set(arrayWithDuplicates)];
 	}
-	modifier.randomElements = returnRandomElements(arrayOfRandomNumbers, modifier.type, filteredWordsObj);
-	setCardCounter(Object.keys(passedWords).length, Object.keys(filteredWordsObj).length, cardCounter);
-	render(modifier.type, modifier.list, modifier.randomElements);
+	sectionModifier.randomElements = returnRandomElements(arrayOfRandomNumbers, sectionModifier.type, filterModifier);
+	setCardCounter(
+		Object.keys(filterModifier.passedWords).length,
+		Object.keys(filterModifier.wordsObj).length,
+		cardCounter
+	);
+	render(sectionModifier.type, sectionModifier.list, sectionModifier.randomElements);
 };
 
 const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
 	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
-	let modifier = {
+	let sectionModifier = {
 		type,
 		totalNumberOfElements,
 		wantedNumberToShow,
@@ -164,8 +139,7 @@ const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
 		sectionSwitched,
 		filterName,
 	};
-	showRandomisedElements(modifier);
-	returnArrayOfLectures(words);
+	showRandomisedElements(sectionModifier);
 };
 
-export { returnObjectLength, render, randomise, returnArrayOfLectures };
+export { returnObjectLength, render, randomise };

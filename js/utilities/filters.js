@@ -1,18 +1,21 @@
-import { returnArrayOfLectures } from '../services/shared-service.js';
 import { randomise } from '../services/shared-service.js';
 import { DEFAULT_FILTER } from '../constants.js';
 import { textFilter } from '../elements/shared.js';
-
-const lectures = returnArrayOfLectures();
+import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
 let filterName = DEFAULT_FILTER;
-let filterModifier = {
-	previousFilter: '',
-	passedWords: {},
-	wordsArray: [],
-	wordsObj: {},
+
+const returnArrayOfLectures = () => {
+	let arrayOfLectures = [DEFAULT_FILTER];
+	for (let number in words) {
+		arrayOfLectures.push(words[number].source);
+	}
+	arrayOfLectures = [...new Set(arrayOfLectures)];
+	return arrayOfLectures;
 };
+
+const lectures = returnArrayOfLectures();
 
 const setDefaultFilter = () => {
 	filterName = DEFAULT_FILTER;
@@ -50,7 +53,7 @@ const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, ra
 	randomise('words', listOfWords, randomWords, false, filterName);
 };
 
-const filteringWords = (modifier, words) => {
+const filteringWords = (modifier, words, filterModifier) => {
 	if (modifier.filterName !== filterModifier.previousFilter) {
 		filterModifier.passedWords = {};
 		if (modifier.filterName !== DEFAULT_FILTER) {
@@ -72,13 +75,4 @@ const filteringWords = (modifier, words) => {
 	return filterModifier;
 };
 
-export {
-	insertFilters,
-	toggleFilter,
-	chooseFilter,
-	setDefaultFilter,
-	// filteringWords,
-	isFilterClicked,
-	filterName,
-	// filterModifier,
-};
+export { insertFilters, toggleFilter, chooseFilter, setDefaultFilter, filteringWords, isFilterClicked, filterName };
