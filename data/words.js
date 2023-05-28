@@ -1224,4 +1224,64 @@ export const words = {
 		infinitive: '',
 		date: new Date(2023, 4, 27), //next
 	},
+	101: {
+		word: 'chiodo',
+		translation: 'ekser',
+		context: 'Ho appeso il quadro al muro con un chiodo.',
+		source: 'Freestyle',
+		type: 'noun',
+		singular: { article: 'il', word: 'chiodo' },
+		plural: { article: 'i', word: 'chiodi' },
+		gender: 'M',
+		infinitive: '',
+		date: new Date(2023, 4, 28), //next
+	},
+	102: {
+		word: 'gancio',
+		translation: 'kuka',
+		context: "Ho appeso l'abito nell'armadio con un gancio.",
+		source: 'Freestyle',
+		type: 'noun',
+		singular: { article: 'il', word: 'gancio' },
+		plural: { article: 'i', word: 'ganci' },
+		gender: 'M',
+		infinitive: '',
+		date: new Date(2023, 4, 28), //next
+	},
+	103: {
+		word: 'fianco',
+		translation: 'bok, strana',
+		context: 'Mi fa male il fianco sinistro.',
+		source: 'Freestyle',
+		type: 'noun',
+		singular: { article: 'il', word: 'fianco' },
+		plural: { article: 'i', word: 'fianchi' },
+		gender: 'M',
+		infinitive: '',
+		date: new Date(2023, 4, 28), //next
+	},
+	104: {
+		word: 'nemmeno',
+		translation: 'čak ni',
+		context: 'Non ho nemmeno un euro in tasca.',
+		source: 'Freestyle',
+		type: 'adverb',
+		singular: null,
+		plural: null,
+		gender: null,
+		infinitive: '',
+		date: new Date(2023, 4, 28), //next
+	},
+	105: {
+		word: 'oltretutto',
+		translation: 'štaviše, pored toga',
+		context: 'Ha perso il lavoro e oltretutto ha rotto la macchina.',
+		source: 'Freestyle',
+		type: 'adverb',
+		singular: null,
+		plural: null,
+		gender: null,
+		infinitive: '',
+		date: new Date(2023, 4, 28), //next
+	},
 };

@@ -1,2 +1,2 @@
-1. Refactor code (SHARED SERVICE, FILTERS)
+1. Refactor code (SHARED SERVICE, create content.js)
 2. Create game in words section like matching words in duolingo
