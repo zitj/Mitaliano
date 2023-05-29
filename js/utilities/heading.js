@@ -1,12 +1,20 @@
 import { errorMessageText, headingText } from '../constants.js';
+import { hideList } from './list.js';
 
-export const addHeadingError = (heading, totalNumberOfVerbs) => {
+const addHeadingError = (heading, totalNumberOfVerbs) => {
 	let errorMessage = `${errorMessageText} ${totalNumberOfVerbs}`;
 	heading.innerHTML = errorMessage;
 	heading.classList.add('error');
 };
 
-export const removeHeadingError = (heading) => {
+const removeHeadingError = (heading) => {
 	heading.classList.remove('error');
 	heading.innerHTML = headingText;
 };
+
+const showHeadingError = (heading, totalNumberOfElements, list) => {
+	addHeadingError(heading, totalNumberOfElements);
+	hideList(list);
+};
+
+export { removeHeadingError, showHeadingError };

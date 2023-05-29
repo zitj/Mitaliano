@@ -1,10 +1,11 @@
-import { showList, hideList } from '../utilities/list.js';
+import { showList } from '../utilities/list.js';
 import { verbs } from '../../data/verbs.js';
 import { words } from '../../data/words.js';
-import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
-import { WORDS, VERBS, showTranslationBtnContent, DEFAULT_FILTER } from '../constants.js';
+import { removeHeadingError, showHeadingError } from '../utilities/heading.js';
+import { WORDS, VERBS } from '../constants.js';
 import { heading, cardCounter, verbsInput } from '../utilities/html_elements.js';
 import { filteringWords } from '../utilities/filters.js';
+import { returnContent } from '../utilities/content.js';
 
 let lastWordNumber;
 let filterModifier = {
@@ -12,48 +13,6 @@ let filterModifier = {
 	passedWords: {},
 	wordsArray: [],
 	wordsObj: {},
-};
-
-const returnObjectLength = (object) => {
-	let counter = 0;
-	for (let key in object) {
-		counter++;
-	}
-	return counter;
-};
-
-const createContent = (type, element) => {
-	let content = ``;
-	if (type === VERBS) {
-		content = `
-            <a class="verb-link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${element}'  target="_blank">${element}</a>
-        `;
-	}
-	if (type === WORDS) {
-		let context = element.context.replace(element.word, `<span class="context-word">${element.word}</span>`);
-
-		content += `
-            <div class="card">
-                <h2>${element.word}</h2>
-                <p class="context">${context}</p>
-                <button class="translation-button" id=${element.id}>${showTranslationBtnContent}</button>
-				<p class="translation-word hide" >${element.translation}</p>
-				<button id="next-btn">&rarr;</button>
-            </div>
-        `;
-	}
-
-	return content;
-};
-
-const returnContent = (randomElements, type) => {
-	let content = ``;
-
-	randomElements.forEach((element) => {
-		content += createContent(type, element);
-	});
-
-	return content;
 };
 
 const render = (type, list, randomElements) => {
@@ -81,10 +40,10 @@ const setCardCounter = (filterModifier, cardCounter) => {
 	cardCounter.innerHTML = `${passedCards} / ${totalCards}`;
 };
 
-const showHeadingError = (heading, totalNumberOfElements, list) => {
-	addHeadingError(heading, totalNumberOfElements);
-	hideList(list);
-};
+// const showHeadingError = (heading, totalNumberOfElements, list) => {
+// 	addHeadingError(heading, totalNumberOfElements);
+// 	hideList(list);
+// };
 
 const showRandomisedElements = (sectionModifier) => {
 	let arrayWithDuplicates = [];
@@ -132,7 +91,7 @@ const returnArrayOfRandomNumbers = (sectionModifier, filterModifier, arrayOfRand
 };
 
 const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
-	let totalNumberOfElements = type === VERBS ? returnObjectLength(verbs) : returnObjectLength(words);
+	let totalNumberOfElements = type === VERBS ? Object.keys(verbs).length : Object.keys(words).length;
 	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
 	let sectionModifier = {
 		type,
@@ -146,4 +105,4 @@ const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
 	showRandomisedElements(sectionModifier);
 };
 
-export { returnObjectLength, render, randomise };
+export { render, randomise };
