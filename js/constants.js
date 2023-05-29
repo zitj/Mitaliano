@@ -1,6 +1,8 @@
 const WORDS = 'words';
 const VERBS = 'verbs';
 const DEFAULT_FILTER = 'Senza filtro';
+const errorMessageText = 'Il numero deve essere meno di';
+const headingText = 'Verbi da coniugare';
 const showTranslationBtnContent = 'Mostra traduzione';
 const CLASSES = {
 	VERB_LINK: 'verb-link',
@@ -12,4 +14,4 @@ const CLASSES = {
 	WORDS_SECTION_LINK: 'words-section-link',
 };
 
-export { WORDS, VERBS, DEFAULT_FILTER, CLASSES, showTranslationBtnContent };
+export { WORDS, VERBS, DEFAULT_FILTER, CLASSES, showTranslationBtnContent, errorMessageText, headingText };

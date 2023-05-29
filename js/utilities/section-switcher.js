@@ -1,7 +1,7 @@
 import { resetClassListFor } from './list.js';
 import { randomise } from '../services/shared-service.js';
 import { DEFAULT_FILTER, WORDS, VERBS, CLASSES } from '../constants.js';
-import { verbSection, wordSection, listOfWords, wrapper } from '../elements/shared.js';
+import { verbSection, wordSection, listOfWords, wrapper } from './html_elements.js';
 import { setDefaultFilter } from './filters.js';
 
 const randomiseWord = () => {

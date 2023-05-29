@@ -1214,7 +1214,7 @@ export const words = {
 	},
 	100: {
 		word: 'consapevolezza',
-		translation: 'svestanost',
+		translation: 'svest',
 		context: "La consapevolezza dell'importanza della salute è fondamentale.",
 		source: 'Freestyle',
 		type: 'noun',

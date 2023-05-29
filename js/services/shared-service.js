@@ -3,7 +3,7 @@ import { verbs } from '../../data/verbs.js';
 import { words } from '../../data/words.js';
 import { addHeadingError, removeHeadingError } from '../utilities/heading.js';
 import { WORDS, VERBS, showTranslationBtnContent, DEFAULT_FILTER } from '../constants.js';
-import { heading, cardCounter, verbsInput } from '../elements/shared.js';
+import { heading, cardCounter, verbsInput } from '../utilities/html_elements.js';
 import { filteringWords } from '../utilities/filters.js';
 
 let lastWordNumber;

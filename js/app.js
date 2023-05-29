@@ -13,7 +13,7 @@ import {
 	listOfWords,
 	textFilter,
 	filterOptions,
-} from './elements/shared.js';
+} from './utilities/html_elements.js';
 
 let randomWords = [];
 let randomVerbs = [];

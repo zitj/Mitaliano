@@ -1,5 +1,4 @@
-const errorMessageText = 'Il numero deve essere meno di';
-const headingText = 'Verbi da coniugare';
+import { errorMessageText, headingText } from '../constants.js';
 
 export const addHeadingError = (heading, totalNumberOfVerbs) => {
 	let errorMessage = `${errorMessageText} ${totalNumberOfVerbs}`;

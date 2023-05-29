@@ -1,6 +1,6 @@
 import { randomise } from '../services/shared-service.js';
 import { DEFAULT_FILTER } from '../constants.js';
-import { textFilter } from '../elements/shared.js';
+import { textFilter } from './html_elements.js';
 import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
