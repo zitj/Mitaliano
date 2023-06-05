@@ -40,11 +40,6 @@ const setCardCounter = (filterModifier, cardCounter) => {
 	cardCounter.innerHTML = `${passedCards} / ${totalCards}`;
 };
 
-// const showHeadingError = (heading, totalNumberOfElements, list) => {
-// 	addHeadingError(heading, totalNumberOfElements);
-// 	hideList(list);
-// };
-
 const showRandomisedElements = (sectionModifier) => {
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];

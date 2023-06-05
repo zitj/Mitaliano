@@ -12,7 +12,18 @@ const returnArrayOfLectures = () => {
 		arrayOfLectures.push(words[number].source);
 	}
 	arrayOfLectures = [...new Set(arrayOfLectures)];
+	returnArrayOfDates();
 	return arrayOfLectures;
+};
+
+const returnArrayOfDates = () => {
+	let dates = [];
+	for (let number in words) {
+		dates.push(words[number].date.getTime());
+	}
+	dates = [...new Set(dates)];
+	console.log(dates);
+	// return dates;
 };
 
 const lectures = returnArrayOfLectures();
