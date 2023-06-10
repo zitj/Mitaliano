@@ -59,6 +59,108 @@ body {
   display: none;
 }
 
+#filter-overlay {
+  position: absolute;
+  background: rgb(235, 253, 234);
+  z-index: 1000;
+  width: 70%;
+  height: 100%;
+  box-shadow: 0px 0px 20px 5px rgba(135, 135, 135, 0.39);
+  right: 0;
+}
+#filter-overlay #close-button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  transform: scale(1);
+}
+#filter-overlay #filter {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 13%;
+}
+#filter-overlay #filter #filter-lectures {
+  z-index: 3;
+  width: 210px;
+  background: #f1fff1;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.3em;
+  outline: none;
+  margin: 1% auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+  color: #025702;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+#filter-overlay #filter #filter-lectures #arrow {
+  z-index: 3;
+  transform: rotate(90deg);
+  font-weight: 600;
+}
+#filter-overlay #filter #filter-options {
+  width: 250px;
+  background: #f1fff1;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.3em;
+  outline: none;
+  margin: 1% auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+  color: #025702;
+  position: absolute;
+  top: 120%;
+  text-align: left;
+  z-index: 2;
+}
+#filter-overlay #filter #filter-options .filter-option {
+  z-index: 2;
+  margin: 0 0 1em 1.5em;
+}
+#filter-overlay #filter #filter-options .filter-option:hover {
+  color: #d1525a;
+}
+#filter-overlay #filter #filter-options .filter-option:active {
+  color: #025702;
+}
+#filter-overlay #filter .filter-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+#filter-overlay #filter label {
+  margin-right: 0.5em;
+}
+#filter-overlay #filter select {
+  width: 250px;
+  background: #f1fff1;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.3em;
+  outline: none;
+  margin: 1% auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+  color: #025702;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -179,91 +281,6 @@ header nav span.visited {
   background: #ecffec;
   box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
   padding: 0.3em 2em;
-}
-.wrapper #words-section #filter {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  top: 13%;
-}
-.wrapper #words-section #filter #filter-lectures {
-  z-index: 3;
-  width: 250px;
-  background: #f1fff1;
-  text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  outline: none;
-  margin: 1% auto;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
-  color: #025702;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-}
-.wrapper #words-section #filter #filter-lectures #arrow {
-  z-index: 3;
-  transform: rotate(90deg);
-  font-weight: 600;
-}
-.wrapper #words-section #filter #filter-options {
-  width: 250px;
-  background: #f1fff1;
-  text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  outline: none;
-  margin: 1% auto;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
-  color: #025702;
-  position: absolute;
-  top: 120%;
-  text-align: left;
-  z-index: 2;
-}
-.wrapper #words-section #filter #filter-options .filter-option {
-  z-index: 2;
-  margin: 0 0 1em 1.5em;
-}
-.wrapper #words-section #filter #filter-options .filter-option:hover {
-  color: #d1525a;
-}
-.wrapper #words-section #filter #filter-options .filter-option:active {
-  color: #025702;
-}
-.wrapper #words-section #filter .filter-wrapper {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.wrapper #words-section #filter label {
-  margin-right: 0.5em;
-}
-.wrapper #words-section #filter select {
-  width: 250px;
-  background: #f1fff1;
-  text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  outline: none;
-  margin: 1% auto;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
-  color: #025702;
 }
 .wrapper #words-section #word-counter {
   position: absolute;

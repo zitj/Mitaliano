@@ -16,6 +16,67 @@ body {
 .hide {
 	display: none;
 }
+#filter-overlay {
+	position: absolute;
+	background: rgb(235 253 234);
+	z-index: 1000;
+	width: 70%;
+	height: 100%;
+	box-shadow: 0px 0px 20px 5px rgb(135 135 135 / 39%);
+	right: 0;
+	#close-button {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		transform: scale(1);
+	}
+	#filter {
+		@include remove-blue-color-on-click();
+		#filter-lectures {
+			z-index: 3;
+			@include stylize-input(210px, 0.3em, 1em, 1% auto);
+			cursor: pointer;
+			position: relative;
+			display: flex;
+			justify-content: space-evenly;
+			#arrow {
+				z-index: 3;
+				transform: rotate(90deg);
+				font-weight: 600;
+			}
+		}
+		#filter-options {
+			@include stylize-input(250px, 0.3em, 1em, 1% auto);
+			position: absolute;
+			top: 120%;
+			text-align: left;
+			z-index: 2;
+			.filter-option {
+				z-index: 2;
+				margin: 0 0 1em 1.5em;
+				&:hover {
+					color: $dark-red;
+				}
+				&:active {
+					color: $dark-green;
+				}
+			}
+		}
+		@include positioned-element($top: 13%);
+		.filter-wrapper {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			margin-bottom: 2em;
+		}
+		label {
+			margin-right: 0.5em;
+		}
+		select {
+			@include stylize-input(250px, 0.3em, 1em, 1% auto);
+		}
+	}
+}
 
 header {
 	display: flex;
@@ -134,51 +195,6 @@ header {
 		}
 	}
 	#words-section {
-		#filter {
-			@include remove-blue-color-on-click();
-			#filter-lectures {
-				z-index: 3;
-				@include stylize-input(250px, 0.3em, 1em, 1% auto);
-				cursor: pointer;
-				position: relative;
-				display: flex;
-				justify-content: space-evenly;
-				#arrow {
-					z-index: 3;
-					transform: rotate(90deg);
-					font-weight: 600;
-				}
-			}
-			#filter-options {
-				@include stylize-input(250px, 0.3em, 1em, 1% auto);
-				position: absolute;
-				top: 120%;
-				text-align: left;
-				z-index: 2;
-				.filter-option {
-					z-index: 2;
-					margin: 0 0 1em 1.5em;
-					&:hover {
-						color: $dark-red;
-					}
-					&:active {
-						color: $dark-green;
-					}
-				}
-			}
-			@include positioned-element($top: 13%);
-			.filter-wrapper {
-				display: flex;
-				justify-content: center;
-				flex-direction: column;
-			}
-			label {
-				margin-right: 0.5em;
-			}
-			select {
-				@include stylize-input(250px, 0.3em, 1em, 1% auto);
-			}
-		}
 		#word-counter {
 			@include positioned-element($bottom: 10%);
 		}

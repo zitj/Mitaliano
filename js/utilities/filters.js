@@ -5,42 +5,41 @@ import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
 let filterName = DEFAULT_FILTER;
-
-const returnArrayOfLectures = () => {
-	let arrayOfLectures = [DEFAULT_FILTER];
-	for (let number in words) {
-		arrayOfLectures.push(words[number].source);
-	}
-	arrayOfLectures = [...new Set(arrayOfLectures)];
-	returnArrayOfDates();
-	return arrayOfLectures;
+let filter = {
+	lectures: [],
+	dates: [],
+	wordTypes: [],
 };
 
-const returnArrayOfDates = () => {
-	let dates = [];
+const returnFilterOptions = (filterType) => {
+	let options = [DEFAULT_FILTER];
 	for (let number in words) {
-		dates.push(words[number].date.getTime());
+		if (filterType === 'dates') options.push(words[number].date.getTime());
+		if (filterType === 'lectures') options.push(words[number].source);
+		if (filterType === 'wordTypes') options.push(words[number].type);
 	}
-	dates = [...new Set(dates)];
-	console.log(dates);
-	// return dates;
+	options = [...new Set(options)];
+	console.log(options);
+	return options;
 };
 
-const lectures = returnArrayOfLectures();
+filter.lectures = returnFilterOptions('lectures');
+filter.dates = returnFilterOptions('dates');
+filter.wordTypes = returnFilterOptions('wordTypes');
 
 const setDefaultFilter = () => {
 	filterName = DEFAULT_FILTER;
 	textFilter.innerText = filterName;
 };
 
-const insertFilters = (filter, textFilter) => {
-	lectures.forEach((lecture) => {
+const insertFilters = (filterHTMLelement, textFilter) => {
+	filter.lectures.forEach((lecture) => {
 		let option = document.createElement('div');
 		option.classList.add('filter-option');
 		option.innerText = lecture;
-		filter.appendChild(option);
+		filterHTMLelement.appendChild(option);
 	});
-	textFilter.innerText = lectures[0];
+	textFilter.innerText = filter.lectures[0];
 };
 
 const toggleFilter = (elementClicked, elementIDsOfFilter, filterOptions) => {
