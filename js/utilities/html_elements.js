@@ -12,6 +12,9 @@ const wordSection = document.querySelector('#words-section');
 const wrapper = document.querySelector('.wrapper');
 const cardCounter = document.querySelector('#word-counter');
 const verbsInput = document.querySelector('#wanted-verbs-input');
+const closeFilterButton = document.querySelector('#close-filters-button');
+const filterMenu = document.querySelector('#filter-menu');
+const overlay = document.querySelector('#overlay');
 
 export {
 	wantedVerbsInput,
@@ -28,4 +31,7 @@ export {
 	wrapper,
 	cardCounter,
 	verbsInput,
+	closeFilterButton,
+	filterMenu,
+	overlay,
 };

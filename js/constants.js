@@ -12,6 +12,7 @@ const CLASSES = {
 	FILTER_OPTION: 'filter-option',
 	VERBS_SECTION_LINK: 'verbs-section-link',
 	WORDS_SECTION_LINK: 'words-section-link',
+	FILTER_ICON: 'filter-icon',
 };
 
 export { WORDS, VERBS, DEFAULT_FILTER, CLASSES, showTranslationBtnContent, errorMessageText, headingText };

@@ -13,6 +13,9 @@ import {
 	listOfWords,
 	textFilter,
 	filterOptions,
+	closeFilterButton,
+	filterMenu,
+	overlay,
 } from './utilities/html_elements.js';
 
 let randomWords = [];
@@ -55,6 +58,16 @@ const nextWord = (elementClicked) => {
 	});
 };
 
+const showFilterMenu = () => {
+	filterMenu.classList.add('active');
+	overlay.classList.add('active');
+};
+
+const hideFilterMenu = () => {
+	filterMenu.classList.remove('active');
+	overlay.classList.remove('active');
+};
+
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
@@ -64,6 +77,7 @@ const clickLogic = (element) => {
 	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, navigationLinks, sections);
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
 	if (elementClicked.id === CLASSES.NEXT_BUTTON) nextWord(elementClicked);
+	if (className == CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
 		chooseFilter(elementClicked, filterOptions, textFilter, listOfWords, randomWords);
 	}
@@ -73,4 +87,8 @@ document.addEventListener('click', (event) => {
 	clickLogic(event);
 });
 
-insertFilters(filterOptions, textFilter);
+closeFilterButton.addEventListener('click', (event) => {
+	hideFilterMenu();
+});
+
+// insertFilters(filterOptions, textFilter);
