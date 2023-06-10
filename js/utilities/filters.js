@@ -5,7 +5,7 @@ import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
 let filterName = DEFAULT_FILTER;
-let filter = {
+let filters = {
 	lectures: [],
 	dates: [],
 	wordTypes: [],
@@ -23,9 +23,9 @@ const returnFilterOptions = (filterType) => {
 	return options;
 };
 
-filter.lectures = returnFilterOptions('lectures');
-filter.dates = returnFilterOptions('dates');
-filter.wordTypes = returnFilterOptions('wordTypes');
+filters.lectures = returnFilterOptions('lectures');
+filters.dates = returnFilterOptions('dates');
+filters.wordTypes = returnFilterOptions('wordTypes');
 
 const setDefaultFilter = () => {
 	filterName = DEFAULT_FILTER;
@@ -33,13 +33,13 @@ const setDefaultFilter = () => {
 };
 
 const insertFilters = (filterHTMLelement, textFilter) => {
-	filter.lectures.forEach((lecture) => {
+	filters.lectures.forEach((lecture) => {
 		let option = document.createElement('div');
 		option.classList.add('filter-option');
 		option.innerText = lecture;
 		filterHTMLelement.appendChild(option);
 	});
-	textFilter.innerText = filter.lectures[0];
+	textFilter.innerText = filters.lectures[0];
 };
 
 const toggleFilter = (elementClicked, elementIDsOfFilter, filterOptions) => {

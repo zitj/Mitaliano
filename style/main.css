@@ -59,22 +59,43 @@ body {
   display: none;
 }
 
-#filter-overlay {
+#overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.224);
+  position: absolute;
+  z-index: 2;
+}
+
+#filter-menu {
   position: absolute;
   background: rgb(235, 253, 234);
   z-index: 1000;
   width: 70%;
   height: 100%;
-  box-shadow: 0px 0px 20px 5px rgba(135, 135, 135, 0.39);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.303);
   right: 0;
 }
-#filter-overlay #close-button {
+#filter-menu #close-filters-button {
   position: absolute;
-  right: 5px;
-  top: 5px;
-  transform: scale(1);
+  right: 30px;
+  top: 30px;
+  transform: scale(2);
 }
-#filter-overlay #filter {
+#filter-menu button {
+  width: 220px;
+  background: #d45e66;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.65em;
+  outline: none;
+  margin: 2em auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
+  color: white;
+}
+#filter-menu #filter {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -88,7 +109,7 @@ body {
   text-align: center;
   top: 13%;
 }
-#filter-overlay #filter #filter-lectures {
+#filter-menu #filter #filter-lectures {
   z-index: 3;
   width: 210px;
   background: #f1fff1;
@@ -106,12 +127,12 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-#filter-overlay #filter #filter-lectures #arrow {
+#filter-menu #filter #filter-lectures #arrow {
   z-index: 3;
   transform: rotate(90deg);
   font-weight: 600;
 }
-#filter-overlay #filter #filter-options {
+#filter-menu #filter #filter-options {
   width: 250px;
   background: #f1fff1;
   text-align: center;
@@ -128,37 +149,25 @@ body {
   text-align: left;
   z-index: 2;
 }
-#filter-overlay #filter #filter-options .filter-option {
+#filter-menu #filter #filter-options .filter-option {
   z-index: 2;
   margin: 0 0 1em 1.5em;
 }
-#filter-overlay #filter #filter-options .filter-option:hover {
+#filter-menu #filter #filter-options .filter-option:hover {
   color: #d1525a;
 }
-#filter-overlay #filter #filter-options .filter-option:active {
+#filter-menu #filter #filter-options .filter-option:active {
   color: #025702;
 }
-#filter-overlay #filter .filter-wrapper {
+#filter-menu #filter .filter-wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 2em;
 }
-#filter-overlay #filter label {
+#filter-menu #filter label {
   margin-right: 0.5em;
-}
-#filter-overlay #filter select {
-  width: 250px;
-  background: #f1fff1;
-  text-align: center;
-  font-size: 1em;
-  padding: 0.3em;
-  outline: none;
-  margin: 1% auto;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
-  color: #025702;
+  margin-bottom: 5px;
 }
 
 header {
