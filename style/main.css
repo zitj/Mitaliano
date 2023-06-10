@@ -73,7 +73,7 @@ body {
   z-index: 1000;
   width: 70%;
   height: 100%;
-  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.303);
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.2);
   right: 0;
 }
 #filter-menu #close-filters-button {
