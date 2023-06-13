@@ -3,7 +3,7 @@ import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
 import { randomise } from './services/shared-service.js';
 import { insertFilters, toggleFilter, chooseFilter, isFilterClicked, filterName } from './utilities/filters.js';
-import { WORDS, VERBS, CLASSES } from './constants.js';
+import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
 import {
 	wantedVerbsInput,
 	listOfVerbs,
@@ -71,12 +71,15 @@ const hideFilterMenu = () => {
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
+
 	toggleFilter(elementClicked, elementIDsOfFilter, filterOptions);
+
+	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
+	if (elementClicked.id === IDs.OVERLAY) hideFilterMenu();
 
 	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
 	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, navigationLinks, sections);
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
-	if (elementClicked.id === CLASSES.NEXT_BUTTON) nextWord(elementClicked);
 	if (className == CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
 		chooseFilter(elementClicked, filterOptions, textFilter, listOfWords, randomWords);
