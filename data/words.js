@@ -1648,7 +1648,7 @@ export const words = {
 	135: {
 		word: 'sprecato',
 		translation: 'potrošeno',
-		context: "E si sente infelice per aver spercato tutta la sua vita dietro qull'ossessione pazzesca.",
+		context: "E si sente infelice per aver sprecato tutta la sua vita dietro qull'ossessione pazzesca.",
 		source: 'Il colombre',
 		type: 'adjective',
 		singular: null,
@@ -1723,7 +1723,7 @@ export const words = {
 	},
 	141: {
 		word: 'mostro',
-		translation: 'harpun',
+		translation: 'čudovište',
 		context: 'Alza arpione per colpire il mostro con tutte le forze quando sente una voce che lo supplica...',
 		source: 'Il colombre',
 		type: 'noun',
@@ -1783,7 +1783,7 @@ export const words = {
 	},
 	146: {
 		word: 'scheletro',
-		translation: 'litica',
+		translation: 'skelet',
 		context: "Dentro c'è uno scheletro bianco che stringe fra le mani una grande perla.",
 		source: 'Il colombre',
 		type: 'noun',
