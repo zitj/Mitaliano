@@ -55,15 +55,16 @@ body {
 			cursor: pointer;
 			position: relative;
 			display: flex;
-			justify-content: space-evenly;
+			justify-content: space-between;
 			.filter-arrow {
 				z-index: 3;
 				transform: rotate(90deg);
 				font-weight: 600;
+				margin-right: 15px;
 			}
 		}
 		.filter-options-list {
-			@include stylize-input(250px, 0.3em, 1em, 1% auto, $dark-green, $background-green);
+			@include stylize-input(200px, 0.3em, 1em, 1% auto, $dark-green, $background-green);
 			position: absolute;
 			top: 120%;
 			text-align: left;

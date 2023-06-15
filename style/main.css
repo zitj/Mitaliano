@@ -132,15 +132,16 @@ body {
   cursor: pointer;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 #filter-menu #filter-menu-content .filter-frame .filter-arrow {
   z-index: 3;
   transform: rotate(90deg);
   font-weight: 600;
+  margin-right: 15px;
 }
 #filter-menu #filter-menu-content .filter-options-list {
-  width: 250px;
+  width: 200px;
   background: #f1fff1;
   text-align: center;
   font-size: 1em;

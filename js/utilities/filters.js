@@ -9,17 +9,14 @@ let filters = {
 	lectures: {
 		array: [],
 		label: 'Lezioni',
-		isClicked: false,
 	},
 	dates: {
 		array: [],
 		label: 'Dati',
-		isClicked: false,
 	},
 	wordTypes: {
 		array: [],
 		label: 'Tipi',
-		isClicked: false,
 	},
 };
 
@@ -137,4 +134,5 @@ export {
 	returnFiltersDOM,
 	isFilterClicked,
 	filterName,
+	filters,
 };

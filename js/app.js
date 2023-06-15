@@ -8,6 +8,7 @@ import {
 	chooseFilter,
 	isFilterClicked,
 	filterName,
+	filters,
 	returnFiltersDOM,
 } from './utilities/filters.js';
 import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
@@ -112,7 +113,11 @@ filterWrappers.forEach((filterWrapper) => {
 
 		console.log('Klikces na filter', filterName);
 		filterOptionsLists.forEach((list) => {
-			if (list.id.includes(filterName)) console.log(list);
+			list.classList.add('hide');
+			if (list.id.includes(filterName)) {
+				console.log(list);
+				list.classList.remove('hide');
+			}
 		});
 	});
 });
