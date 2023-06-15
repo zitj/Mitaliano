@@ -102,7 +102,7 @@ body {
   box-shadow: 2px 2px 8px #d9e6d9, -2px -2px 8px rgb(243, 254, 243);
   color: white;
 }
-#filter-menu #filter {
+#filter-menu #filter-menu-content {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -116,7 +116,7 @@ body {
   text-align: center;
   top: 13%;
 }
-#filter-menu #filter #filter-lectures {
+#filter-menu #filter-menu-content .filter-frame {
   z-index: 3;
   width: 210px;
   background: #f1fff1;
@@ -134,12 +134,12 @@ body {
   display: flex;
   justify-content: space-evenly;
 }
-#filter-menu #filter #filter-lectures #arrow {
+#filter-menu #filter-menu-content .filter-frame .filter-arrow {
   z-index: 3;
   transform: rotate(90deg);
   font-weight: 600;
 }
-#filter-menu #filter #filter-options {
+#filter-menu #filter-menu-content .filter-options-list {
   width: 250px;
   background: #f1fff1;
   text-align: center;
@@ -156,23 +156,23 @@ body {
   text-align: left;
   z-index: 2;
 }
-#filter-menu #filter #filter-options .filter-option {
+#filter-menu #filter-menu-content .filter-options-list .filter-option {
   z-index: 2;
   margin: 0 0 1em 1.5em;
 }
-#filter-menu #filter #filter-options .filter-option:hover {
+#filter-menu #filter-menu-content .filter-options-list .filter-option:hover {
   color: #d1525a;
 }
-#filter-menu #filter #filter-options .filter-option:active {
+#filter-menu #filter-menu-content .filter-options-list .filter-option:active {
   color: #025702;
 }
-#filter-menu #filter .filter-wrapper {
+#filter-menu #filter-menu-content .filter-wrapper {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: 2em;
 }
-#filter-menu #filter label {
+#filter-menu #filter-menu-content label {
   margin-right: 0.5em;
   margin-bottom: 5px;
 }

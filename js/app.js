@@ -2,7 +2,14 @@ import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
 import { randomise } from './services/shared-service.js';
-import { insertFilters, toggleFilter, chooseFilter, isFilterClicked, filterName } from './utilities/filters.js';
+import {
+	insertFilters,
+	toggleFilter,
+	chooseFilter,
+	isFilterClicked,
+	filterName,
+	returnFiltersDOM,
+} from './utilities/filters.js';
 import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
 import {
 	wantedVerbsInput,
@@ -72,7 +79,7 @@ const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
 
-	toggleFilter(elementClicked, elementIDsOfFilter, filterOptions);
+	// toggleFilter(elementClicked, elementIDsOfFilter, filterOptions);
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
 	if (elementClicked.id === IDs.OVERLAY) hideFilterMenu();
@@ -92,6 +99,22 @@ document.addEventListener('click', (event) => {
 
 closeFilterButton.addEventListener('click', (event) => {
 	hideFilterMenu();
+});
+
+let filterWrappers = returnFiltersDOM();
+let filterOptionsLists = document.querySelectorAll('.filter-options-list');
+let filterTexts = document.querySelectorAll('.filter-text');
+
+filterWrappers.forEach((filterWrapper) => {
+	filterWrapper.addEventListener('click', (event) => {
+		let elementsID = event.target.id;
+		let filterName = elementsID.split('-')[elementsID.split('-').length - 1];
+
+		console.log('Klikces na filter', filterName);
+		filterOptionsLists.forEach((list) => {
+			if (list.id.includes(filterName)) console.log(list);
+		});
+	});
 });
 
 // insertFilters(filterOptions, textFilter);

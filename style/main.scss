@@ -47,22 +47,22 @@ body {
 	button {
 		@include stylize-input(220px, 0.65em, 1em, 2em auto, white, $dark-red);
 	}
-	#filter {
+	#filter-menu-content {
 		@include remove-blue-color-on-click();
-		#filter-lectures {
+		.filter-frame {
 			z-index: 3;
 			@include stylize-input(210px, 0.3em, 1em, 1% auto, $dark-green, $background-green);
 			cursor: pointer;
 			position: relative;
 			display: flex;
 			justify-content: space-evenly;
-			#arrow {
+			.filter-arrow {
 				z-index: 3;
 				transform: rotate(90deg);
 				font-weight: 600;
 			}
 		}
-		#filter-options {
+		.filter-options-list {
 			@include stylize-input(250px, 0.3em, 1em, 1% auto, $dark-green, $background-green);
 			position: absolute;
 			top: 120%;

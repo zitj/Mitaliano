@@ -16,6 +16,11 @@ const CLASSES = {
 const IDs = {
 	NEXT_BUTTON: 'next-btn',
 	OVERLAY: 'overlay',
+	FILTERS: {
+		LECTURES: 'lectures',
+		DATES: 'dates',
+		WORD_TYPE: 'wordType',
+	},
 };
 
 export { WORDS, VERBS, DEFAULT_FILTER, CLASSES, IDs, showTranslationBtnContent, errorMessageText, headingText };

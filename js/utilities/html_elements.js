@@ -5,16 +5,21 @@ const listOfWords = document.querySelector('#list-of-words');
 const heading = verbsContainer.children[0];
 const navigationLinks = document.querySelectorAll('.navigation-link');
 const sections = document.querySelectorAll('section');
-const textFilter = document.querySelector('#filter-text');
-const filterOptions = document.querySelector('#filter-options');
 const verbSection = document.querySelector('#verbs-section');
 const wordSection = document.querySelector('#words-section');
 const wrapper = document.querySelector('.wrapper');
 const cardCounter = document.querySelector('#word-counter');
 const verbsInput = document.querySelector('#wanted-verbs-input');
 const closeFilterButton = document.querySelector('#close-filters-button');
-const filterMenu = document.querySelector('#filter-menu');
 const overlay = document.querySelector('#overlay');
+
+const filterMenu = document.querySelector('#filter-menu');
+const filtersMenuContent = document.querySelector('#filter-menu-content');
+const filtersOptionsLists = document.querySelectorAll('.filter-options-list');
+const filtersText = document.querySelectorAll('.filter-text');
+
+const textFilter = document.querySelector('#filter-text');
+const filterOptions = document.querySelector('#filter-options');
 
 export {
 	wantedVerbsInput,
@@ -34,4 +39,5 @@ export {
 	closeFilterButton,
 	filterMenu,
 	overlay,
+	filtersMenuContent,
 };
