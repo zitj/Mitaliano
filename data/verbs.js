@@ -366,4 +366,8 @@ export const verbs = {
 	364: { name: 'AFFIORARE' },
 	365: { name: 'SUPPLICARE' },
 	366: { name: 'CONSEGNARE' },
+	367: { name: 'MENZIONARE' },
+	368: { name: 'PERCORRERE' },
+	369: { name: 'BLATERARE' },
+	370: { name: 'PENTIRSI' },
 };
