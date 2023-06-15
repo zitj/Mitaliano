@@ -12,7 +12,7 @@ const createContent = (type, element) => {
 
 		content += `
             <div class="card">
-				<span class="filter-icon">filter-icon</span>
+				<img src="./img/filter.png" alt="filter" class="filter-icon">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
                 <button class="translation-button" id=${element.id}>${showTranslationBtnContent}</button>
