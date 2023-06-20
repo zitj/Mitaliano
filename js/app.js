@@ -3,12 +3,12 @@ import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
 import { randomise, hideAllElements } from './services/shared-service.js';
 import {
-	insertFilters,
 	chooseFilter,
 	toggleFilterList,
 	isFilterClicked,
 	filterName,
-	changeInnerTextForFilter,
+	showFilterMenu,
+	closeFilterMenu,
 	insertFiltersOptions,
 	returnFiltersDOM,
 	chooseFilterOption,
@@ -21,11 +21,8 @@ import {
 	navigationLinks,
 	sections,
 	listOfWords,
-	textFilter,
 	filterOptions,
 	closeFilterButton,
-	filterMenu,
-	overlay,
 } from './utilities/html_elements.js';
 
 let randomWords = [];
@@ -62,34 +59,13 @@ const nextWord = (elementClicked) => {
 	});
 };
 
-const showFilterMenu = () => {
-	filterMenu.classList.add('active');
-	overlay.classList.add('active');
-};
-
-const hideFilterMenu = () => {
-	filterMenu.classList.remove('active');
-	overlay.classList.remove('active');
-};
-
-const closeFilterMenu = () => {
-	hideFilterMenu();
-	hideAllElements(filterOptionsLists);
-};
-
-// const chooseFilterOption = (filterType, elementClicked) => {
-// 	chosenFilters[filterType] = elementClicked.innerText;
-// 	hideAllElements(filterOptionsLists);
-// 	changeInnerTextForFilter(filterType, filterTexts, elementClicked.innerText);
-// };
-
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
 	let filterType = element.target.filterType;
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
-	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu();
+	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu(filterOptionsLists);
 
 	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
 	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, navigationLinks, sections);

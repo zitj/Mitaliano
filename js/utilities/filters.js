@@ -1,6 +1,6 @@
 import { randomise, hideAllElements } from '../services/shared-service.js';
 import { DEFAULT_FILTER, IDs } from '../constants.js';
-import { textFilter, filtersMenuContent } from './html_elements.js';
+import { textFilter, filtersMenuContent, filterMenu, overlay } from './html_elements.js';
 import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
@@ -163,6 +163,9 @@ const toggleFilterList = (filterName, filterOptionsLists) => {
 	for (let id in IDs.FILTERS) {
 		if (IDs.FILTERS[id] === filterName) {
 			hideAllElements(filterOptionsLists);
+			for (let name in filters) {
+				if (name !== filterName) filters[name].isOpen = false;
+			}
 			filterOptionsLists.forEach((list) => {
 				if (list.id.includes(filterName) && !filters[filterName].isOpen) {
 					list.classList.remove('hide');
@@ -182,6 +185,21 @@ const chooseFilterOption = (filterType, filterOptionsLists, filterTexts, element
 	changeInnerTextForFilter(filterType, filterTexts, elementClicked.innerText);
 };
 
+const showFilterMenu = () => {
+	filterMenu.classList.add('active');
+	overlay.classList.add('active');
+};
+
+const hideFilterMenu = () => {
+	filterMenu.classList.remove('active');
+	overlay.classList.remove('active');
+};
+
+const closeFilterMenu = (filterOptionsLists) => {
+	hideFilterMenu();
+	hideAllElements(filterOptionsLists);
+};
+
 export {
 	insertFilters,
 	chooseFilter,
@@ -192,6 +210,8 @@ export {
 	changeInnerTextForFilter,
 	toggleFilterList,
 	chooseFilterOption,
+	showFilterMenu,
+	closeFilterMenu,
 	isFilterClicked,
 	filterName,
 	filters,
