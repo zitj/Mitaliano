@@ -1,3 +1,3 @@
-1. Add date filter
+1. Create logic for filtering filters based on a filter option :D
 2. Create game in words section like matching words in duolingo
 3. Reorganise certain files from utilities to services
