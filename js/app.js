@@ -4,12 +4,14 @@ import { switchSections } from './utilities/section-switcher.js';
 import { randomise, hideAllElements } from './services/shared-service.js';
 import {
 	insertFilters,
-	toggleFilter,
 	chooseFilter,
+	toggleFilterList,
 	isFilterClicked,
 	filterName,
-	filters,
+	changeInnerTextForFilter,
+	insertFiltersOptions,
 	returnFiltersDOM,
+	chooseFilterOption,
 } from './utilities/filters.js';
 import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
 import {
@@ -28,14 +30,6 @@ import {
 
 let randomWords = [];
 let randomVerbs = [];
-
-let elementIDsOfFilter = {
-	'filter-lectures': true,
-	arrow: true,
-	'filter-text': true,
-};
-
-let previousFilterName = '';
 
 wantedVerbsInput.addEventListener(
 	'keyup',
@@ -83,11 +77,16 @@ const closeFilterMenu = () => {
 	hideAllElements(filterOptionsLists);
 };
 
+// const chooseFilterOption = (filterType, elementClicked) => {
+// 	chosenFilters[filterType] = elementClicked.innerText;
+// 	hideAllElements(filterOptionsLists);
+// 	changeInnerTextForFilter(filterType, filterTexts, elementClicked.innerText);
+// };
+
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
-
-	// toggleFilter(elementClicked, elementIDsOfFilter, filterOptions);
+	let filterType = element.target.filterType;
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
 	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu();
@@ -97,7 +96,7 @@ const clickLogic = (element) => {
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
 	if (className == CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
-		// chooseFilter(elementClicked, filterOptions, textFilter, listOfWords, randomWords);
+		chooseFilterOption(filterType, filterOptionsLists, filterTexts, elementClicked);
 	}
 };
 
@@ -111,50 +110,12 @@ let filterWrappers = returnFiltersDOM();
 let filterOptionsLists = document.querySelectorAll('.filter-options-list');
 let filterTexts = document.querySelectorAll('.filter-text');
 
-const insertFiltersOptions = (filterWrapper) => {
-	let filterID = filterWrapper.id.split('-')[filterWrapper.id.split('-').length - 1];
-	for (let id in IDs.FILTERS) {
-		if (IDs.FILTERS[id] === filterID) {
-			let filterTextDOM;
-			filterTexts.forEach((filterText) => {
-				if (filterText.id.includes(filterID)) {
-					filterTextDOM = filterText;
-				}
-			});
-			filterOptionsLists.forEach((list) => {
-				if (list.id.includes(filterID)) {
-					insertFilters(list, filterTextDOM, filterID);
-				}
-			});
-		}
-	}
-};
+filterWrappers.forEach((filter) => {
+	insertFiltersOptions(filter, filterTexts, filterOptionsLists);
 
-filterWrappers.forEach((filterWrapper) => {
-	insertFiltersOptions(filterWrapper);
-
-	filterWrapper.addEventListener('click', (event) => {
+	filter.addEventListener('click', (event) => {
 		let elementsID = event.target.id;
 		let filterName = elementsID.split('-')[elementsID.split('-').length - 1];
-		let filterTextDOM;
-
-		filterTexts.forEach((filterText) => {
-			if (filterText.id.includes(filterName)) {
-				filterTextDOM = filterText;
-			}
-		});
-
-		for (let id in IDs.FILTERS) {
-			if (IDs.FILTERS[id] === filterName) {
-				hideAllElements(filterOptionsLists);
-				filterOptionsLists.forEach((list) => {
-					if (list.id.includes(filterName)) {
-						list.classList.remove('hide');
-					}
-				});
-			}
-		}
+		toggleFilterList(filterName, filterOptionsLists);
 	});
 });
-
-// insertFilters(filterOptions, textFilter);

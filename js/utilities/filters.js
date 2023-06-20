@@ -1,4 +1,4 @@
-import { randomise } from '../services/shared-service.js';
+import { randomise, hideAllElements } from '../services/shared-service.js';
 import { DEFAULT_FILTER, IDs } from '../constants.js';
 import { textFilter, filtersMenuContent } from './html_elements.js';
 import { words } from '../../data/words.js';
@@ -9,16 +9,25 @@ let filters = {
 	lectures: {
 		array: [],
 		label: 'Lezioni',
+		isOpen: false,
 	},
 	dates: {
 		array: [],
 		label: 'Dati',
+		isOpen: false,
 	},
 	wordTypes: {
 		array: [],
 		label: 'Tipi',
+		isOpen: false,
 	},
 };
+let chosenFilters = {
+	lectures: '',
+	dates: '',
+	wordTypes: '',
+};
+let previousFilterName = '';
 
 const createFilterApplyButton = () => {
 	let button = document.createElement('button');
@@ -70,7 +79,6 @@ const returnFilterOptions = (filterType) => {
 		if (filterType === IDs.FILTERS.WORD_TYPE) options.push(words[number].type);
 	}
 	options = [...new Set(options)];
-	console.log(options);
 	return options;
 };
 
@@ -86,26 +94,33 @@ const setDefaultFilter = () => {
 const insertFilters = (filterHTMLelement, textFilter, filterName) => {
 	filters[filterName].array.forEach((filterOption) => {
 		let option = document.createElement('div');
-		option.classList.add('filter-option');
+		option.classList.add(`filter-option`);
+		option.filterType = `${filterName}`;
 		option.innerText = filterOption;
 		filterHTMLelement.appendChild(option);
 	});
 	textFilter.innerText = filters[filterName].array[0];
 };
 
-const toggleFilter = (elementClicked, elementIDsOfFilter, filterOptions) => {
-	if (elementIDsOfFilter[elementClicked.id]) {
-		isFilterClicked = !isFilterClicked;
-		if (isFilterClicked) {
-			filterOptions.classList.remove('hide');
-		} else {
-			filterOptions.classList.add('hide');
+const insertFiltersOptions = (filter, filterTexts, filterOptionsLists) => {
+	let filterID = filter.id.split('-')[filter.id.split('-').length - 1];
+	for (let id in IDs.FILTERS) {
+		if (IDs.FILTERS[id] === filterID) {
+			let filterTextDOM;
+			filterTexts.forEach((filterText) => {
+				if (filterText.id.includes(filterID)) {
+					filterTextDOM = filterText;
+				}
+			});
+			filterOptionsLists.forEach((list) => {
+				if (list.id.includes(filterID)) {
+					insertFilters(list, filterTextDOM, filterID);
+				}
+			});
 		}
-	} else {
-		isFilterClicked = false;
-		filterOptions.classList.add('hide');
 	}
 };
+
 const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, randomWords) => {
 	isFilterClicked = false;
 	filterOptions.classList.add('hide');
@@ -136,13 +151,47 @@ const filteringWords = (sectionModifier, words, filterModifier) => {
 	return filterModifier;
 };
 
+const changeInnerTextForFilter = (filterType, filterTexts, filterOption) => {
+	filterTexts.forEach((filterText) => {
+		if (filterText.id.includes(filterType)) {
+			filterText.innerText = filterOption;
+		}
+	});
+};
+
+const toggleFilterList = (filterName, filterOptionsLists) => {
+	for (let id in IDs.FILTERS) {
+		if (IDs.FILTERS[id] === filterName) {
+			hideAllElements(filterOptionsLists);
+			filterOptionsLists.forEach((list) => {
+				if (list.id.includes(filterName) && !filters[filterName].isOpen) {
+					list.classList.remove('hide');
+					filters[filterName].isOpen = true;
+				} else if (list.id.includes(filterName) && filters[filterName].isOpen) {
+					list.classList.add('hide');
+					filters[filterName].isOpen = false;
+				}
+			});
+		}
+	}
+};
+
+const chooseFilterOption = (filterType, filterOptionsLists, filterTexts, elementClicked) => {
+	chosenFilters[filterType] = elementClicked.innerText;
+	toggleFilterList(filterType, filterOptionsLists);
+	changeInnerTextForFilter(filterType, filterTexts, elementClicked.innerText);
+};
+
 export {
 	insertFilters,
-	toggleFilter,
 	chooseFilter,
 	setDefaultFilter,
 	filteringWords,
 	returnFiltersDOM,
+	insertFiltersOptions,
+	changeInnerTextForFilter,
+	toggleFilterList,
+	chooseFilterOption,
 	isFilterClicked,
 	filterName,
 	filters,
