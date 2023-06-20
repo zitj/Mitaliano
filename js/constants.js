@@ -19,7 +19,7 @@ const IDs = {
 	FILTERS: {
 		LECTURES: 'lectures',
 		DATES: 'dates',
-		WORD_TYPE: 'wordType',
+		WORD_TYPE: 'wordTypes',
 	},
 };
 

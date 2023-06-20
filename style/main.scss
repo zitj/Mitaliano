@@ -50,27 +50,24 @@ body {
 	#filter-menu-content {
 		@include remove-blue-color-on-click();
 		.filter-frame {
-			z-index: 3;
 			@include stylize-input(210px, 0.3em, 1em, 1% auto, $dark-green, $background-green);
 			cursor: pointer;
 			position: relative;
 			display: flex;
 			justify-content: space-between;
 			.filter-arrow {
-				z-index: 3;
 				transform: rotate(90deg);
 				font-weight: 600;
 				margin-right: 15px;
 			}
 		}
 		.filter-options-list {
-			@include stylize-input(200px, 0.3em, 1em, 1% auto, $dark-green, $background-green);
+			@include stylize-input(200px, 0.3em, 1em, 5% auto, $dark-green, $background-green);
 			position: absolute;
 			top: 120%;
 			text-align: left;
-			z-index: 2;
+			z-index: 2222;
 			.filter-option {
-				z-index: 2;
 				margin: 0 0 1em 1.5em;
 				&:hover {
 					color: $dark-red;

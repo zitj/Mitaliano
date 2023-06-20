@@ -50,16 +50,27 @@ const returnFiltersDOM = () => {
 	return document.querySelectorAll('.filter-wrapper');
 };
 
+const formatDate = (miliseconds) => {
+	if (typeof miliseconds === 'number') {
+		const date = new Date(miliseconds);
+		const day = String(date.getDate()).padStart(2, '0');
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		const year = date.getFullYear();
+		return `${day}.${month}.${year}`;
+	} else {
+		return miliseconds;
+	}
+};
+
 const returnFilterOptions = (filterType) => {
 	let options = [DEFAULT_FILTER];
 	for (let number in words) {
-		if (filterType === IDs.FILTERS.DATES) options.push(words[number].date.getTime());
+		if (filterType === IDs.FILTERS.DATES) options.push(formatDate(words[number].date.getTime()));
 		if (filterType === IDs.FILTERS.LECTURES) options.push(words[number].source);
 		if (filterType === IDs.FILTERS.WORD_TYPE) options.push(words[number].type);
 	}
 	options = [...new Set(options)];
 	console.log(options);
-
 	return options;
 };
 
@@ -72,14 +83,14 @@ const setDefaultFilter = () => {
 	textFilter.innerText = filterName;
 };
 
-const insertFilters = (filterHTMLelement, textFilter) => {
-	filters.lectures.forEach((lecture) => {
+const insertFilters = (filterHTMLelement, textFilter, filterName) => {
+	filters[filterName].array.forEach((filterOption) => {
 		let option = document.createElement('div');
 		option.classList.add('filter-option');
-		option.innerText = lecture;
+		option.innerText = filterOption;
 		filterHTMLelement.appendChild(option);
 	});
-	textFilter.innerText = filters.lectures[0];
+	textFilter.innerText = filters[filterName].array[0];
 };
 
 const toggleFilter = (elementClicked, elementIDsOfFilter, filterOptions) => {

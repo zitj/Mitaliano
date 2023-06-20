@@ -40,6 +40,10 @@ const setCardCounter = (filterModifier, cardCounter) => {
 	cardCounter.innerHTML = `${passedCards} / ${totalCards}`;
 };
 
+const hideAllElements = (elements) => {
+	elements.forEach((element) => element.classList.add('hide'));
+};
+
 const showRandomisedElements = (sectionModifier) => {
 	let arrayWithDuplicates = [];
 	let arrayOfRandomNumbers = [];
@@ -100,4 +104,4 @@ const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
 	showRandomisedElements(sectionModifier);
 };
 
-export { render, randomise };
+export { render, randomise, hideAllElements };
