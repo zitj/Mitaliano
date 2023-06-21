@@ -23,9 +23,9 @@ let filters = {
 	},
 };
 let chosenFilters = {
-	lectures: '',
-	dates: '',
-	wordTypes: '',
+	lectures: null,
+	dates: null,
+	wordTypes: null,
 };
 let previousFilterName = '';
 
@@ -92,6 +92,7 @@ const setDefaultFilter = () => {
 };
 
 const insertFilters = (filterHTMLelement, textFilter, filterName) => {
+	filterHTMLelement.innerHTML = '';
 	filters[filterName].array.forEach((filterOption) => {
 		let option = document.createElement('div');
 		option.classList.add(`filter-option`);
@@ -119,6 +120,38 @@ const insertFiltersOptions = (filter, filterTexts, filterOptionsLists) => {
 			});
 		}
 	}
+};
+const returnOptionTypeBasedOn = (filterType) => {
+	if (filterType === IDs.FILTERS.LECTURES) return 'source';
+	if (filterType === IDs.FILTERS.DATES) return 'date';
+	if (filterType === IDs.FILTERS.WORD_TYPE) return 'type';
+};
+
+const insertFiltersOptionsBasedOnChosenFilter = (filterID, chosenOption) => {
+	let filtersCopy = filters;
+	let optionType = returnOptionTypeBasedOn(filterID);
+	let options = {
+		lectures: [DEFAULT_FILTER],
+		dates: [DEFAULT_FILTER],
+		wordTypes: [DEFAULT_FILTER],
+	};
+	for (let number in words) {
+		if (words[number][optionType] === chosenOption) {
+			for (let option in options) {
+				if (filterID !== option) {
+					if (option === IDs.FILTERS.DATES) options[option].push(formatDate(words[number].date.getTime()));
+					if (option === IDs.FILTERS.LECTURES) options[option].push(words[number].source);
+					if (option === IDs.FILTERS.WORD_TYPE) options[option].push(words[number].type);
+				}
+			}
+		}
+	}
+	for (let option in options) {
+		options[option] = [...new Set(options[option])];
+		filtersCopy[option].array = options[option].length > 1 ? options[option] : filters[option].array;
+	}
+	console.log('Filters', filters);
+	console.log('FiltersCopy', filters);
 };
 
 const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, randomWords) => {
@@ -179,10 +212,11 @@ const toggleFilterList = (filterName, filterOptionsLists) => {
 	}
 };
 
-const chooseFilterOption = (filterType, filterOptionsLists, filterTexts, elementClicked) => {
+const chooseFilterOption = (filterType, filterOptionsLists, filterTexts, elementClicked, filterWrappers) => {
 	chosenFilters[filterType] = elementClicked.innerText;
 	toggleFilterList(filterType, filterOptionsLists);
 	changeInnerTextForFilter(filterType, filterTexts, elementClicked.innerText);
+	insertFiltersOptionsBasedOnChosenFilter(filterType, elementClicked.innerText, filterWrappers);
 };
 
 const showFilterMenu = () => {
@@ -212,6 +246,7 @@ export {
 	chooseFilterOption,
 	showFilterMenu,
 	closeFilterMenu,
+	insertFiltersOptionsBasedOnChosenFilter,
 	isFilterClicked,
 	filterName,
 	filters,

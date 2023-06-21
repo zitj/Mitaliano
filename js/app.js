@@ -10,6 +10,7 @@ import {
 	showFilterMenu,
 	closeFilterMenu,
 	insertFiltersOptions,
+	insertFiltersOptionsBasedOnChosenFilter,
 	returnFiltersDOM,
 	chooseFilterOption,
 } from './utilities/filters.js';
@@ -72,7 +73,7 @@ const clickLogic = (element) => {
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
 	if (className == CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
-		chooseFilterOption(filterType, filterOptionsLists, filterTexts, elementClicked);
+		chooseFilterOption(filterType, filterOptionsLists, filterTexts, elementClicked, filterWrappers);
 	}
 };
 
