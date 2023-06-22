@@ -91,31 +91,34 @@ const setDefaultFilter = () => {
 	textFilter.innerText = filterName;
 };
 
-const insertFilters = (filterHTMLelement, textFilter, filterName) => {
-	filterHTMLelement.innerHTML = '';
-	filters[filterName].array.forEach((filterOption) => {
+const insertFilters = (modifier) => {
+	modifier.filterHTMLelement.innerHTML = '';
+	modifier.filters[modifier.filterID].array.forEach((filterOption) => {
 		let option = document.createElement('div');
 		option.classList.add(`filter-option`);
-		option.filterType = `${filterName}`;
+		option.filterType = `${modifier.filterID}`;
 		option.innerText = filterOption;
-		filterHTMLelement.appendChild(option);
+		modifier.filterHTMLelement.appendChild(option);
 	});
-	textFilter.innerText = filters[filterName].array[0];
+	if (chosenFilters[modifier.type] == null) modifier.filterText.innerText = DEFAULT_FILTER;
 };
 
-const insertFiltersOptions = (filter, filterTexts, filterOptionsLists) => {
-	let filterID = filter.id.split('-')[filter.id.split('-').length - 1];
+const insertFiltersOptions = (modifier) => {
+	let filterID = modifier.filter.id.split('-')[modifier.filter.id.split('-').length - 1];
 	for (let id in IDs.FILTERS) {
 		if (IDs.FILTERS[id] === filterID) {
 			let filterTextDOM;
-			filterTexts.forEach((filterText) => {
+			modifier.htmlElements.filterTexts.forEach((filterText) => {
 				if (filterText.id.includes(filterID)) {
 					filterTextDOM = filterText;
 				}
 			});
-			filterOptionsLists.forEach((list) => {
+			modifier.htmlElements.filterOptionsLists.forEach((list) => {
 				if (list.id.includes(filterID)) {
-					insertFilters(list, filterTextDOM, filterID);
+					modifier.filterHTMLelement = list;
+					modifier.filterText = filterTextDOM;
+					modifier.filterID = filterID;
+					insertFilters(modifier);
 				}
 			});
 		}
@@ -127,22 +130,24 @@ const returnOptionTypeBasedOn = (filterType) => {
 	if (filterType === IDs.FILTERS.WORD_TYPE) return 'type';
 };
 
-const insertFiltersOptionsBasedOnChosenFilter = (filterID, chosenOption) => {
-	let filtersCopy = filters;
-	let optionType = returnOptionTypeBasedOn(filterID);
+const insertFiltersOptionsBasedOnChosenFilter = (modifier) => {
+	let filtersCopy = _.cloneDeep(filters);
+	let optionType = returnOptionTypeBasedOn(modifier.type);
 	let options = {
 		lectures: [DEFAULT_FILTER],
 		dates: [DEFAULT_FILTER],
 		wordTypes: [DEFAULT_FILTER],
 	};
 	for (let number in words) {
-		if (words[number][optionType] === chosenOption) {
+		let word = words[number];
+		let selectedOption = modifier.elementClicked.innerText;
+		if (word[optionType] === selectedOption) {
 			for (let option in options) {
-				if (filterID !== option) {
-					if (option === IDs.FILTERS.DATES) options[option].push(formatDate(words[number].date.getTime()));
-					if (option === IDs.FILTERS.LECTURES) options[option].push(words[number].source);
-					if (option === IDs.FILTERS.WORD_TYPE) options[option].push(words[number].type);
-				}
+				// if (modifier.type !== option) {
+				if (option === IDs.FILTERS.DATES) options[option].push(formatDate(word.date.getTime()));
+				if (option === IDs.FILTERS.LECTURES) options[option].push(word.source);
+				if (option === IDs.FILTERS.WORD_TYPE) options[option].push(word.type);
+				// }
 			}
 		}
 	}
@@ -150,8 +155,16 @@ const insertFiltersOptionsBasedOnChosenFilter = (filterID, chosenOption) => {
 		options[option] = [...new Set(options[option])];
 		filtersCopy[option].array = options[option].length > 1 ? options[option] : filters[option].array;
 	}
+
+	modifier.htmlElements.filterWrappers.forEach((filter) => {
+		modifier.filter = filter;
+		modifier.filters = filtersCopy;
+		insertFiltersOptions(modifier);
+	});
+	console.log('Modifier', modifier);
+	console.log('Chosen filters', chosenFilters);
 	console.log('Filters', filters);
-	console.log('FiltersCopy', filters);
+	console.log('FiltersCopy', filtersCopy);
 };
 
 const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, randomWords) => {
@@ -184,39 +197,40 @@ const filteringWords = (sectionModifier, words, filterModifier) => {
 	return filterModifier;
 };
 
-const changeInnerTextForFilter = (filterType, filterTexts, filterOption) => {
-	filterTexts.forEach((filterText) => {
-		if (filterText.id.includes(filterType)) {
-			filterText.innerText = filterOption;
+const changeInnerTextForFilter = (modifier) => {
+	modifier.htmlElements.filterTexts.forEach((filterText) => {
+		if (filterText.id.includes(modifier.type)) {
+			filterText.innerText = chosenFilters[modifier.type];
 		}
 	});
 };
 
-const toggleFilterList = (filterName, filterOptionsLists) => {
+const toggleFilterList = (modifier) => {
 	for (let id in IDs.FILTERS) {
-		if (IDs.FILTERS[id] === filterName) {
-			hideAllElements(filterOptionsLists);
+		if (IDs.FILTERS[id] === modifier.type) {
+			hideAllElements(modifier.htmlElements.filterOptionsLists);
 			for (let name in filters) {
-				if (name !== filterName) filters[name].isOpen = false;
+				if (name !== modifier.type) filters[name].isOpen = false;
 			}
-			filterOptionsLists.forEach((list) => {
-				if (list.id.includes(filterName) && !filters[filterName].isOpen) {
+			modifier.htmlElements.filterOptionsLists.forEach((list) => {
+				if (list.id.includes(modifier.type) && !filters[modifier.type].isOpen) {
 					list.classList.remove('hide');
-					filters[filterName].isOpen = true;
-				} else if (list.id.includes(filterName) && filters[filterName].isOpen) {
+					filters[modifier.type].isOpen = true;
+				} else if (list.id.includes(modifier.type) && filters[modifier.type].isOpen) {
 					list.classList.add('hide');
-					filters[filterName].isOpen = false;
+					filters[modifier.type].isOpen = false;
 				}
 			});
 		}
 	}
 };
 
-const chooseFilterOption = (filterType, filterOptionsLists, filterTexts, elementClicked, filterWrappers) => {
-	chosenFilters[filterType] = elementClicked.innerText;
-	toggleFilterList(filterType, filterOptionsLists);
-	changeInnerTextForFilter(filterType, filterTexts, elementClicked.innerText);
-	insertFiltersOptionsBasedOnChosenFilter(filterType, elementClicked.innerText, filterWrappers);
+const chooseFilterOption = (modifier) => {
+	chosenFilters[modifier.type] = modifier.elementClicked.innerText;
+	toggleFilterList(modifier);
+	insertFiltersOptionsBasedOnChosenFilter(modifier);
+
+	changeInnerTextForFilter(modifier);
 };
 
 const showFilterMenu = () => {

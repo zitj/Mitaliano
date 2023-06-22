@@ -13,6 +13,7 @@ import {
 	insertFiltersOptionsBasedOnChosenFilter,
 	returnFiltersDOM,
 	chooseFilterOption,
+	filters,
 } from './utilities/filters.js';
 import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
 import {
@@ -64,6 +65,15 @@ const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
 	let filterType = element.target.filterType;
+	let modifier = {
+		type: filterType,
+		htmlElements: {
+			filterOptionsLists: filterOptionsLists,
+			filterTexts: filterTexts,
+			filterWrappers: filterWrappers,
+		},
+		elementClicked: elementClicked,
+	};
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
 	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu(filterOptionsLists);
@@ -73,7 +83,7 @@ const clickLogic = (element) => {
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
 	if (className == CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
-		chooseFilterOption(filterType, filterOptionsLists, filterTexts, elementClicked, filterWrappers);
+		chooseFilterOption(modifier);
 	}
 };
 
@@ -88,11 +98,22 @@ let filterOptionsLists = document.querySelectorAll('.filter-options-list');
 let filterTexts = document.querySelectorAll('.filter-text');
 
 filterWrappers.forEach((filter) => {
-	insertFiltersOptions(filter, filterTexts, filterOptionsLists);
+	let modifier = {
+		type: null,
+		htmlElements: {
+			filterOptionsLists: filterOptionsLists,
+			filterTexts: filterTexts,
+		},
+		filter: filter,
+		filters: filters,
+	};
+
+	insertFiltersOptions(modifier);
 
 	filter.addEventListener('click', (event) => {
 		let elementsID = event.target.id;
 		let filterName = elementsID.split('-')[elementsID.split('-').length - 1];
-		toggleFilterList(filterName, filterOptionsLists);
+		modifier.type = filterName;
+		toggleFilterList(modifier);
 	});
 });
