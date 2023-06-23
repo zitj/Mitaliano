@@ -104,4 +104,8 @@ const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
 	showRandomisedElements(sectionModifier);
 };
 
-export { render, randomise, hideAllElements };
+const returnFilterIDBasedOn = (elementsID) => {
+	return elementsID.split('-')[elementsID.split('-').length - 1];
+};
+
+export { render, randomise, hideAllElements, returnFilterIDBasedOn };

@@ -1,7 +1,7 @@
 import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
-import { randomise, hideAllElements } from './services/shared-service.js';
+import { randomise, returnFilterIDBasedOn } from './services/shared-service.js';
 import {
 	chooseFilter,
 	toggleFilterList,
@@ -10,7 +10,6 @@ import {
 	showFilterMenu,
 	closeFilterMenu,
 	insertFiltersOptions,
-	insertFiltersOptionsBasedOnChosenFilter,
 	returnFiltersDOM,
 	chooseFilterOption,
 	filters,
@@ -112,7 +111,7 @@ filterWrappers.forEach((filter) => {
 
 	filter.addEventListener('click', (event) => {
 		let elementsID = event.target.id;
-		let filterName = elementsID.split('-')[elementsID.split('-').length - 1];
+		let filterName = returnFilterIDBasedOn(elementsID);
 		modifier.type = filterName;
 		toggleFilterList(modifier);
 	});

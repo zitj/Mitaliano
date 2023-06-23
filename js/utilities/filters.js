@@ -1,4 +1,4 @@
-import { randomise, hideAllElements } from '../services/shared-service.js';
+import { randomise, hideAllElements, returnFilterIDBasedOn } from '../services/shared-service.js';
 import { DEFAULT_FILTER, IDs } from '../constants.js';
 import { textFilter, filtersMenuContent, filterMenu, overlay } from './html_elements.js';
 import { words } from '../../data/words.js';
@@ -161,9 +161,9 @@ const insertFiltersOptionsBasedOnChosenFilter = (modifier) => {
 		modifier.filters = filtersCopy;
 		insertFiltersOptions(modifier);
 	});
-	console.log('Modifier', modifier);
-	console.log('Chosen filters', chosenFilters);
-	console.log('Filters', filters);
+	// console.log('Modifier', modifier);
+	// console.log('Chosen filters', chosenFilters);
+	// console.log('Filters', filters);
 	console.log('FiltersCopy', filtersCopy);
 };
 
@@ -197,10 +197,47 @@ const filteringWords = (sectionModifier, words, filterModifier) => {
 	return filterModifier;
 };
 
+const allFieldsAreSelected = () => {
+	let filtersLength = Object.keys(chosenFilters).length;
+	let allSelected = true;
+
+	for (let i = 0; i < filtersLength; i++) {
+		if (
+			chosenFilters[Object.keys(chosenFilters)[i]] === null ||
+			chosenFilters[Object.keys(chosenFilters)[i]] === DEFAULT_FILTER
+		) {
+			allSelected = false;
+		}
+	}
+	return allSelected;
+};
+
+const resetAllFiltersExceptTheLastOne = (modifier) => {
+	let filtersLength = Object.keys(chosenFilters).length;
+	let lastFilterIndex = filtersLength - 1;
+	let lastFilterName = Object.keys(chosenFilters)[lastFilterIndex];
+	let lastFilter = chosenFilters[lastFilterName];
+
+	if (
+		lastFilter !== null &&
+		lastFilter !== DEFAULT_FILTER &&
+		!allFieldsAreSelected() &&
+		modifier.type == lastFilterName
+	) {
+		for (let i = lastFilterIndex - 1; i >= 0; i--) {
+			chosenFilters[Object.keys(chosenFilters)[i]] = DEFAULT_FILTER;
+		}
+	}
+	changeInnerTextForFilter(modifier);
+};
+
 const changeInnerTextForFilter = (modifier) => {
 	modifier.htmlElements.filterTexts.forEach((filterText) => {
+		let filterID = returnFilterIDBasedOn(filterText.id);
 		if (filterText.id.includes(modifier.type)) {
-			filterText.innerText = chosenFilters[modifier.type];
+		}
+		if (chosenFilters[filterID] !== null) {
+			filterText.innerText = chosenFilters[filterID];
 		}
 	});
 };
@@ -229,8 +266,8 @@ const chooseFilterOption = (modifier) => {
 	chosenFilters[modifier.type] = modifier.elementClicked.innerText;
 	toggleFilterList(modifier);
 	insertFiltersOptionsBasedOnChosenFilter(modifier);
-
 	changeInnerTextForFilter(modifier);
+	resetAllFiltersExceptTheLastOne(modifier);
 };
 
 const showFilterMenu = () => {
