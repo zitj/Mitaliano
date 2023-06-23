@@ -9,7 +9,7 @@ export const words = {
 		plural: { article: 'le', word: 'raccolte' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	1: {
 		word: 'regno',
@@ -21,7 +21,7 @@ export const words = {
 		plural: { article: 'i', word: 'regni' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	2: {
 		word: 'confini',
@@ -33,7 +33,7 @@ export const words = {
 		plural: { article: 'i', word: 'confini' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	3: {
 		word: 'bussola',
@@ -45,7 +45,7 @@ export const words = {
 		plural: { article: 'le', word: 'bussole' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	4: {
 		word: 'impazzita',
@@ -57,7 +57,7 @@ export const words = {
 		plural: { article: '/', word: '/' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	5: {
 		word: 'cerchio',
@@ -69,7 +69,7 @@ export const words = {
 		plural: { article: 'i', word: 'cherchi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	6: {
 		word: 'cavalieri',
@@ -81,7 +81,7 @@ export const words = {
 		plural: { article: 'i', word: 'cavalieri' },
 		gender: 'maschile',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	7: {
 		word: 'mi rendo conto',
@@ -93,7 +93,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	8: {
 		word: 'tenacia',
@@ -105,7 +105,7 @@ export const words = {
 		plural: { article: 'le', word: 'tenacie' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	9: {
 		word: 'devozione',
@@ -117,7 +117,7 @@ export const words = {
 		plural: { article: 'i', word: 'devozioni' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	10: {
 		word: 'sella',
@@ -130,7 +130,7 @@ export const words = {
 		plural: { article: 'le', word: 'selle' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	11: {
 		word: 'Mi sono accorto',
@@ -143,7 +143,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	12: {
 		word: 'bastava',
@@ -156,7 +156,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	13: {
 		word: 'impiegati',
@@ -169,7 +169,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	14: {
 		word: 'deboli',
@@ -181,7 +181,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	15: {
 		word: 'sgualcite',
@@ -193,7 +193,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	16: {
 		word: 'macchiate',
@@ -205,7 +205,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	17: {
 		word: 'trascorse',
@@ -217,7 +217,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	18: {
 		word: 'scoraggiamento',
@@ -229,7 +229,7 @@ export const words = {
 		plural: { article: 'gli', word: 'scoraggiamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	19: {
 		word: 'comportamento',
@@ -241,7 +241,7 @@ export const words = {
 		plural: { article: 'i', word: 'comportamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	20: {
 		word: 'partenza',
@@ -253,7 +253,7 @@ export const words = {
 		plural: { article: 'le', word: 'partenze' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	21: {
 		word: 'vaghi',
@@ -265,7 +265,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	22: {
 		word: 'ingiallite',
@@ -277,7 +277,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	23: {
 		word: 'insoliti',
@@ -289,7 +289,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	24: {
 		word: 'stravolto',
@@ -301,7 +301,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	25: {
 		word: 'praterie',
@@ -313,7 +313,7 @@ export const words = {
 		plural: { article: 'le', word: 'praterie' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	26: {
 		word: 'boschi',
@@ -325,7 +325,7 @@ export const words = {
 		plural: { article: 'i', word: 'boschi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	27: {
 		word: 'pietra',
@@ -337,7 +337,7 @@ export const words = {
 		plural: { article: 'le', word: 'pietre' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	28: {
 		word: 'querce',
@@ -349,7 +349,7 @@ export const words = {
 		plural: { article: 'le', word: 'querce' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	29: {
 		word: 'ignote',
@@ -361,7 +361,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	30: {
 		word: 'scomparirà',
@@ -373,7 +373,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'scomparire',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	31: {
 		word: 'rimpiango',
@@ -385,7 +385,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'rimpiangere',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	32: {
 		word: 'Talmente',
@@ -397,7 +397,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	33: {
 		word: 'perfino',
@@ -410,7 +410,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	34: {
 		word: 'francobolli',
@@ -422,7 +422,7 @@ export const words = {
 		plural: { article: 'i', word: 'francobolli' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	35: {
 		word: 'compenso',
@@ -434,7 +434,7 @@ export const words = {
 		plural: { article: 'i', word: 'compensi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	36: {
 		word: 'formidabile',
@@ -446,7 +446,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	37: {
 		word: 'contabile',
@@ -458,7 +458,7 @@ export const words = {
 		plural: { article: 'i', word: 'contabili' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	38: {
 		word: 'sottrarre',
@@ -470,7 +470,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'sottrare',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	39: {
 		word: 'appassionante',
@@ -482,7 +482,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	40: {
 		word: 'favolosa',
@@ -494,7 +494,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	41: {
 		word: 'si addormentano',
@@ -506,7 +506,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'addormentarsi',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	42: {
 		word: 'preside',
@@ -518,7 +518,7 @@ export const words = {
 		plural: { article: 'i', word: 'presidi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	43: {
 		word: 'bidello',
@@ -530,7 +530,7 @@ export const words = {
 		plural: { article: 'i', word: 'bidell' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	44: {
 		word: 'tasso',
@@ -543,7 +543,7 @@ export const words = {
 		plural: { article: 'i', word: 'tassi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	45: {
 		word: 'rendimento',
@@ -556,7 +556,7 @@ export const words = {
 		plural: { article: 'i', word: 'rendimenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	46: {
 		word: 'ammortamenti',
@@ -569,7 +569,7 @@ export const words = {
 		plural: { article: 'gli', word: 'ammortamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	47: {
 		word: 'accantonamenti',
@@ -582,7 +582,7 @@ export const words = {
 		plural: { article: 'gli', word: 'accantonamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	48: {
 		word: 'sbadigliano',
@@ -594,7 +594,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'sbadigliare',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	49: {
 		word: 'deluso',
@@ -606,7 +606,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	50: {
 		word: 'imbattibile',
@@ -618,7 +618,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	51: {
 		word: 'reggere',
@@ -630,7 +630,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'reggere',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	52: {
 		word: 'confronto',
@@ -642,7 +642,7 @@ export const words = {
 		plural: { article: 'i', word: 'confronti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	53: {
 		word: 'trasmette',
@@ -654,7 +654,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'trasmettere',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	54: {
 		word: 'Orgogliosa',
@@ -667,7 +667,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	55: {
 		word: 'straordinario',
@@ -680,7 +680,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	56: {
 		word: 'prodigio',
@@ -692,7 +692,7 @@ export const words = {
 		plural: { article: 'i', word: 'prodigi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	57: {
 		word: 'tenera',
@@ -704,7 +704,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	58: {
 		word: 'gabbia',
@@ -717,7 +717,7 @@ export const words = {
 		plural: { article: 'le', word: 'gabbie' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	59: {
 		word: 'filastrocca',
@@ -730,7 +730,7 @@ export const words = {
 		plural: { article: 'le', word: 'filastrocche' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	60: {
 		word: 'truccatrice',
@@ -742,7 +742,7 @@ export const words = {
 		plural: { article: 'le', word: 'truccatrici' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	61: {
 		word: 'barzellette',
@@ -754,7 +754,7 @@ export const words = {
 		plural: { article: 'le', word: 'barzellette' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	62: {
 		word: 'previsioni',
@@ -766,7 +766,7 @@ export const words = {
 		plural: { article: 'le', word: 'previsioni' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	63: {
 		word: 'profondamente',
@@ -778,7 +778,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	64: {
 		word: 'soffre',
@@ -790,7 +790,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'soffrire',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	65: {
 		word: 'accarezza',
@@ -802,7 +802,7 @@ export const words = {
 		plural: { article: '', word: '' },
 		gender: '/',
 		infinitive: 'accarezzare',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	66: {
 		word: 'scorciatoia',
@@ -814,7 +814,7 @@ export const words = {
 		plural: { article: 'le', word: 'scorciatoie' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	67: {
 		word: 'freccia',
@@ -826,7 +826,7 @@ export const words = {
 		plural: { article: 'le', word: 'frecce' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	68: {
 		word: 'ferita',
@@ -838,7 +838,7 @@ export const words = {
 		plural: { article: 'le', word: 'ferite' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	69: {
 		word: 'cicatrice',
@@ -850,7 +850,7 @@ export const words = {
 		plural: { article: 'le', word: 'cicatrici' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	70: {
 		word: 'tessuto',
@@ -862,7 +862,7 @@ export const words = {
 		plural: { article: 'i', word: 'tessuti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	71: {
 		word: 'guarigione',
@@ -874,7 +874,7 @@ export const words = {
 		plural: { article: 'le', word: 'guarigioni' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	72: {
 		word: 'attegiamento',
@@ -886,7 +886,7 @@ export const words = {
 		plural: { article: 'gli', word: 'atteggiamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	73: {
 		word: 'prestazione',
@@ -898,7 +898,7 @@ export const words = {
 		plural: { article: 'le', word: 'prestazioni' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	74: {
 		word: 'invidia',
@@ -910,7 +910,7 @@ export const words = {
 		plural: { article: 'le', word: 'invidie' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	75: {
 		word: 'trattino',
@@ -922,7 +922,7 @@ export const words = {
 		plural: { article: 'i', word: 'trattini' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	76: {
 		word: 'scopo',
@@ -934,7 +934,7 @@ export const words = {
 		plural: { article: 'gli', word: 'scopi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	77: {
 		word: 'proposta',
@@ -946,7 +946,7 @@ export const words = {
 		plural: { article: 'le', word: 'proposte' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	78: {
 		word: 'maschera',
@@ -958,7 +958,7 @@ export const words = {
 		plural: { article: 'le', word: 'maschere' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	79: {
 		word: 'postazione',
@@ -970,7 +970,7 @@ export const words = {
 		plural: { article: 'le', word: 'postazioni' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	80: {
 		word: 'previdenza',
@@ -982,7 +982,7 @@ export const words = {
 		plural: { article: 'le', word: 'previdenze' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	81: {
 		word: 'ricorso',
@@ -994,7 +994,7 @@ export const words = {
 		plural: { article: 'i', word: 'ricorsi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	82: {
 		word: 'percorso',
@@ -1006,7 +1006,7 @@ export const words = {
 		plural: { article: 'i', word: 'percorsi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	83: {
 		word: 'sofferenza',
@@ -1018,7 +1018,7 @@ export const words = {
 		plural: { article: 'le', word: 'sofferenze' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	84: {
 		word: 'attrito',
@@ -1030,7 +1030,7 @@ export const words = {
 		plural: { article: 'gli', word: 'attriti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	85: {
 		word: 'appagamento',
@@ -1042,7 +1042,7 @@ export const words = {
 		plural: { article: 'gli', word: 'appagamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	86: {
 		word: 'piuttosto',
@@ -1054,7 +1054,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	87: {
 		word: 'perlomeno',
@@ -1066,7 +1066,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	88: {
 		word: 'degni',
@@ -1078,7 +1078,7 @@ export const words = {
 		plural: { article: 'degni', word: 'degni' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	89: {
 		word: 'nessi',
@@ -1090,7 +1090,7 @@ export const words = {
 		plural: { article: 'i', word: 'nessi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	90: {
 		word: 'equilibrio',
@@ -1102,7 +1102,7 @@ export const words = {
 		plural: { article: 'gli', word: 'equilibri' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	91: {
 		word: 'zavorra',
@@ -1114,7 +1114,7 @@ export const words = {
 		plural: { article: 'le', word: 'zavorre' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	92: {
 		word: 'campanella',
@@ -1126,7 +1126,7 @@ export const words = {
 		plural: { article: 'le', word: 'campane' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	93: {
 		word: 'peccato',
@@ -1138,7 +1138,7 @@ export const words = {
 		plural: { article: 'i', word: 'peccati' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 26), //next
+		date: new Date(2023, 4, 26).getTime(), //next
 	},
 	94: {
 		word: 'intrattenimento',
@@ -1150,7 +1150,7 @@ export const words = {
 		plural: { article: 'gli', word: 'intrattenimenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	95: {
 		word: 'fatica',
@@ -1162,7 +1162,7 @@ export const words = {
 		plural: { article: 'le', word: 'fatiche' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	96: {
 		word: 'buio',
@@ -1174,7 +1174,7 @@ export const words = {
 		plural: null,
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	97: {
 		word: 'sospeso',
@@ -1186,7 +1186,7 @@ export const words = {
 		plural: { article: 'sospesi', word: 'sospesi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	98: {
 		word: 'contagiose',
@@ -1198,7 +1198,7 @@ export const words = {
 		plural: { article: 'contagiose', word: 'contagiose' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	99: {
 		word: 'eppure',
@@ -1210,7 +1210,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	100: {
 		word: 'consapevolezza',
@@ -1222,7 +1222,7 @@ export const words = {
 		plural: null,
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 4, 27), //next
+		date: new Date(2023, 4, 27).getTime(), //next
 	},
 	101: {
 		word: 'chiodo',
@@ -1234,7 +1234,7 @@ export const words = {
 		plural: { article: 'i', word: 'chiodi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 28), //next
+		date: new Date(2023, 4, 28).getTime(), //next
 	},
 	102: {
 		word: 'gancio',
@@ -1246,7 +1246,7 @@ export const words = {
 		plural: { article: 'i', word: 'ganci' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 28), //next
+		date: new Date(2023, 4, 28).getTime(), //next
 	},
 	103: {
 		word: 'fianco',
@@ -1258,7 +1258,7 @@ export const words = {
 		plural: { article: 'i', word: 'fianchi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 4, 28), //next
+		date: new Date(2023, 4, 28).getTime(), //next
 	},
 	104: {
 		word: 'nemmeno',
@@ -1270,7 +1270,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: '',
-		date: new Date(2023, 4, 28), //next
+		date: new Date(2023, 4, 28).getTime(), //next
 	},
 	105: {
 		word: 'oltretutto',
@@ -1282,7 +1282,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: '',
-		date: new Date(2023, 4, 28), //next
+		date: new Date(2023, 4, 28).getTime(), //next
 	},
 	106: {
 		word: 'compie',
@@ -1294,7 +1294,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'compiere',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	107: {
 		word: 'imbarcarsi',
@@ -1306,7 +1306,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'imbarcarsi',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	108: {
 		word: 'veliero',
@@ -1318,7 +1318,7 @@ export const words = {
 		plural: { article: 'i', word: 'velieri' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	109: {
 		word: 'marinai',
@@ -1330,7 +1330,7 @@ export const words = {
 		plural: { article: 'i', word: 'marinai' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	110: {
 		word: 'poppa',
@@ -1342,7 +1342,7 @@ export const words = {
 		plural: { article: 'le', word: 'poppe' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	111: {
 		word: 'cannocchiale',
@@ -1354,7 +1354,7 @@ export const words = {
 		plural: { article: 'i', word: 'cannocchiali' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	112: {
 		word: 'osserva',
@@ -1366,7 +1366,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'osservare',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	113: {
 		word: 'impallidisce',
@@ -1378,7 +1378,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'impallidire',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	114: {
 		word: 'rivolgendosi',
@@ -1390,7 +1390,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'rivolgersi',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	115: {
 		word: 'vele',
@@ -1402,7 +1402,7 @@ export const words = {
 		plural: { article: 'le', word: 'vele' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	116: {
 		word: 'astuto',
@@ -1415,7 +1415,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	117: {
 		word: 'preda',
@@ -1428,7 +1428,7 @@ export const words = {
 		plural: { article: 'le', word: 'prede' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	118: {
 		word: 'divorarla',
@@ -1441,7 +1441,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'divorare',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	119: {
 		word: 'invertire',
@@ -1453,7 +1453,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'invertire',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	120: {
 		word: 'riva',
@@ -1465,7 +1465,7 @@ export const words = {
 		plural: { article: 'le', word: 'rive' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	121: {
 		word: 'sgomento',
@@ -1477,7 +1477,7 @@ export const words = {
 		plural: { article: 'i', word: 'sgomenti' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	122: {
 		word: 'inquietudine',
@@ -1489,7 +1489,7 @@ export const words = {
 		plural: { article: 'gli', word: 'inquietudini' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	123: {
 		word: 'eredita',
@@ -1501,7 +1501,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'ereditare',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	124: {
 		word: 'patrimonio',
@@ -1513,7 +1513,7 @@ export const words = {
 		plural: { article: 'i', word: 'patrimoni' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	125: {
 		word: 'conduce',
@@ -1526,7 +1526,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'conducere',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	126: {
 		word: 'agiata',
@@ -1539,7 +1539,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	127: {
 		word: 'avverte',
@@ -1552,7 +1552,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'avvertire',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	128: {
 		word: 'malgrado',
@@ -1565,7 +1565,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	129: {
 		word: 'anzi',
@@ -1578,7 +1578,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	130: {
 		word: 'volontà',
@@ -1591,7 +1591,7 @@ export const words = {
 		plural: { article: 'le', word: 'volonté' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	131: {
 		word: 'socio',
@@ -1604,7 +1604,7 @@ export const words = {
 		plural: { article: 'i', word: 'soci' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	132: {
 		word: 'piroscafo',
@@ -1617,7 +1617,7 @@ export const words = {
 		plural: { article: 'i', word: 'piroscafi' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	133: {
 		word: 'mercantile',
@@ -1630,7 +1630,7 @@ export const words = {
 		plural: { article: 'i', word: 'mercantili' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	134: {
 		word: 'ritirarsi',
@@ -1643,7 +1643,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'ritirarsi',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	135: {
 		word: 'sprecato',
@@ -1655,7 +1655,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	136: {
 		word: 'ufficiale',
@@ -1668,7 +1668,7 @@ export const words = {
 		plural: { article: 'gli', word: 'ufficiali' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	137: {
 		word: 'opporsi',
@@ -1681,7 +1681,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'opporsi',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	138: {
 		word: 'calare',
@@ -1694,7 +1694,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'calare',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	139: {
 		word: 'arpione',
@@ -1707,7 +1707,7 @@ export const words = {
 		plural: { article: 'gli', word: 'arpioni' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	140: {
 		word: 'affiorare',
@@ -1719,7 +1719,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'affiorare',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	141: {
 		word: 'mostro',
@@ -1731,7 +1731,7 @@ export const words = {
 		plural: { article: 'i', word: 'mostri' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	142: {
 		word: 'supplica',
@@ -1743,7 +1743,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: 'supplicare',
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	143: {
 		word: 'potenza',
@@ -1755,7 +1755,7 @@ export const words = {
 		plural: { article: 'le', word: 'potenze' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	144: {
 		word: 'rovinato',
@@ -1767,7 +1767,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	145: {
 		word: 'scogliera',
@@ -1779,7 +1779,7 @@ export const words = {
 		plural: { article: 'le', word: 'scogliere' },
 		gender: 'F',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	146: {
 		word: 'scheletro',
@@ -1791,7 +1791,7 @@ export const words = {
 		plural: { article: 'i', word: 'scheletri' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	147: {
 		word: 'addirittura',
@@ -1803,7 +1803,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	148: {
 		word: 'vapore',
@@ -1816,7 +1816,7 @@ export const words = {
 		plural: { article: 'i', word: 'vapori' },
 		gender: 'M',
 		infinitive: null,
-		date: new Date(2023, 5, 3), //next
+		date: new Date(2023, 5, 3).getTime(), //next
 	},
 	149: {
 		word: 'vincolante',
@@ -1828,7 +1828,7 @@ export const words = {
 		plural: { article: 'i', word: 'vincolanti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	150: {
 		word: 'consolidato',
@@ -1840,7 +1840,7 @@ export const words = {
 		plural: { article: 'i', word: 'consolidati' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	151: {
 		word: 'coinvolgente',
@@ -1852,7 +1852,7 @@ export const words = {
 		plural: { article: 'i', word: 'coinvolgenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	152: {
 		word: 'fardello',
@@ -1864,7 +1864,7 @@ export const words = {
 		plural: { article: 'i', word: 'fardelli' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	153: {
 		word: 'arrichimento',
@@ -1876,7 +1876,7 @@ export const words = {
 		plural: { article: 'gli', word: 'arrichimenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	154: {
 		word: 'incazzato',
@@ -1888,7 +1888,7 @@ export const words = {
 		plural: { article: 'gli', word: 'incazzati' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	155: {
 		word: 'prova',
@@ -1900,7 +1900,7 @@ export const words = {
 		plural: { article: 'le', word: 'prove' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	156: {
 		word: 'insomma',
@@ -1912,7 +1912,7 @@ export const words = {
 		plural: { article: '', word: 'insomma' },
 		gender: '',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	157: {
 		word: 'intanto',
@@ -1924,7 +1924,7 @@ export const words = {
 		plural: { article: '', word: 'intanto' },
 		gender: '',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	158: {
 		word: 'tramite',
@@ -1936,7 +1936,7 @@ export const words = {
 		plural: { article: 'i', word: 'tramiti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	159: {
 		word: 'affidabile',
@@ -1948,7 +1948,7 @@ export const words = {
 		plural: { article: 'degli', word: 'affidabili' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	160: {
 		word: 'strumento',
@@ -1960,7 +1960,7 @@ export const words = {
 		plural: { article: 'gli', word: 'strumenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	161: {
 		word: 'mercato',
@@ -1972,7 +1972,7 @@ export const words = {
 		plural: { article: 'i', word: 'mercati' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	162: {
 		word: 'fittizi',
@@ -1984,7 +1984,7 @@ export const words = {
 		plural: { article: '', word: 'fittizi' },
 		gender: '',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	163: {
 		word: 'susciti',
@@ -1996,7 +1996,7 @@ export const words = {
 		plural: { article: '', word: 'suscitano' },
 		gender: '',
 		infinitive: 'suscitare',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	164: {
 		word: 'disagio',
@@ -2008,7 +2008,7 @@ export const words = {
 		plural: { article: 'i', word: 'disagi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	165: {
 		word: 'paragoni',
@@ -2020,7 +2020,7 @@ export const words = {
 		plural: { article: 'i', word: 'paragoni' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	166: {
 		word: 'rassegnarmi',
@@ -2032,7 +2032,7 @@ export const words = {
 		plural: { article: '', word: 'rassegnarsi' },
 		gender: '',
 		infinitive: 'rassegnarsi',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	167: {
 		word: 'rassegnazione',
@@ -2044,7 +2044,7 @@ export const words = {
 		plural: { article: 'le', word: 'rassegnazioni' },
 		gender: 'F',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	168: {
 		word: 'nocciolo',
@@ -2056,7 +2056,7 @@ export const words = {
 		plural: { article: 'i', word: 'noccioli' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	169: {
 		word: 'doveri',
@@ -2068,7 +2068,7 @@ export const words = {
 		plural: { article: 'i', word: 'doveri' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	170: {
 		word: 'vizio',
@@ -2080,7 +2080,7 @@ export const words = {
 		plural: { article: 'i', word: 'vizi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	171: {
 		word: 'ossia',
@@ -2092,7 +2092,7 @@ export const words = {
 		plural: { article: '', word: 'ossia' },
 		gender: '',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	172: {
 		word: 'menzionare',
@@ -2104,7 +2104,7 @@ export const words = {
 		plural: { article: '', word: 'menzionare' },
 		gender: '',
 		infinitive: 'menzionare',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	173: {
 		word: 'percorrere',
@@ -2116,7 +2116,7 @@ export const words = {
 		plural: { article: '', word: 'percorrere' },
 		gender: '',
 		infinitive: 'percorrere',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	174: {
 		word: 'blaterando',
@@ -2128,7 +2128,7 @@ export const words = {
 		plural: { article: '', word: 'blaterare' },
 		gender: '',
 		infinitive: 'blaterare',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	175: {
 		word: 'ragionamento',
@@ -2140,7 +2140,7 @@ export const words = {
 		plural: { article: 'i', word: 'ragionamenti' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	176: {
 		word: 'ognoso',
@@ -2152,7 +2152,7 @@ export const words = {
 		plural: { article: 'degli', word: 'ognosi' },
 		gender: 'M',
 		infinitive: '',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	177: {
 		word: 'ulteriormente',
@@ -2164,7 +2164,7 @@ export const words = {
 		plural: null,
 		gender: null,
 		infinitive: null,
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	178: {
 		word: 'anticipo',
@@ -2175,7 +2175,7 @@ export const words = {
 		singular: { article: 'un', word: 'anticipo' },
 		plural: { article: 'degli', word: 'anticipi' },
 		gender: 'M',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	179: {
 		word: 'si pentì',
@@ -2184,7 +2184,7 @@ export const words = {
 		source: 'Freestyle',
 		type: 'verbo',
 		infinitive: 'pentirsi',
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	180: {
 		word: 'amaramente',
@@ -2195,6 +2195,6 @@ export const words = {
 		singular: null,
 		plural: null,
 		gender: null,
-		date: new Date(2023, 5, 15), //next
+		date: new Date(2023, 5, 15).getTime(), //next
 	},
 };

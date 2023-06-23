@@ -108,4 +108,17 @@ const returnFilterIDBasedOn = (elementsID) => {
 	return elementsID.split('-')[elementsID.split('-').length - 1];
 };
 
-export { render, randomise, hideAllElements, returnFilterIDBasedOn };
+const formatDate = (miliseconds) => {
+	miliseconds = +miliseconds;
+	if (typeof miliseconds === 'number') {
+		const date = new Date(miliseconds);
+		const day = String(date.getDate()).padStart(2, '0');
+		const month = String(date.getMonth() + 1).padStart(2, '0');
+		const year = date.getFullYear();
+		return `${day}.${month}.${year}`;
+	} else {
+		return miliseconds;
+	}
+};
+
+export { render, randomise, hideAllElements, returnFilterIDBasedOn, formatDate };

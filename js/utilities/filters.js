@@ -22,6 +22,11 @@ let filters = {
 		isOpen: false,
 	},
 };
+let filterOptions = {
+	lectures: [DEFAULT_FILTER],
+	dates: [DEFAULT_FILTER],
+	wordTypes: [DEFAULT_FILTER],
+};
 let chosenFilters = {
 	lectures: null,
 	dates: null,
@@ -60,6 +65,7 @@ const returnFiltersDOM = () => {
 };
 
 const formatDate = (miliseconds) => {
+	miliseconds = +miliseconds;
 	if (typeof miliseconds === 'number') {
 		const date = new Date(miliseconds);
 		const day = String(date.getDate()).padStart(2, '0');
@@ -74,7 +80,7 @@ const formatDate = (miliseconds) => {
 const returnFilterOptions = (filterType) => {
 	let options = [DEFAULT_FILTER];
 	for (let number in words) {
-		if (filterType === IDs.FILTERS.DATES) options.push(formatDate(words[number].date.getTime()));
+		if (filterType === IDs.FILTERS.DATES) options.push(formatDate(words[number].date));
 		if (filterType === IDs.FILTERS.LECTURES) options.push(words[number].source);
 		if (filterType === IDs.FILTERS.WORD_TYPE) options.push(words[number].type);
 	}
@@ -104,7 +110,7 @@ const insertFilters = (modifier) => {
 };
 
 const insertFiltersOptions = (modifier) => {
-	let filterID = modifier.filter.id.split('-')[modifier.filter.id.split('-').length - 1];
+	let filterID = returnFilterIDBasedOn(modifier.filter.id);
 	for (let id in IDs.FILTERS) {
 		if (IDs.FILTERS[id] === filterID) {
 			let filterTextDOM;
@@ -133,27 +139,29 @@ const returnOptionTypeBasedOn = (filterType) => {
 const insertFiltersOptionsBasedOnChosenFilter = (modifier) => {
 	let filtersCopy = _.cloneDeep(filters);
 	let optionType = returnOptionTypeBasedOn(modifier.type);
-	let options = {
-		lectures: [DEFAULT_FILTER],
-		dates: [DEFAULT_FILTER],
-		wordTypes: [DEFAULT_FILTER],
-	};
+	// if(chosenFilters[modif])filterOptions.dates = [DEFAULT_FILTER];
+	for (let filterType in chosenFilters) {
+		if (chosenFilters[filterType] === null || chosenFilters[filterType] === DEFAULT_FILTER) {
+			filterOptions[filterType] = [DEFAULT_FILTER];
+		}
+	}
+
 	for (let number in words) {
 		let word = words[number];
 		let selectedOption = modifier.elementClicked.innerText;
-		if (word[optionType] === selectedOption) {
-			for (let option in options) {
+		if (word[optionType] == selectedOption) {
+			for (let option in filterOptions) {
 				// if (modifier.type !== option) {
-				if (option === IDs.FILTERS.DATES) options[option].push(formatDate(word.date.getTime()));
-				if (option === IDs.FILTERS.LECTURES) options[option].push(word.source);
-				if (option === IDs.FILTERS.WORD_TYPE) options[option].push(word.type);
+				if (option === IDs.FILTERS.DATES) filterOptions[option].push(formatDate(word.date));
+				if (option === IDs.FILTERS.LECTURES) filterOptions[option].push(word.source);
+				if (option === IDs.FILTERS.WORD_TYPE) filterOptions[option].push(word.type);
 				// }
 			}
 		}
 	}
-	for (let option in options) {
-		options[option] = [...new Set(options[option])];
-		filtersCopy[option].array = options[option].length > 1 ? options[option] : filters[option].array;
+	for (let option in filterOptions) {
+		filterOptions[option] = [...new Set(filterOptions[option])];
+		filtersCopy[option].array = filterOptions[option].length > 1 ? filterOptions[option] : filters[option].array;
 	}
 
 	modifier.htmlElements.filterWrappers.forEach((filter) => {
