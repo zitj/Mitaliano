@@ -7,7 +7,14 @@ import { setDefaultFilter } from './filters.js';
 const randomiseWord = () => {
 	let randomWords = [];
 	setDefaultFilter();
-	randomise(WORDS, listOfWords, randomWords, true, DEFAULT_FILTER);
+	let sectionModifier = {
+		type: WORDS,
+		list: listOfWords,
+		randomElements: randomWords,
+		sectionSwitched: false,
+		filterName: DEFAULT_FILTER,
+	};
+	randomise(sectionModifier);
 	let card = document.querySelector('.card');
 	card.classList.add('intro');
 	card.addEventListener('animationend', (event) => {

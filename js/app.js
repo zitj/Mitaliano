@@ -3,7 +3,7 @@ import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
 import { randomise, returnFilterIDBasedOn } from './services/shared-service.js';
 import {
-	chooseFilter,
+	chosenFilters,
 	toggleFilterList,
 	isFilterClicked,
 	filterName,
@@ -13,6 +13,7 @@ import {
 	returnFiltersDOM,
 	chooseFilterOption,
 	filters,
+	applyFilters,
 } from './utilities/filters.js';
 import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
 import {
@@ -28,6 +29,26 @@ import {
 
 let randomWords = [];
 let randomVerbs = [];
+
+let sectionModifier = {
+	type: WORDS,
+	list: listOfWords,
+	randomElements: randomWords,
+	sectionSwitched: false,
+	filterName: filterName,
+	totalNumberOfElements: null,
+	wantedNumberToShow: null,
+};
+
+let filterModifier = {
+	type: null,
+	htmlElements: {
+		filterOptionsLists: null,
+		filterTexts: null,
+	},
+	filter: null,
+	filters: filters,
+};
 
 wantedVerbsInput.addEventListener(
 	'keyup',
@@ -54,9 +75,10 @@ const nextWord = (elementClicked) => {
 	}
 	let card = elementClicked.parentElement;
 	card.classList.add('outro');
+
 	card.addEventListener('animationend', (event) => {
 		card.classList.remove('outro');
-		randomise(WORDS, listOfWords, randomWords, false, filterName);
+		randomise(sectionModifier);
 	});
 };
 
@@ -64,25 +86,22 @@ const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
 	let filterType = element.target.filterType;
-	let modifier = {
-		type: filterType,
-		htmlElements: {
-			filterOptionsLists: filterOptionsLists,
-			filterTexts: filterTexts,
-			filterWrappers: filterWrappers,
-		},
-		elementClicked: elementClicked,
-	};
+
+	filterModifier.type = filterType;
+	filterModifier.htmlElements.filterWrappers = filterWrappers;
+	filterModifier.elementClicked = elementClicked;
+	filterModifier.filtersToApply = chosenFilters;
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
 	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu(filterOptionsLists);
+	if (elementClicked.id === IDs.FILTER_APPLY_BUTTON) applyFilters(filterModifier);
 
 	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
 	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, navigationLinks, sections);
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
 	if (className == CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
-		chooseFilterOption(modifier);
+		chooseFilterOption(filterModifier);
 	}
 };
 
@@ -90,29 +109,23 @@ document.addEventListener('click', (event) => {
 	clickLogic(event);
 });
 
-closeFilterButton.addEventListener('click', (event) => closeFilterMenu());
+closeFilterButton.addEventListener('click', (event) => closeFilterMenu(filterModifier.htmlElements.filterOptionsLists));
 
 let filterWrappers = returnFiltersDOM();
 let filterOptionsLists = document.querySelectorAll('.filter-options-list');
 let filterTexts = document.querySelectorAll('.filter-text');
 
 filterWrappers.forEach((filter) => {
-	let modifier = {
-		type: null,
-		htmlElements: {
-			filterOptionsLists: filterOptionsLists,
-			filterTexts: filterTexts,
-		},
-		filter: filter,
-		filters: filters,
+	filterModifier.filter = filter;
+	filterModifier.htmlElements = {
+		filterOptionsLists: filterOptionsLists,
+		filterTexts: filterTexts,
 	};
-
-	insertFiltersOptions(modifier);
-
+	insertFiltersOptions(filterModifier);
 	filter.addEventListener('click', (event) => {
 		let elementsID = event.target.id;
 		let filterName = returnFilterIDBasedOn(elementsID);
-		modifier.type = filterName;
-		toggleFilterList(modifier);
+		filterModifier.type = filterName;
+		toggleFilterList(filterModifier);
 	});
 });

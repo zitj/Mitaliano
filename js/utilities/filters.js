@@ -36,6 +36,7 @@ let chosenFilters = {
 const createFilterApplyButton = () => {
 	let button = document.createElement('button');
 	button.innerText = 'Applica filtri';
+	button.id = 'filter-apply-button';
 	filtersMenuContent.appendChild(button);
 };
 
@@ -331,7 +332,13 @@ const closeFilterMenu = (filterOptionsLists) => {
 	hideAllElements(filterOptionsLists);
 };
 
+const applyFilters = (modifier) => {
+	console.log(modifier);
+	closeFilterMenu(modifier.htmlElements.filterOptionsLists);
+};
+
 export {
+	applyFilters,
 	insertFilters,
 	chooseFilter,
 	setDefaultFilter,
@@ -347,4 +354,5 @@ export {
 	isFilterClicked,
 	filterName,
 	filters,
+	chosenFilters,
 };

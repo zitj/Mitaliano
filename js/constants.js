@@ -15,6 +15,7 @@ const CLASSES = {
 };
 const IDs = {
 	NEXT_BUTTON: 'next-btn',
+	FILTER_APPLY_BUTTON: 'filter-apply-button',
 	OVERLAY: 'overlay',
 	FILTERS: {
 		LECTURES: 'lectures',

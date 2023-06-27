@@ -89,18 +89,11 @@ const returnArrayOfRandomNumbers = (sectionModifier, filterModifier, arrayOfRand
 	return arrayOfRandomNumbers;
 };
 
-const randomise = (type, list, randomElements, sectionSwitched, filterName) => {
-	let totalNumberOfElements = type === VERBS ? Object.keys(verbs).length : Object.keys(words).length;
-	let wantedNumberToShow = type === VERBS ? +verbsInput.value : 1;
-	let sectionModifier = {
-		type,
-		totalNumberOfElements,
-		wantedNumberToShow,
-		list,
-		randomElements,
-		sectionSwitched,
-		filterName,
-	};
+const randomise = (sectionModifier) => {
+	sectionModifier.totalNumberOfElements =
+		sectionModifier.type === VERBS ? Object.keys(verbs).length : Object.keys(words).length;
+	sectionModifier.wantedNumberToShow = sectionModifier.type === VERBS ? +verbsInput.value : 1;
+
 	showRandomisedElements(sectionModifier);
 };
 
