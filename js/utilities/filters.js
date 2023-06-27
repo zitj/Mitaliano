@@ -32,7 +32,6 @@ let chosenFilters = {
 	dates: null,
 	wordTypes: null,
 };
-let previousFilterName = '';
 
 const createFilterApplyButton = () => {
 	let button = document.createElement('button');
@@ -136,43 +135,83 @@ const returnOptionTypeBasedOn = (filterType) => {
 	if (filterType === IDs.FILTERS.WORD_TYPE) return 'type';
 };
 
-const insertFiltersOptionsBasedOnChosenFilter = (modifier) => {
-	let filtersCopy = _.cloneDeep(filters);
-	let optionType = returnOptionTypeBasedOn(modifier.type);
-	// if(chosenFilters[modif])filterOptions.dates = [DEFAULT_FILTER];
+const allFiltersAreChosenExceptLast = () => {
+	let result = true;
+	for (let i = 0; i < Object.keys(chosenFilters).length - 1; i++) {
+		if (
+			chosenFilters[Object.keys(chosenFilters)[i]] === null &&
+			chosenFilters[Object.keys(chosenFilters)[i]] === DEFAULT_FILTER
+		) {
+			result = false;
+		}
+	}
+	return result;
+};
+
+const resetFilterFields = (modifier) => {
 	for (let filterType in chosenFilters) {
+		if (modifier.type === IDs.FILTERS.LECTURES) {
+			if (modifier.type !== filterType) {
+				chosenFilters[filterType] = DEFAULT_FILTER;
+			}
+		}
+		if (modifier.type === IDs.FILTERS.DATES) {
+			chosenFilters.wordTypes = DEFAULT_FILTER;
+		}
 		if (chosenFilters[filterType] === null || chosenFilters[filterType] === DEFAULT_FILTER) {
 			filterOptions[filterType] = [DEFAULT_FILTER];
 		}
 	}
+};
 
-	for (let number in words) {
-		let word = words[number];
-		let selectedOption = modifier.elementClicked.innerText;
-		if (word[optionType] == selectedOption) {
-			for (let option in filterOptions) {
-				// if (modifier.type !== option) {
-				if (option === IDs.FILTERS.DATES) filterOptions[option].push(formatDate(word.date));
-				if (option === IDs.FILTERS.LECTURES) filterOptions[option].push(word.source);
-				if (option === IDs.FILTERS.WORD_TYPE) filterOptions[option].push(word.type);
-				// }
+const addOption = (option, word) => {
+	if (option === IDs.FILTERS.DATES) {
+		if (
+			word.source === chosenFilters.lectures ||
+			(word.source === chosenFilters.lectures && word.type === chosenFilters.type)
+		) {
+			filterOptions[option].push(word.date);
+		}
+	}
+	if (option === IDs.FILTERS.WORD_TYPE) {
+		if (allFiltersAreChosenExceptLast()) {
+			if (
+				word.source === chosenFilters.lectures ||
+				(word.source === chosenFilters.lectures && word.date === chosenFilters.dates)
+			) {
+				filterOptions[option].push(word.type);
 			}
 		}
 	}
+};
+
+const addOptionsToFilters = (modifier, optionType) => {
+	for (let number in words) {
+		let word = words[number];
+		let selectedOption = modifier.elementClicked.innerText;
+		if (typeof word.date === 'number') word.date = formatDate(word.date);
+		if (word[optionType] == selectedOption) {
+			for (let option in filterOptions) {
+				addOption(option, word);
+			}
+		}
+	}
+};
+
+const insertFiltersOptionsBasedOnChosenFilter = (modifier) => {
+	let filtersCopy = _.cloneDeep(filters);
+	let optionType = returnOptionTypeBasedOn(modifier.type);
+	resetFilterFields(modifier);
+	addOptionsToFilters(modifier, optionType);
 	for (let option in filterOptions) {
 		filterOptions[option] = [...new Set(filterOptions[option])];
 		filtersCopy[option].array = filterOptions[option].length > 1 ? filterOptions[option] : filters[option].array;
 	}
-
 	modifier.htmlElements.filterWrappers.forEach((filter) => {
 		modifier.filter = filter;
 		modifier.filters = filtersCopy;
 		insertFiltersOptions(modifier);
 	});
-	// console.log('Modifier', modifier);
-	// console.log('Chosen filters', chosenFilters);
-	// console.log('Filters', filters);
-	console.log('FiltersCopy', filtersCopy);
 };
 
 const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, randomWords) => {
@@ -275,7 +314,6 @@ const chooseFilterOption = (modifier) => {
 	toggleFilterList(modifier);
 	insertFiltersOptionsBasedOnChosenFilter(modifier);
 	changeInnerTextForFilter(modifier);
-	resetAllFiltersExceptTheLastOne(modifier);
 };
 
 const showFilterMenu = () => {
