@@ -1891,8 +1891,8 @@ export const words = {
 		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	155: {
-		word: 'prova',
-		translation: 'dokaz',
+		word: 'prove',
+		translation: 'dokazi',
 		context: 'Hai portato le prove del tuo alibi?',
 		source: 'Freestyle',
 		type: 'sostantivo',
@@ -1903,7 +1903,7 @@ export const words = {
 		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	156: {
-		word: 'insomma',
+		word: 'Insomma',
 		translation: 'u suštini, ukratko',
 		context: 'Insomma, dobbiamo prendere una decisione al più presto.',
 		source: 'Freestyle',
@@ -1915,7 +1915,7 @@ export const words = {
 		date: new Date(2023, 5, 15).getTime(), //next
 	},
 	157: {
-		word: 'intanto',
+		word: 'Intanto',
 		translation: 'u međuvremenu',
 		context: 'Intanto, possiamo iniziare a preparare la cena.',
 		source: 'Freestyle',
