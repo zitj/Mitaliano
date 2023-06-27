@@ -89,12 +89,12 @@ const returnArrayOfRandomNumbers = (sectionModifier, filterModifier, arrayOfRand
 	return arrayOfRandomNumbers;
 };
 
-const randomise = (sectionModifier) => {
-	sectionModifier.totalNumberOfElements =
-		sectionModifier.type === VERBS ? Object.keys(verbs).length : Object.keys(words).length;
-	sectionModifier.wantedNumberToShow = sectionModifier.type === VERBS ? +verbsInput.value : 1;
+const randomise = (modifiers) => {
+	modifiers.sectionModifier.totalNumberOfElements =
+		modifiers.sectionModifier.type === VERBS ? Object.keys(verbs).length : Object.keys(words).length;
+	modifiers.sectionModifier.wantedNumberToShow = modifiers.sectionModifier.type === VERBS ? +verbsInput.value : 1;
 
-	showRandomisedElements(sectionModifier);
+	showRandomisedElements(modifiers.sectionModifier);
 };
 
 const returnFilterIDBasedOn = (elementsID) => {

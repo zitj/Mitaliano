@@ -4,17 +4,11 @@ import { DEFAULT_FILTER, WORDS, VERBS, CLASSES } from '../constants.js';
 import { verbSection, wordSection, listOfWords, wrapper } from './html_elements.js';
 import { setDefaultFilter } from './filters.js';
 
-const randomiseWord = () => {
+const randomiseWord = (modifiers) => {
 	let randomWords = [];
 	setDefaultFilter();
-	let sectionModifier = {
-		type: WORDS,
-		list: listOfWords,
-		randomElements: randomWords,
-		sectionSwitched: false,
-		filterName: DEFAULT_FILTER,
-	};
-	randomise(sectionModifier);
+	modifiers.sectionModifier.filterName = DEFAULT_FILTER;
+	randomise(modifiers);
 	let card = document.querySelector('.card');
 	card.classList.add('intro');
 	card.addEventListener('animationend', (event) => {
@@ -35,13 +29,13 @@ const showSection = (type) => {
 	}
 };
 
-const switchSections = (section, ...elements) => {
+const switchSections = (section, modifiers, ...elements) => {
 	elements.forEach((element) => resetClassListFor(element));
 	section.classList.add('visited');
 
 	if (section.id === CLASSES.WORDS_SECTION_LINK) {
 		showSection(WORDS);
-		randomiseWord();
+		randomiseWord(modifiers);
 	}
 	if (section.id === CLASSES.VERBS_SECTION_LINK) {
 		showSection(VERBS);

@@ -49,6 +49,10 @@ let filterModifier = {
 	filter: null,
 	filters: filters,
 };
+let modifiers = {
+	filterModifier,
+	sectionModifier,
+};
 
 wantedVerbsInput.addEventListener(
 	'keyup',
@@ -58,7 +62,10 @@ wantedVerbsInput.addEventListener(
 			hideList(listOfVerbs);
 			return;
 		}
-		randomise(VERBS, listOfVerbs, randomVerbs);
+		sectionModifier.type = VERBS;
+		sectionModifier.list = listOfVerbs;
+		sectionModifier.randomElements = randomVerbs;
+		randomise(modifiers);
 	}, 500)
 );
 
@@ -78,7 +85,7 @@ const nextWord = (elementClicked) => {
 
 	card.addEventListener('animationend', (event) => {
 		card.classList.remove('outro');
-		randomise(sectionModifier);
+		randomise(modifiers);
 	});
 };
 
@@ -91,15 +98,19 @@ const clickLogic = (element) => {
 	filterModifier.htmlElements.filterWrappers = filterWrappers;
 	filterModifier.elementClicked = elementClicked;
 	filterModifier.filtersToApply = chosenFilters;
+	let modifiers = {
+		filterModifier,
+		sectionModifier,
+	};
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
 	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu(filterOptionsLists);
 	if (elementClicked.id === IDs.FILTER_APPLY_BUTTON) applyFilters(filterModifier);
 
 	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
-	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, navigationLinks, sections);
+	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, modifiers, navigationLinks, sections);
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
-	if (className == CLASSES.FILTER_ICON) showFilterMenu();
+	if (className === CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) {
 		chooseFilterOption(filterModifier);
 	}
