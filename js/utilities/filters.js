@@ -5,6 +5,8 @@ import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
 let filterName = DEFAULT_FILTER;
+let filtersAlreadyApplied = {};
+let testingmadafaking = Object.values(words);
 let filters = {
 	lectures: {
 		array: [],
@@ -135,6 +137,11 @@ const returnOptionTypeBasedOn = (filterType) => {
 	if (filterType === IDs.FILTERS.DATES) return 'date';
 	if (filterType === IDs.FILTERS.WORD_TYPE) return 'type';
 };
+const returnFilterTypeBasedOn = (optionType) => {
+	if (optionType === 'source') return IDs.FILTERS.LECTURES;
+	if (optionType === 'date') return IDs.FILTERS.DATES;
+	if (optionType === 'type') return IDs.FILTERS.WORD_TYPE;
+};
 
 const allFiltersAreChosenExceptLast = () => {
 	let result = true;
@@ -224,6 +231,38 @@ const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, ra
 };
 
 const filteringWords = (sectionModifier, words, filterModifier) => {
+	// developing new logic for filtering words
+	let test = [];
+	let allFiltersApplied = true;
+	let filtersApplied = {};
+
+	for (let filter in filterModifier.filtersToApply) {
+		let bind = returnOptionTypeBasedOn(filter);
+		if (
+			filterModifier.filtersToApply[filter] === null ||
+			filterModifier.filtersToApply[filter] === DEFAULT_FILTER
+		) {
+			allFiltersApplied = false;
+			delete filtersAlreadyApplied[bind];
+		} else {
+			filtersApplied[bind] = filterModifier.filtersToApply[filter];
+		}
+	}
+	testingmadafaking = Object.values(words);
+
+	for (let key in filtersApplied) {
+		if (filtersAlreadyApplied[key] !== undefined && filtersAlreadyApplied[key] !== filtersApplied[key]) {
+			delete filtersAlreadyApplied[key];
+		}
+		if (filtersAlreadyApplied[key] === undefined) {
+			filtersAlreadyApplied[key] = filtersApplied[key];
+			testingmadafaking = testingmadafaking.filter((word) => word[key] === filtersApplied[key]);
+		}
+	}
+	console.log(testingmadafaking);
+	console.log('Filters already applied', filtersAlreadyApplied);
+	//ENDS developing new logic for filtering words ENDS
+
 	if (sectionModifier.filterName !== filterModifier.previousFilter) {
 		filterModifier.passedWords = {};
 		if (sectionModifier.filterName !== DEFAULT_FILTER) {
@@ -334,7 +373,9 @@ const closeFilterMenu = (filterOptionsLists) => {
 
 const applyFilters = (modifier) => {
 	console.log(modifier);
-	closeFilterMenu(modifier.htmlElements.filterOptionsLists);
+
+	closeFilterMenu(modifier.filterModifier.htmlElements.filterOptionsLists);
+	randomise(modifier);
 };
 
 export {

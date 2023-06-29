@@ -105,7 +105,7 @@ const clickLogic = (element) => {
 
 	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
 	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu(filterOptionsLists);
-	if (elementClicked.id === IDs.FILTER_APPLY_BUTTON) applyFilters(filterModifier);
+	if (elementClicked.id === IDs.FILTER_APPLY_BUTTON) applyFilters(modifiers);
 
 	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
 	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, modifiers, navigationLinks, sections);

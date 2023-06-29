@@ -1,4 +1,4 @@
-1. Create logic for filtering filters based on a filter option :D
+1. Modify logic for /showRandomisedElements -> filterModifier\ in filters.js
 2. Create game in words section like matching words in duolingo
 3. Reorganise certain files from utilities to services
 4. Install webpack, lodash etc. (learn how to use webpack)
