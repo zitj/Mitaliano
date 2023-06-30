@@ -243,17 +243,15 @@ const filteringWords = (sectionModifier, words, filterModifier) => {
 			filterModifier.filtersToApply[filter] === DEFAULT_FILTER
 		) {
 			allFiltersApplied = false;
-			delete filtersAlreadyApplied[bind];
 		} else {
 			filtersApplied[bind] = filterModifier.filtersToApply[filter];
 		}
+		delete filtersAlreadyApplied[bind];
 	}
-	testingmadafaking = Object.values(words);
-
+	if (Object.keys(filtersAlreadyApplied).length === 0) {
+		testingmadafaking = Object.values(words);
+	}
 	for (let key in filtersApplied) {
-		if (filtersAlreadyApplied[key] !== undefined && filtersAlreadyApplied[key] !== filtersApplied[key]) {
-			delete filtersAlreadyApplied[key];
-		}
 		if (filtersAlreadyApplied[key] === undefined) {
 			filtersAlreadyApplied[key] = filtersApplied[key];
 			testingmadafaking = testingmadafaking.filter((word) => word[key] === filtersApplied[key]);
