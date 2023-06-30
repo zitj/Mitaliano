@@ -232,25 +232,21 @@ const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, ra
 
 const filteringWords = (sectionModifier, words, filterModifier) => {
 	// developing new logic for filtering words
-	let test = [];
-	let allFiltersApplied = true;
 	let filtersApplied = {};
 
 	for (let filter in filterModifier.filtersToApply) {
 		let bind = returnOptionTypeBasedOn(filter);
 		if (
-			filterModifier.filtersToApply[filter] === null ||
-			filterModifier.filtersToApply[filter] === DEFAULT_FILTER
+			filterModifier.filtersToApply[filter] !== null &&
+			filterModifier.filtersToApply[filter] !== DEFAULT_FILTER
 		) {
-			allFiltersApplied = false;
-		} else {
 			filtersApplied[bind] = filterModifier.filtersToApply[filter];
 		}
 		delete filtersAlreadyApplied[bind];
 	}
-	if (Object.keys(filtersAlreadyApplied).length === 0) {
-		testingmadafaking = Object.values(words);
-	}
+
+	if (Object.keys(filtersAlreadyApplied).length === 0) testingmadafaking = Object.values(words);
+
 	for (let key in filtersApplied) {
 		if (filtersAlreadyApplied[key] === undefined) {
 			filtersAlreadyApplied[key] = filtersApplied[key];
