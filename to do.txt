@@ -1,4 +1,10 @@
 1. Modify logic for /showRandomisedElements -> filterModifier\ in filters.js
+    [a] -- BUG (done)-- When there is only one word the card is being lost after cliking on next button
+    [b] -- REFACTOR -- Refactor code after finishing logic for filters
+    [c] -- STYLE -- Add animation for filter menu
+    [d] -- BUG [CALL ISSUE] -- Unnecessary call every time when clicked on NEXT button it fires the call for filter.png
+
+
 2. Create game in words section like matching words in duolingo
 3. Reorganise certain files from utilities to services
 4. Install webpack, lodash etc. (learn how to use webpack)

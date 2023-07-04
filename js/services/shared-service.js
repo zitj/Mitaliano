@@ -15,9 +15,9 @@ let filterModifier = {
 	wordsObj: {},
 };
 
-const render = (type, list, randomElements) => {
-	let content = returnContent(randomElements, type);
-	showList(list, content);
+const render = (modifiers) => {
+	let content = returnContent(modifiers);
+	showList(modifiers.sectionModifier.list, content);
 };
 
 const returnRandomElements = (arrayOfRandomNumbers, type, source) => {
@@ -50,11 +50,10 @@ const showRandomisedElements = (modifiers) => {
 	modifiers.sectionModifier.randomElements = [];
 	filterModifier.filtersToApply = modifiers.filterModifier.filtersToApply;
 	filterModifier.newFiltersApplied = modifiers.filterModifier.newFiltersApplied;
-	console.log(modifiers.filterModifier.filtersToApply);
 
 	if (modifiers.sectionModifier.sectionSwitched) filterModifier.passedWords = {};
 	if (modifiers.sectionModifier.type === VERBS) {
-		if (sectionModifier.wantedNumberToShow > modifiers.sectionModifier.totalNumberOfElements) {
+		if (modifiers.sectionModifier.wantedNumberToShow > modifiers.sectionModifier.totalNumberOfElements) {
 			showHeadingError(heading, modifiers.sectionModifier.totalNumberOfElements, modifiers.sectionModifier.list);
 			return;
 		}
@@ -78,7 +77,8 @@ const showRandomisedElements = (modifiers) => {
 		filterModifier
 	);
 	setCardCounter(filterModifier, cardCounter);
-	render(modifiers.sectionModifier.type, modifiers.sectionModifier.list, modifiers.sectionModifier.randomElements);
+	// render(modifiers.sectionModifier.type, modifiers.sectionModifier.list, modifiers.sectionModifier.randomElements);
+	render(modifiers);
 };
 
 const returnArrayOfRandomNumbers = (sectionModifier, filterModifier, arrayOfRandomNumbers, arrayWithDuplicates) => {
