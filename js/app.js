@@ -98,6 +98,8 @@ const clickLogic = (element) => {
 	filterModifier.htmlElements.filterWrappers = filterWrappers;
 	filterModifier.elementClicked = elementClicked;
 	filterModifier.filtersToApply = chosenFilters;
+	filterModifier.newFiltersApplied = false;
+
 	let modifiers = {
 		filterModifier,
 		sectionModifier,

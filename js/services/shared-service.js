@@ -49,6 +49,7 @@ const showRandomisedElements = (modifiers) => {
 	let arrayOfRandomNumbers = [];
 	modifiers.sectionModifier.randomElements = [];
 	filterModifier.filtersToApply = modifiers.filterModifier.filtersToApply;
+	filterModifier.newFiltersApplied = modifiers.filterModifier.newFiltersApplied;
 	console.log(modifiers.filterModifier.filtersToApply);
 
 	if (modifiers.sectionModifier.sectionSwitched) filterModifier.passedWords = {};
@@ -59,8 +60,9 @@ const showRandomisedElements = (modifiers) => {
 		}
 		removeHeadingError(heading);
 	}
-	if (modifiers.sectionModifier.type === WORDS)
+	if (modifiers.sectionModifier.type === WORDS) {
 		filterModifier = filteringWords(modifiers.sectionModifier, words, filterModifier);
+	}
 
 	while (arrayOfRandomNumbers.length < modifiers.sectionModifier.wantedNumberToShow) {
 		arrayOfRandomNumbers = returnArrayOfRandomNumbers(

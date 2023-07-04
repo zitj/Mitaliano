@@ -1205,7 +1205,7 @@ export const words = {
 		translation: 'ipak',
 		context: 'Avevo studiato molto, eppure ho fallito il test.',
 		source: 'Freestyle',
-		type: 'conjunction',
+		type: 'avverbio',
 		singular: null,
 		plural: null,
 		gender: null,

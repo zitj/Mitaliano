@@ -257,24 +257,33 @@ const filteringWords = (sectionModifier, words, filterModifier) => {
 	console.log('Filters already applied', filtersAlreadyApplied);
 	//ENDS developing new logic for filtering words ENDS
 
-	if (sectionModifier.filterName !== filterModifier.previousFilter) {
-		filterModifier.passedWords = {};
-		if (sectionModifier.filterName !== DEFAULT_FILTER) {
-			filterModifier.wordsArray = [];
-			filterModifier.wordsObj = {};
-			for (let wordNum in words) {
-				let word = words[wordNum];
-				if (word.source === sectionModifier.filterName) filterModifier.wordsArray.push(word);
-			}
-			for (let i = 0; i < filterModifier.wordsArray.length; i++) {
-				filterModifier.wordsObj[i] = filterModifier.wordsArray[i];
-			}
-			sectionModifier.totalNumberOfElements = filterModifier.wordsArray.length;
-		} else {
-			filterModifier.wordsObj = words;
-		}
-		filterModifier.previousFilter = sectionModifier.filterName;
+	// if (sectionModifier.filterName !== filterModifier.previousFilter) {
+	// 	filterModifier.passedWords = {};
+	// 	if (sectionModifier.filterName !== DEFAULT_FILTER) {
+	// 		filterModifier.wordsArray = [];
+	// 		filterModifier.wordsObj = {};
+	// 		for (let wordNum in words) {
+	// 			let word = words[wordNum];
+	// 			if (word.source === sectionModifier.filterName) filterModifier.wordsArray.push(word);
+	// 		}
+	// 		for (let i = 0; i < filterModifier.wordsArray.length; i++) {
+	// 			filterModifier.wordsObj[i] = filterModifier.wordsArray[i];
+	// 		}
+	// 		sectionModifier.totalNumberOfElements = filterModifier.wordsArray.length;
+	// 	} else {
+	// 		filterModifier.wordsObj = words;
+	// 	}
+	// 	filterModifier.previousFilter = sectionModifier.filterName;
+	// }
+	if (filterModifier.newFiltersApplied) filterModifier.passedWords = {};
+	filterModifier.wordsArray = [];
+	filterModifier.wordsObj = {};
+	filterModifier.wordsArray = testingmadafaking;
+	for (let i = 0; i < filterModifier.wordsArray.length; i++) {
+		filterModifier.wordsObj[i] = filterModifier.wordsArray[i];
 	}
+	sectionModifier.totalNumberOfElements = filterModifier.wordsArray.length;
+
 	return filterModifier;
 };
 
@@ -367,7 +376,7 @@ const closeFilterMenu = (filterOptionsLists) => {
 
 const applyFilters = (modifier) => {
 	console.log(modifier);
-
+	modifier.filterModifier.newFiltersApplied = true;
 	closeFilterMenu(modifier.filterModifier.htmlElements.filterOptionsLists);
 	randomise(modifier);
 };
