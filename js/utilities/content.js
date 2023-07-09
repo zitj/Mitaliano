@@ -3,7 +3,7 @@ import { VERBS, WORDS, showTranslationBtnContent } from '../constants.js';
 const createContent = (modifiers, element) => {
 	let content = ``;
 	let type = modifiers.sectionModifier.type;
-	let totalNumberOfElements = modifiers.sectionModifier.totalNumberOfElements;
+	let totalNumberOfElements = Object.keys(modifiers.filterModifier.wordsObj).length;
 
 	if (type === VERBS) {
 		content = `

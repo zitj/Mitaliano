@@ -62,9 +62,9 @@ wantedVerbsInput.addEventListener(
 			hideList(listOfVerbs);
 			return;
 		}
-		sectionModifier.type = VERBS;
-		sectionModifier.list = listOfVerbs;
-		sectionModifier.randomElements = randomVerbs;
+		modifiers.sectionModifier.type = VERBS;
+		modifiers.sectionModifier.list = listOfVerbs;
+		modifiers.sectionModifier.randomElements = randomVerbs;
 		randomise(modifiers);
 	}, 500)
 );
@@ -76,15 +76,14 @@ const showTranslation = (button) => {
 };
 
 const nextWord = (elementClicked) => {
-	if (isFilterClicked) {
-		filterOptions.classList.add('hide');
-		isFilterClicked = !isFilterClicked;
-	}
 	let card = elementClicked.parentElement;
 	card.classList.add('outro');
 
 	card.addEventListener('animationend', (event) => {
 		card.classList.remove('outro');
+		modifiers.sectionModifier.type = WORDS;
+		modifiers.sectionModifier.list = listOfWords;
+		modifiers.sectionModifier.randomElements = randomWords;
 		randomise(modifiers);
 	});
 };

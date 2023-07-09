@@ -6,7 +6,7 @@ import { words } from '../../data/words.js';
 let isFilterClicked = false;
 let filterName = DEFAULT_FILTER;
 let filtersAlreadyApplied = {};
-let testingmadafaking = Object.values(words);
+let filteredWordsArray = Object.values(words);
 let filters = {
 	lectures: {
 		array: [],
@@ -230,7 +230,7 @@ const chooseFilter = (elementClicked, filterOptions, textFilter, listOfWords, ra
 	randomise('words', listOfWords, randomWords, false, filterName);
 };
 
-const filteringWords = (sectionModifier, words, filterModifier) => {
+const filteringWords = (filterModifier, words) => {
 	let filtersApplied = {};
 
 	for (let filter in filterModifier.filtersToApply) {
@@ -244,23 +244,23 @@ const filteringWords = (sectionModifier, words, filterModifier) => {
 		delete filtersAlreadyApplied[bind];
 	}
 
-	if (Object.keys(filtersAlreadyApplied).length === 0) testingmadafaking = Object.values(words);
+	if (Object.keys(filtersAlreadyApplied).length === 0) filteredWordsArray = Object.values(words);
 
 	for (let key in filtersApplied) {
 		if (filtersAlreadyApplied[key] === undefined) {
 			filtersAlreadyApplied[key] = filtersApplied[key];
-			testingmadafaking = testingmadafaking.filter((word) => word[key] === filtersApplied[key]);
+			filteredWordsArray = filteredWordsArray.filter((word) => word[key] === filtersApplied[key]);
 		}
 	}
 
 	if (filterModifier.newFiltersApplied) filterModifier.passedWords = {};
 	filterModifier.wordsArray = [];
 	filterModifier.wordsObj = {};
-	filterModifier.wordsArray = testingmadafaking;
+	filterModifier.wordsArray = filteredWordsArray;
 	for (let i = 0; i < filterModifier.wordsArray.length; i++) {
 		filterModifier.wordsObj[i] = filterModifier.wordsArray[i];
 	}
-	sectionModifier.totalNumberOfElements = filterModifier.wordsArray.length;
+	filterModifier.totalNumberOfElements = filterModifier.wordsArray.length;
 
 	return filterModifier;
 };

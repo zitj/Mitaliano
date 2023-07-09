@@ -1,8 +1,9 @@
 1. Modify logic for /showRandomisedElements -> filterModifier\ in filters.js
-    [a] -- BUG (done)-- When there is only one word the card is being lost after cliking on next button
+    [a.0] -- BUG -- Verbs do not show
+    [a.1] -- BUG -- Go to word section press next button return to verb section and type number then go back to word section
+    [a.2] -- BUG -- Unnecessary call every time when clicked on NEXT button it fires the call for filter.png
     [b] -- REFACTOR -- Refactor code after finishing logic for filters
     [c] -- STYLE -- Add animation for filter menu
-    [d] -- BUG [CALL ISSUE] -- Unnecessary call every time when clicked on NEXT button it fires the call for filter.png
 
 
 2. Create game in words section like matching words in duolingo
