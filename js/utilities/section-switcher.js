@@ -1,11 +1,10 @@
 import { resetClassListFor } from './list.js';
 import { randomise } from '../services/shared-service.js';
 import { DEFAULT_FILTER, WORDS, VERBS, CLASSES } from '../constants.js';
-import { verbSection, wordSection, listOfWords, wrapper, listOfVerbs } from './html_elements.js';
+import { verbSection, wordSection, listOfWords, wrapper, listOfVerbs, navigationLinks } from './html_elements.js';
 import { setDefaultFilter } from './filters.js';
 
 const randomiseWord = (modifiers) => {
-	let randomWords = [];
 	setDefaultFilter();
 	modifiers.sectionModifier.filterName = DEFAULT_FILTER;
 	randomise(modifiers);
@@ -43,12 +42,13 @@ const switchToSection = (type, modifiers) => {
 	}
 };
 
-const switchSections = (section, modifiers, ...elements) => {
+const switchSections = (modifiers) => {
+	let elements = [modifiers.sections, modifiers.navigationLinks];
 	elements.forEach((element) => resetClassListFor(element));
-	section.classList.add('visited');
+	modifiers.section.classList.add('visited');
 
-	if (section.id === CLASSES.WORDS_SECTION_LINK) switchToSection(WORDS, modifiers);
-	if (section.id === CLASSES.VERBS_SECTION_LINK) switchToSection(VERBS, modifiers);
+	if (modifiers.section.id === CLASSES.WORDS_SECTION_LINK) switchToSection(WORDS, modifiers);
+	if (modifiers.section.id === CLASSES.VERBS_SECTION_LINK) switchToSection(VERBS, modifiers);
 };
 
 export { switchSections };

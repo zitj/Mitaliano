@@ -5,7 +5,6 @@ import { randomise, returnFilterIDBasedOn } from './services/shared-service.js';
 import {
 	chosenFilters,
 	toggleFilterList,
-	isFilterClicked,
 	filterName,
 	showFilterMenu,
 	closeFilterMenu,
@@ -23,7 +22,6 @@ import {
 	navigationLinks,
 	sections,
 	listOfWords,
-	filterOptions,
 	closeFilterButton,
 } from './utilities/html_elements.js';
 
@@ -54,6 +52,13 @@ let modifiers = {
 	sectionModifier,
 };
 
+const randomiseBasedOnSectionType = (type) => {
+	modifiers.sectionModifier.type = type;
+	modifiers.sectionModifier.list = type === WORDS ? listOfWords : listOfVerbs;
+	modifiers.sectionModifier.randomElements = type === WORDS ? randomWords : randomVerbs;
+	randomise(modifiers);
+};
+
 wantedVerbsInput.addEventListener(
 	'keyup',
 	debounce((e) => {
@@ -62,10 +67,7 @@ wantedVerbsInput.addEventListener(
 			hideList(listOfVerbs);
 			return;
 		}
-		modifiers.sectionModifier.type = VERBS;
-		modifiers.sectionModifier.list = listOfVerbs;
-		modifiers.sectionModifier.randomElements = randomVerbs;
-		randomise(modifiers);
+		randomiseBasedOnSectionType(VERBS);
 	}, 500)
 );
 
@@ -81,25 +83,26 @@ const nextWord = (elementClicked) => {
 
 	card.addEventListener('animationend', (event) => {
 		card.classList.remove('outro');
-		modifiers.sectionModifier.type = WORDS;
-		modifiers.sectionModifier.list = listOfWords;
-		modifiers.sectionModifier.randomElements = randomWords;
-		randomise(modifiers);
+		randomiseBasedOnSectionType(WORDS);
 	});
+};
+
+const setFilterModifier = (element) => {
+	filterModifier.type = element.target.filterType;
+	filterModifier.htmlElements.filterWrappers = filterWrappers;
+	filterModifier.elementClicked = element.target;
+	filterModifier.filtersToApply = chosenFilters;
+	filterModifier.newFiltersApplied = false;
 };
 
 const clickLogic = (element) => {
 	let elementClicked = element.target;
 	let className = elementClicked.className;
-	let filterType = element.target.filterType;
-
-	filterModifier.type = filterType;
-	filterModifier.htmlElements.filterWrappers = filterWrappers;
-	filterModifier.elementClicked = elementClicked;
-	filterModifier.filtersToApply = chosenFilters;
-	filterModifier.newFiltersApplied = false;
-
+	setFilterModifier(element);
 	let modifiers = {
+		section: elementClicked,
+		navigationLinks,
+		sections,
 		filterModifier,
 		sectionModifier,
 	};
@@ -109,12 +112,10 @@ const clickLogic = (element) => {
 	if (elementClicked.id === IDs.FILTER_APPLY_BUTTON) applyFilters(modifiers);
 
 	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
-	if (className === CLASSES.NAVIGATION_LINK) switchSections(elementClicked, modifiers, navigationLinks, sections);
+	if (className === CLASSES.NAVIGATION_LINK) switchSections(modifiers);
 	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
 	if (className === CLASSES.FILTER_ICON) showFilterMenu();
-	if (className === CLASSES.FILTER_OPTION) {
-		chooseFilterOption(filterModifier);
-	}
+	if (className === CLASSES.FILTER_OPTION) chooseFilterOption(filterModifier);
 };
 
 document.addEventListener('click', (event) => {
