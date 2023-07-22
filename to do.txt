@@ -1,6 +1,5 @@
-1. Modify logic for /showRandomisedElements -> filterModifier\ in filters.js
-    [a.2] -- BUG -- Unnecessary call every time when clicked on NEXT button it fires the call for filter.png
-    [b] -- REFACTOR -- Refactor code after finishing logic for filters
+   1. FILTERS
+    [b] -- REFACTOR -- Refactor code after finishing logic for filters (filters.js, shared-service.js) 
     [c] -- STYLE -- Add animation for filter menu
 
 
