@@ -23,5 +23,20 @@ const IDs = {
 		WORD_TYPE: 'wordTypes',
 	},
 };
+const WORD_BINDS = {
+	LECTURES: 'source',
+	DATES: 'date',
+	WORD_TYPE: 'type',
+};
 
-export { WORDS, VERBS, DEFAULT_FILTER, CLASSES, IDs, showTranslationBtnContent, errorMessageText, headingText };
+export {
+	WORDS,
+	VERBS,
+	DEFAULT_FILTER,
+	CLASSES,
+	IDs,
+	WORD_BINDS,
+	showTranslationBtnContent,
+	errorMessageText,
+	headingText,
+};

@@ -1,5 +1,5 @@
 import { randomise, hideAllElements, returnFilterIDBasedOn } from '../services/shared-service.js';
-import { DEFAULT_FILTER, IDs } from '../constants.js';
+import { DEFAULT_FILTER, IDs, WORD_BINDS } from '../constants.js';
 import { textFilter, filtersMenuContent, filterMenu, overlay } from './html_elements.js';
 import { words } from '../../data/words.js';
 
@@ -90,9 +90,9 @@ const returnFilterOptions = (filterType) => {
 	return options;
 };
 
-filters.lectures.array = returnFilterOptions('lectures');
-filters.dates.array = returnFilterOptions('dates');
-filters.wordTypes.array = returnFilterOptions('wordTypes');
+filters.lectures.array = returnFilterOptions(IDs.FILTERS.LECTURES);
+filters.dates.array = returnFilterOptions(IDs.FILTERS.DATES);
+filters.wordTypes.array = returnFilterOptions(IDs.FILTERS.WORD_TYPE);
 
 const setDefaultFilter = () => {
 	filterName = DEFAULT_FILTER;
@@ -133,14 +133,9 @@ const insertFiltersOptions = (modifier) => {
 	}
 };
 const returnOptionTypeBasedOn = (filterType) => {
-	if (filterType === IDs.FILTERS.LECTURES) return 'source';
-	if (filterType === IDs.FILTERS.DATES) return 'date';
-	if (filterType === IDs.FILTERS.WORD_TYPE) return 'type';
-};
-const returnFilterTypeBasedOn = (optionType) => {
-	if (optionType === 'source') return IDs.FILTERS.LECTURES;
-	if (optionType === 'date') return IDs.FILTERS.DATES;
-	if (optionType === 'type') return IDs.FILTERS.WORD_TYPE;
+	if (filterType === IDs.FILTERS.LECTURES) return WORD_BINDS.LECTURES;
+	if (filterType === IDs.FILTERS.DATES) return WORD_BINDS.DATES;
+	if (filterType === IDs.FILTERS.WORD_TYPE) return WORD_BINDS.WORD_TYPE;
 };
 
 const allFiltersAreChosenExceptLast = () => {
@@ -263,40 +258,6 @@ const filteringWords = (filterModifier, words) => {
 	filterModifier.totalNumberOfElements = filterModifier.wordsArray.length;
 
 	return filterModifier;
-};
-
-const allFieldsAreSelected = () => {
-	let filtersLength = Object.keys(chosenFilters).length;
-	let allSelected = true;
-
-	for (let i = 0; i < filtersLength; i++) {
-		if (
-			chosenFilters[Object.keys(chosenFilters)[i]] === null ||
-			chosenFilters[Object.keys(chosenFilters)[i]] === DEFAULT_FILTER
-		) {
-			allSelected = false;
-		}
-	}
-	return allSelected;
-};
-
-const resetAllFiltersExceptTheLastOne = (modifier) => {
-	let filtersLength = Object.keys(chosenFilters).length;
-	let lastFilterIndex = filtersLength - 1;
-	let lastFilterName = Object.keys(chosenFilters)[lastFilterIndex];
-	let lastFilter = chosenFilters[lastFilterName];
-
-	if (
-		lastFilter !== null &&
-		lastFilter !== DEFAULT_FILTER &&
-		!allFieldsAreSelected() &&
-		modifier.type == lastFilterName
-	) {
-		for (let i = lastFilterIndex - 1; i >= 0; i--) {
-			chosenFilters[Object.keys(chosenFilters)[i]] = DEFAULT_FILTER;
-		}
-	}
-	changeInnerTextForFilter(modifier);
 };
 
 const changeInnerTextForFilter = (modifier) => {
