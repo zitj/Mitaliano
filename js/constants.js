@@ -1,35 +1,36 @@
 const TEXT = {
-	WORDS: 'words',
-	VERBS: 'verbs',
+	APPLY_FILTERS: 'Applica filtri',
 	DEFAULT_FILTER: 'Senza filtro',
 	NUMBER_MUST_BE_SMALLER: 'Il numero deve essere meno di',
-	VERBS_TO_CONJUNGATE: 'Verbi da coniugare',
 	SHOW_TRANSLATION: 'Mostra traduzione',
-	APPLY_FILTERS: 'Applica filtri',
+	VERBS: 'verbs',
+	VERBS_TO_CONJUNGATE: 'Verbi da coniugare',
+	WORDS: 'words',
 };
-
 const CLASSES = {
-	VERB_LINK: 'verb-link',
+	FILTER_ICON: 'filter-icon',
+	FILTER_OPTION: 'filter-option',
+	FILTER_OPTION_LIST: 'filter-options-list',
+	FILTER_TEXT: 'filter-text',
 	NAVIGATION_LINK: 'navigation-link',
 	TRANSLATION_BUTTON: 'translation-button',
-	FILTER_OPTION: 'filter-option',
+	VERB_LINK: 'verb-link',
 	VERBS_SECTION_LINK: 'verbs-section-link',
 	WORDS_SECTION_LINK: 'words-section-link',
-	FILTER_ICON: 'filter-icon',
 };
 const IDs = {
-	NEXT_BUTTON: 'next-btn',
-	FILTER_APPLY_BUTTON: 'filter-apply-button',
-	OVERLAY: 'overlay',
 	FILTERS: {
-		LECTURES: 'lectures',
 		DATES: 'dates',
+		LECTURES: 'lectures',
 		WORD_TYPE: 'wordTypes',
 	},
+	FILTER_APPLY_BUTTON: 'filter-apply-button',
+	NEXT_BUTTON: 'next-btn',
+	OVERLAY: 'overlay',
 };
 const WORD_BINDS = {
-	LECTURES: 'source',
 	DATES: 'date',
+	LECTURES: 'source',
 	WORD_TYPE: 'type',
 };
 

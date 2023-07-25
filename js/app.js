@@ -123,8 +123,8 @@ document.addEventListener('click', (event) => clickLogic(event));
 closeFilterButton.addEventListener('click', (event) => closeFilterMenu(filterModifier.htmlElements.filterOptionsLists));
 
 let filterWrappers = returnFiltersDOM();
-let filterOptionsLists = document.querySelectorAll('.filter-options-list');
-let filterTexts = document.querySelectorAll('.filter-text');
+let filterOptionsLists = document.querySelectorAll(`.${CLASSES.FILTER_OPTION_LIST}`);
+let filterTexts = document.querySelectorAll(`.${CLASSES.FILTER_TEXT}`);
 
 filterWrappers.forEach((filter) => {
 	filterModifier.filter = filter;
