@@ -21,7 +21,6 @@ import {
 	navigationLinks,
 	sections,
 	listOfWords,
-	closeFilterButton,
 } from './utilities/html-elements.js';
 
 let randomWords = [];
@@ -46,6 +45,7 @@ let filterModifier = {
 	filter: null,
 	filters: filters,
 };
+
 let modifiers = {
 	filterModifier,
 	sectionModifier,
@@ -94,29 +94,41 @@ const setFilterModifier = (element) => {
 	filterModifier.newFiltersApplied = false;
 };
 
-const clickLogic = (element) => {
-	let elementClicked = element.target;
-	let className = elementClicked.className;
-	setFilterModifier(element);
-	let modifiers = {
-		section: elementClicked,
-		navigationLinks,
-		sections,
-		filterModifier,
-		sectionModifier,
-	};
+const fireFunctionBasedOnIDofElement = (modifiers) => {
+	let id = modifiers.elementClicked.id;
+	if (id === IDs.NEXT_BUTTON) nextWord(modifiers.elementClicked);
+	if (id === IDs.FILTER_APPLY_BUTTON) applyFilters(modifiers);
+	if (id === IDs.CLOSE_FILTERS_BUTTON) closeFilterMenu(modifiers.filterModifier.htmlElements.filterOptionsLists);
+	if (id === IDs.OVERLAY) closeFilterMenu(modifiers.filterModifier.htmlElements.filterOptionsLists);
+};
 
-	if (elementClicked.id === IDs.NEXT_BUTTON) nextWord(elementClicked);
-	if (elementClicked.id === IDs.OVERLAY) closeFilterMenu(filterOptionsLists);
-	if (elementClicked.id === IDs.FILTER_APPLY_BUTTON) applyFilters(modifiers);
-
-	if (className === CLASSES.VERB_LINK) elementClicked.classList.add('visited');
+const fireFunctionBasedOnClassOfElement = (modifiers) => {
+	let className = modifiers.elementClicked.className;
+	if (className === CLASSES.VERB_LINK) modifiers.elementClicked.classList.add('visited');
 	if (className === CLASSES.NAVIGATION_LINK) switchSections(modifiers);
-	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(element);
+	if (className === CLASSES.TRANSLATION_BUTTON) showTranslation(modifiers.event);
 	if (className === CLASSES.FILTER_ICON) showFilterMenu();
 	if (className === CLASSES.FILTER_OPTION) chooseFilterOption(filterModifier);
 };
 
+const setModifiers = (element) => {
+	return {
+		section: element.target,
+		navigationLinks,
+		sections,
+		filterModifier,
+		sectionModifier,
+		elementClicked: element.target,
+		event: element,
+	};
+};
+
+const clickLogic = (element) => {
+	setFilterModifier(element);
+	let modifiers = setModifiers(element);
+	fireFunctionBasedOnIDofElement(modifiers);
+	fireFunctionBasedOnClassOfElement(modifiers);
+};
+
 document.addEventListener('click', (event) => clickLogic(event));
-closeFilterButton.addEventListener('click', (event) => closeFilterMenu(filterModifier.htmlElements.filterOptionsLists));
 toggleFilters(filterModifier);

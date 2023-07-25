@@ -25,6 +25,7 @@ const IDs = {
 		WORD_TYPE: 'wordTypes',
 	},
 	FILTER_APPLY_BUTTON: 'filter-apply-button',
+	CLOSE_FILTERS_BUTTON: 'close-filters-button',
 	NEXT_BUTTON: 'next-btn',
 	OVERLAY: 'overlay',
 };
