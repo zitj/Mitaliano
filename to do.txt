@@ -1,5 +1,7 @@
    1. FILTERS
-    [b] -- REFACTOR -- Refactor code after finishing logic for filters (filters.js, shared-service.js) 
+    [b] -- REFACTOR -- Refactor code after finishing logic for filters
+    filteringWords (filters.js), showRandomisedElements (shared-service.js),
+
     [c] -- STYLE -- Add animation for filter menu
 
 

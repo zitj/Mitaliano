@@ -1,11 +1,11 @@
-import { showList } from '../utilities/list.js';
+import { showList } from './list.js';
 import { verbs } from '../../data/verbs.js';
 import { words } from '../../data/words.js';
-import { removeHeadingError, showHeadingError } from '../utilities/heading.js';
+import { removeHeadingError, showHeadingError } from './heading.js';
 import { WORDS, VERBS } from '../constants.js';
-import { heading, cardCounter, verbsInput } from '../utilities/html_elements.js';
-import { filteringWords } from '../utilities/filters.js';
-import { returnContent } from '../utilities/content.js';
+import { heading, cardCounter, verbsInput } from './html-elements.js';
+import { filteringWords } from './filters.js';
+import { returnContent } from './content.js';
 
 let lastWordNumber;
 let filterModifier = {
@@ -20,15 +20,15 @@ const render = (modifiers) => {
 	showList(modifiers.sectionModifier.list, content);
 };
 
-const returnRandomElements = (arrayOfRandomNumbers, type, source) => {
+const returnRandomElements = (modifiers) => {
 	let randomElements = [];
-	arrayOfRandomNumbers.forEach((number) => {
-		if (type === VERBS) randomElements.push(verbs[number].name);
-		if (type === WORDS) {
+	modifiers.arrayOfRandomNumbers.forEach((number) => {
+		if (modifiers.sectionModifier.type === VERBS) randomElements.push(verbs[number].name);
+		if (modifiers.sectionModifier.type === WORDS) {
 			lastWordNumber = number;
-			source.wordsObj[number].id = number;
-			source.passedWords[number] = source.wordsObj[number];
-			randomElements.push(source.wordsObj[number]);
+			modifiers.filterModifier.wordsObj[number].id = number;
+			modifiers.filterModifier.passedWords[number] = modifiers.filterModifier.wordsObj[number];
+			randomElements.push(modifiers.filterModifier.wordsObj[number]);
 		}
 	});
 	return randomElements;
@@ -64,11 +64,7 @@ const returnArrayOfRandomNumbersBasedOnTotalNumberOfElements = (modifiers) => {
 	return modifiers.arrayOfRandomNumbers;
 };
 
-const showRandomisedElements = (modifiers) => {
-	let arrayOfRandomNumbers = [];
-	let arrayWithDuplicates = [];
-	modifiers.sectionModifier.randomElements = [];
-	modifiers.filterModifier.wordsObj = {};
+const returnModifiedFilterModifier = (modifiers) => {
 	if (modifiers.filterModifier.passedWords === undefined) {
 		modifiers.filterModifier.passedWords = filterModifier.passedWords;
 	}
@@ -78,24 +74,31 @@ const showRandomisedElements = (modifiers) => {
 	}
 
 	if (modifiers.sectionModifier.sectionSwitched) modifiers.filterModifier.passedWords = {};
+
+	if (modifiers.sectionModifier.type === WORDS) {
+		modifiers.filterModifier = filteringWords(modifiers.filterModifier, words);
+	}
+	return modifiers;
+};
+
+const showRandomisedElements = (modifiers) => {
+	let arrayOfRandomNumbers = [];
+	let arrayWithDuplicates = [];
+	modifiers.sectionModifier.randomElements = [];
+	modifiers.filterModifier.wordsObj = {};
+	modifiers = returnModifiedFilterModifier(modifiers);
+
 	if (modifiers.sectionModifier.type === VERBS) {
 		if (modifiers.sectionModifier.wantedNumberToShow > modifiers.sectionModifier.totalNumberOfElements) {
-			showHeadingError(heading, modifiers.sectionModifier.totalNumberOfElements, modifiers.sectionModifier.list);
+			showHeadingError(heading, modifiers);
 			return;
 		}
 		removeHeadingError(heading);
 	}
-	if (modifiers.sectionModifier.type === WORDS) {
-		modifiers.filterModifier = filteringWords(modifiers.filterModifier, words);
-	}
 	modifiers.arrayOfRandomNumbers = arrayOfRandomNumbers;
 	modifiers.arrayWithDuplicates = arrayWithDuplicates;
 	arrayOfRandomNumbers = returnArrayOfRandomNumbersBasedOnTotalNumberOfElements(modifiers);
-	modifiers.sectionModifier.randomElements = returnRandomElements(
-		modifiers.arrayOfRandomNumbers,
-		modifiers.sectionModifier.type,
-		modifiers.filterModifier
-	);
+	modifiers.sectionModifier.randomElements = returnRandomElements(modifiers);
 	if (modifiers.sectionModifier.type === WORDS) setCardCounter(modifiers.filterModifier, cardCounter);
 	render(modifiers);
 };
@@ -129,17 +132,4 @@ const returnFilterIDBasedOn = (elementsID) => {
 	return elementsID.split('-')[elementsID.split('-').length - 1];
 };
 
-const formatDate = (miliseconds) => {
-	miliseconds = +miliseconds;
-	if (typeof miliseconds === 'number') {
-		const date = new Date(miliseconds);
-		const day = String(date.getDate()).padStart(2, '0');
-		const month = String(date.getMonth() + 1).padStart(2, '0');
-		const year = date.getFullYear();
-		return `${day}.${month}.${year}`;
-	} else {
-		return miliseconds;
-	}
-};
-
-export { render, randomise, hideAllElements, returnFilterIDBasedOn, formatDate };
+export { render, randomise, hideAllElements, returnFilterIDBasedOn };

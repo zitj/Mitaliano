@@ -1,7 +1,7 @@
 import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
-import { randomise, returnFilterIDBasedOn } from './services/shared-service.js';
+import { randomise, returnFilterIDBasedOn } from './utilities/renderer.js';
 import {
 	chosenFilters,
 	toggleFilterList,
@@ -23,7 +23,7 @@ import {
 	sections,
 	listOfWords,
 	closeFilterButton,
-} from './utilities/html_elements.js';
+} from './utilities/html-elements.js';
 
 let randomWords = [];
 let randomVerbs = [];

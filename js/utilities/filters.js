@@ -1,6 +1,6 @@
-import { randomise, hideAllElements, returnFilterIDBasedOn } from '../services/shared-service.js';
+import { randomise, hideAllElements, returnFilterIDBasedOn } from './renderer.js';
 import { DEFAULT_FILTER, IDs, WORD_BINDS } from '../constants.js';
-import { textFilter, filtersMenuContent, filterMenu, overlay } from './html_elements.js';
+import { textFilter, filtersMenuContent, filterMenu, overlay } from './html-elements.js';
 import { words } from '../../data/words.js';
 
 let isFilterClicked = false;

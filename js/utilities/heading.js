@@ -12,9 +12,9 @@ const removeHeadingError = (heading) => {
 	heading.innerHTML = headingText;
 };
 
-const showHeadingError = (heading, totalNumberOfElements, list) => {
-	addHeadingError(heading, totalNumberOfElements);
-	hideList(list);
+const showHeadingError = (heading, modifiers) => {
+	addHeadingError(heading, modifiers.sectionModifier.totalNumberOfElements);
+	hideList(modifiers.sectionModifier.list);
 };
 
 export { removeHeadingError, showHeadingError };
