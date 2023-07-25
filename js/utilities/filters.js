@@ -1,5 +1,5 @@
 import { randomise, hideAllElements, returnFilterIDBasedOn } from './renderer.js';
-import { TEXT, IDs, WORD_BINDS } from '../constants.js';
+import { TEXT, IDs, WORD_BINDS, CLASSES } from '../constants.js';
 import { textFilter, filtersMenuContent, filterMenu, overlay } from './html-elements.js';
 import { words } from '../../data/words.js';
 
@@ -319,6 +319,27 @@ const applyFilters = (modifier) => {
 	randomise(modifier);
 };
 
+let filterWrappers = returnFiltersDOM();
+let filterOptionsLists = document.querySelectorAll(`.${CLASSES.FILTER_OPTION_LIST}`);
+let filterTexts = document.querySelectorAll(`.${CLASSES.FILTER_TEXT}`);
+
+const toggleFilters = (filterModifier) => {
+	filterWrappers.forEach((filter) => {
+		filterModifier.filter = filter;
+		filterModifier.htmlElements = {
+			filterTexts: filterTexts,
+			filterOptionsLists: filterOptionsLists,
+		};
+		insertFiltersOptions(filterModifier);
+		filter.addEventListener('click', (event) => {
+			let elementsID = event.target.id;
+			let filterName = returnFilterIDBasedOn(elementsID);
+			filterModifier.type = filterName;
+			toggleFilterList(filterModifier);
+		});
+	});
+};
+
 export {
 	applyFilters,
 	insertFilters,
@@ -333,8 +354,10 @@ export {
 	showFilterMenu,
 	closeFilterMenu,
 	insertFiltersOptionsBasedOnChosenFilter,
+	toggleFilters,
 	isFilterClicked,
 	filterName,
 	filters,
 	chosenFilters,
+	filterWrappers,
 };

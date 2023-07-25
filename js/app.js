@@ -1,15 +1,14 @@
 import { hideList } from './utilities/list.js';
 import { debounce } from './utilities/debounce.js';
 import { switchSections } from './utilities/section-switcher.js';
-import { randomise, returnFilterIDBasedOn } from './utilities/renderer.js';
+import { randomise } from './utilities/renderer.js';
 import {
 	chosenFilters,
-	toggleFilterList,
+	toggleFilters,
 	filterName,
 	showFilterMenu,
 	closeFilterMenu,
-	insertFiltersOptions,
-	returnFiltersDOM,
+	filterWrappers,
 	chooseFilterOption,
 	filters,
 	applyFilters,
@@ -119,24 +118,5 @@ const clickLogic = (element) => {
 };
 
 document.addEventListener('click', (event) => clickLogic(event));
-
 closeFilterButton.addEventListener('click', (event) => closeFilterMenu(filterModifier.htmlElements.filterOptionsLists));
-
-let filterWrappers = returnFiltersDOM();
-let filterOptionsLists = document.querySelectorAll(`.${CLASSES.FILTER_OPTION_LIST}`);
-let filterTexts = document.querySelectorAll(`.${CLASSES.FILTER_TEXT}`);
-
-filterWrappers.forEach((filter) => {
-	filterModifier.filter = filter;
-	filterModifier.htmlElements = {
-		filterOptionsLists: filterOptionsLists,
-		filterTexts: filterTexts,
-	};
-	insertFiltersOptions(filterModifier);
-	filter.addEventListener('click', (event) => {
-		let elementsID = event.target.id;
-		let filterName = returnFilterIDBasedOn(elementsID);
-		filterModifier.type = filterName;
-		toggleFilterList(filterModifier);
-	});
-});
+toggleFilters(filterModifier);
