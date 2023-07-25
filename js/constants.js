@@ -1,9 +1,13 @@
-const WORDS = 'words';
-const VERBS = 'verbs';
-const DEFAULT_FILTER = 'Senza filtro';
-const errorMessageText = 'Il numero deve essere meno di';
-const headingText = 'Verbi da coniugare';
-const showTranslationBtnContent = 'Mostra traduzione';
+const TEXT = {
+	WORDS: 'words',
+	VERBS: 'verbs',
+	DEFAULT_FILTER: 'Senza filtro',
+	NUMBER_MUST_BE_SMALLER: 'Il numero deve essere meno di',
+	VERBS_TO_CONJUNGATE: 'Verbi da coniugare',
+	SHOW_TRANSLATION: 'Mostra traduzione',
+	APPLY_FILTERS: 'Applica filtri',
+};
+
 const CLASSES = {
 	VERB_LINK: 'verb-link',
 	NAVIGATION_LINK: 'navigation-link',
@@ -29,14 +33,4 @@ const WORD_BINDS = {
 	WORD_TYPE: 'type',
 };
 
-export {
-	WORDS,
-	VERBS,
-	DEFAULT_FILTER,
-	CLASSES,
-	IDs,
-	WORD_BINDS,
-	showTranslationBtnContent,
-	errorMessageText,
-	headingText,
-};
+export { TEXT, CLASSES, IDs, WORD_BINDS };

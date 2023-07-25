@@ -1,15 +1,15 @@
-import { errorMessageText, headingText } from '../constants.js';
+import { TEXT } from '../constants.js';
 import { hideList } from './list.js';
 
 const addHeadingError = (heading, totalNumberOfVerbs) => {
-	let errorMessage = `${errorMessageText} ${totalNumberOfVerbs}`;
+	let errorMessage = `${TEXT.NUMBER_MUST_BE_SMALLER} ${totalNumberOfVerbs}`;
 	heading.innerHTML = errorMessage;
 	heading.classList.add('error');
 };
 
 const removeHeadingError = (heading) => {
 	heading.classList.remove('error');
-	heading.innerHTML = headingText;
+	heading.innerHTML = TEXT.VERBS_TO_CONJUNGATE;
 };
 
 const showHeadingError = (heading, modifiers) => {

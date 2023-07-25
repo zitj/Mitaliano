@@ -1,10 +1,10 @@
 import { randomise, hideAllElements, returnFilterIDBasedOn } from './renderer.js';
-import { DEFAULT_FILTER, IDs, WORD_BINDS } from '../constants.js';
+import { TEXT, IDs, WORD_BINDS } from '../constants.js';
 import { textFilter, filtersMenuContent, filterMenu, overlay } from './html-elements.js';
 import { words } from '../../data/words.js';
 
 let isFilterClicked = false;
-let filterName = DEFAULT_FILTER;
+let filterName = TEXT.DEFAULT_FILTER;
 let filtersAlreadyApplied = {};
 let filteredWordsArray = Object.values(words);
 let filters = {
@@ -25,9 +25,9 @@ let filters = {
 	},
 };
 let filterOptions = {
-	lectures: [DEFAULT_FILTER],
-	dates: [DEFAULT_FILTER],
-	wordTypes: [DEFAULT_FILTER],
+	lectures: [TEXT.DEFAULT_FILTER],
+	dates: [TEXT.DEFAULT_FILTER],
+	wordTypes: [TEXT.DEFAULT_FILTER],
 };
 let chosenFilters = {
 	lectures: null,
@@ -37,8 +37,8 @@ let chosenFilters = {
 
 const createFilterApplyButton = () => {
 	let button = document.createElement('button');
-	button.innerText = 'Applica filtri';
-	button.id = 'filter-apply-button';
+	button.innerText = TEXT.APPLY_FILTERS;
+	button.id = IDs.FILTER_APPLY_BUTTON;
 	filtersMenuContent.appendChild(button);
 };
 
@@ -80,7 +80,7 @@ const formatDate = (miliseconds) => {
 };
 
 const returnFilterOptions = (filterType) => {
-	let options = [DEFAULT_FILTER];
+	let options = [TEXT.DEFAULT_FILTER];
 	for (let number in words) {
 		if (filterType === IDs.FILTERS.DATES) options.push(formatDate(words[number].date));
 		if (filterType === IDs.FILTERS.LECTURES) options.push(words[number].source);
@@ -95,7 +95,7 @@ filters.dates.array = returnFilterOptions(IDs.FILTERS.DATES);
 filters.wordTypes.array = returnFilterOptions(IDs.FILTERS.WORD_TYPE);
 
 const setDefaultFilter = () => {
-	filterName = DEFAULT_FILTER;
+	filterName = TEXT.DEFAULT_FILTER;
 	textFilter.innerText = filterName;
 };
 
@@ -108,7 +108,7 @@ const insertFilters = (modifier) => {
 		option.innerText = filterOption;
 		modifier.filterHTMLelement.appendChild(option);
 	});
-	if (chosenFilters[modifier.type] == null) modifier.filterText.innerText = DEFAULT_FILTER;
+	if (chosenFilters[modifier.type] == null) modifier.filterText.innerText = TEXT.DEFAULT_FILTER;
 };
 
 const insertFiltersOptions = (modifier) => {
@@ -143,7 +143,7 @@ const allFiltersAreChosenExceptLast = () => {
 	for (let i = 0; i < Object.keys(chosenFilters).length - 1; i++) {
 		if (
 			chosenFilters[Object.keys(chosenFilters)[i]] === null &&
-			chosenFilters[Object.keys(chosenFilters)[i]] === DEFAULT_FILTER
+			chosenFilters[Object.keys(chosenFilters)[i]] === TEXT.DEFAULT_FILTER
 		) {
 			result = false;
 		}
@@ -155,14 +155,14 @@ const resetFilterFields = (modifier) => {
 	for (let filterType in chosenFilters) {
 		if (modifier.type === IDs.FILTERS.LECTURES) {
 			if (modifier.type !== filterType) {
-				chosenFilters[filterType] = DEFAULT_FILTER;
+				chosenFilters[filterType] = TEXT.DEFAULT_FILTER;
 			}
 		}
 		if (modifier.type === IDs.FILTERS.DATES) {
-			chosenFilters.wordTypes = DEFAULT_FILTER;
+			chosenFilters.wordTypes = TEXT.DEFAULT_FILTER;
 		}
-		if (chosenFilters[filterType] === null || chosenFilters[filterType] === DEFAULT_FILTER) {
-			filterOptions[filterType] = [DEFAULT_FILTER];
+		if (chosenFilters[filterType] === null || chosenFilters[filterType] === TEXT.DEFAULT_FILTER) {
+			filterOptions[filterType] = [TEXT.DEFAULT_FILTER];
 		}
 	}
 };
@@ -232,7 +232,7 @@ const filteringWords = (filterModifier, words) => {
 		let bind = returnOptionTypeBasedOn(filter);
 		if (
 			filterModifier.filtersToApply[filter] !== null &&
-			filterModifier.filtersToApply[filter] !== DEFAULT_FILTER
+			filterModifier.filtersToApply[filter] !== TEXT.DEFAULT_FILTER
 		) {
 			filtersApplied[bind] = filterModifier.filtersToApply[filter];
 		}

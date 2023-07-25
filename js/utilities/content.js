@@ -1,16 +1,16 @@
-import { VERBS, WORDS, showTranslationBtnContent } from '../constants.js';
+import { TEXT } from '../constants.js';
 
 const createContent = (modifiers, element) => {
 	let content = ``;
 	let type = modifiers.sectionModifier.type;
 	let totalNumberOfElements = Object.keys(modifiers.filterModifier.wordsObj).length;
 
-	if (type === VERBS) {
+	if (type === TEXT.VERBS) {
 		content = `
             <a class="verb-link" href='https://www.italian-verbs.com/italian-verbs/conjugation.php?parola=${element}'  target="_blank">${element}</a>
         `;
 	}
-	if (type === WORDS) {
+	if (type === TEXT.WORDS) {
 		let context = element.context.replace(element.word, `<span class="context-word">${element.word}</span>`);
 		let button = `<button id="next-btn">&rarr;</button>`;
 
@@ -19,7 +19,7 @@ const createContent = (modifiers, element) => {
 				<img src="./img/filter.png" alt="filter" class="filter-icon">
                 <h2>${element.word}</h2>
                 <p class="context">${context}</p>
-                <button class="translation-button" id=${element.id}>${showTranslationBtnContent}</button>
+                <button class="translation-button" id=${element.id}>${TEXT.SHOW_TRANSLATION}</button>
 				<p class="translation-word hide" >${element.translation}</p>
 				${totalNumberOfElements > 1 ? button : ''}
             </div>

@@ -14,7 +14,7 @@ import {
 	filters,
 	applyFilters,
 } from './utilities/filters.js';
-import { WORDS, VERBS, CLASSES, IDs } from './constants.js';
+import { TEXT, CLASSES, IDs } from './constants.js';
 import {
 	wantedVerbsInput,
 	listOfVerbs,
@@ -29,7 +29,7 @@ let randomWords = [];
 let randomVerbs = [];
 
 let sectionModifier = {
-	type: WORDS,
+	type: TEXT.WORDS,
 	list: listOfWords,
 	randomElements: randomWords,
 	sectionSwitched: false,
@@ -54,8 +54,8 @@ let modifiers = {
 
 const randomiseBasedOnSectionType = (type) => {
 	modifiers.sectionModifier.type = type;
-	modifiers.sectionModifier.list = type === WORDS ? listOfWords : listOfVerbs;
-	modifiers.sectionModifier.randomElements = type === WORDS ? randomWords : randomVerbs;
+	modifiers.sectionModifier.list = type === TEXT.WORDS ? listOfWords : listOfVerbs;
+	modifiers.sectionModifier.randomElements = type === TEXT.WORDS ? randomWords : randomVerbs;
 	randomise(modifiers);
 };
 
@@ -67,7 +67,7 @@ wantedVerbsInput.addEventListener(
 			hideList(listOfVerbs);
 			return;
 		}
-		randomiseBasedOnSectionType(VERBS);
+		randomiseBasedOnSectionType(TEXT.VERBS);
 	}, 500)
 );
 
@@ -83,7 +83,7 @@ const nextWord = (elementClicked) => {
 
 	card.addEventListener('animationend', (event) => {
 		card.classList.remove('outro');
-		randomiseBasedOnSectionType(WORDS);
+		randomiseBasedOnSectionType(TEXT.WORDS);
 	});
 };
 
@@ -118,9 +118,7 @@ const clickLogic = (element) => {
 	if (className === CLASSES.FILTER_OPTION) chooseFilterOption(filterModifier);
 };
 
-document.addEventListener('click', (event) => {
-	clickLogic(event);
-});
+document.addEventListener('click', (event) => clickLogic(event));
 
 closeFilterButton.addEventListener('click', (event) => closeFilterMenu(filterModifier.htmlElements.filterOptionsLists));
 
