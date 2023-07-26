@@ -1423,7 +1423,7 @@ export const words = {
 		context:
 			'E uno squalo terribile, più astuto di un uomo, che sceglie una preda e la insegue per tutta la sua vita, finché non riesce a divorarla.',
 		source: 'Il colombre',
-		type: 'aggettivo',
+		type: 'sostantivo',
 		singular: { article: 'la', word: 'preda' },
 		plural: { article: 'le', word: 'prede' },
 		gender: 'F',
@@ -2189,9 +2189,9 @@ export const words = {
 	180: {
 		word: 'amaramente',
 		translation: 'ogorčeno',
-		context: 'Dopo la rottura, si sentiva amaramente deluso e ferito.',
+		context: 'Dopo la rottura, si sentiva amaramente, deluso e ferito.',
 		source: 'Freestyle',
-		type: 'avverbio',
+		type: 'aggettivo',
 		singular: null,
 		plural: null,
 		gender: null,

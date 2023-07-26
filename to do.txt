@@ -1,7 +1,8 @@
    1. FILTERS
     [a] -- BUG -- Word type filter does not filter options as it should (usually on date change)
+    
     [b] -- REFACTOR -- Refactor code after finishing logic for filters
-    filteringWords (filters.js), 
+    !!!!!!!!!!!!!!!!!!!!filteringWords (filters.js)!!!!!!!!!!!!!!!!!!!
 
     [c] -- STYLE -- Add animation for filter menu
 
