@@ -142,7 +142,7 @@ const allFiltersAreChosenExceptLast = () => {
 	let result = true;
 	for (let i = 0; i < Object.keys(chosenFilters).length - 1; i++) {
 		if (
-			chosenFilters[Object.keys(chosenFilters)[i]] === null &&
+			chosenFilters[Object.keys(chosenFilters)[i]] === null ||
 			chosenFilters[Object.keys(chosenFilters)[i]] === TEXT.DEFAULT_FILTER
 		) {
 			result = false;
@@ -184,6 +184,15 @@ const addOption = (option, word) => {
 			) {
 				filterOptions[option].push(word.type);
 			}
+		} else {
+			// let filtersPicked = {};
+			for (let filter in chosenFilters) {
+				if (chosenFilters[filter] !== null && chosenFilters[filter] !== TEXT.DEFAULT_FILTER) {
+					// filtersPicked[returnOptionTypeBasedOn(filter)] = chosenFilters[filter];
+					filterOptions[option].push(word.type);
+				}
+			}
+			// console.log(filterPicked);
 		}
 	}
 };
