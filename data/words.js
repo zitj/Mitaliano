@@ -2730,4 +2730,168 @@ export const words = {
 		gender: 'F',
 		date: new Date(2023, 6, 22).getTime(), //next
 	},
+	228: {
+		word: 'scorrevoli',
+		translation: 'posluga',
+		context:
+			'Le grandi porte scorrevoli del centro commerciale si aprono e Robie scivola dolcemente fuori, fra gli applausi entusiasti del pubblico.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'uno', word: 'scorrevole' },
+		plural: { article: 'scorrevoli', word: 'scorrevoli' },
+		date: new Date(2023, 7, 2), //next
+	},
+	229: {
+		word: 'scivola',
+		translation: 'klizi',
+		context:
+			'Le grandi porte scorrevoli del centro commerciale si aprono e Robie scivola dolcemente fuori, fra gli applausi entusiasti del pubblico.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'scivolare',
+		gender: null,
+		singular: null,
+		plural: null,
+		date: new Date(2023, 7, 2), //next
+	},
+	230: {
+		word: 'dolcemente',
+		translation: 'nežno',
+		context:
+			'Le grandi porte scorrevoli del centro commerciale si aprono e Robie scivola dolcemente fuori, fra gli applausi entusiasti del pubblico.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: null,
+		singular: null,
+		plural: null,
+		date: new Date(2023, 7, 2), //next
+	},
+	231: {
+		word: 'goffo',
+		translation: 'nespretan',
+		context: "Ha un aspetto simpatico e amichevole, un po' goffo, le forme morbide e tondeggianti.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'goffo' },
+		plural: { article: 'goffi', word: 'goffi' },
+		date: new Date(2023, 7, 2), //next
+	},
+	232: {
+		word: 'tondeggianti',
+		translation: 'zaobljeni',
+		context: "Ha un aspetto simpatico e amichevole, un po' goffo, le forme morbide e tondeggianti.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'F',
+		plural: { article: 'tondeggianto', word: 'tondeggianto' },
+		plural: { article: 'tondeggianti', word: 'tondeggianti' },
+		date: new Date(2023, 7, 2), //next
+	},
+	233: {
+		word: 'armonioso',
+		translation: 'harmoničan',
+		context:
+			'Sembra uno di quei moderni frigoriferi, dal disegno armonioso, con sportelli, luci colorate, dispensatori di bevande e schermi luminosi.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'armonioso' },
+		plural: { article: 'armoniosi', word: 'armoniosi' },
+		date: new Date(2023, 7, 2), //next
+	},
+	234: {
+		word: 'sportelli',
+		translation: 'šalteri',
+		context:
+			'Sembra uno di quei moderni frigoriferi, dal disegno armonioso, con sportelli, luci colorate, dispensatori di bevande e schermi luminosi.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'sportello' },
+		plural: { article: 'i', word: 'sportelli' },
+		date: new Date(2023, 7, 2), //next
+	},
+	235: {
+		word: 'dispensatori',
+		translation: 'davaoci',
+		context:
+			'Sembra uno di quei moderni frigoriferi, dal disegno armonioso, con sportelli, luci colorate, dispensatori di bevande e schermi luminosi.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'dispensatore' },
+		plural: { article: 'i', word: 'dispensatori' },
+		date: new Date(2023, 7, 2), //next
+	},
+	236: {
+		word: 'cingolate',
+		translation: 'guseničasti',
+		context: 'Si muove lentamente, su ruote cingolate, circondate da una ciambella di gommapiuma di protezione',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'cingolato' },
+		plural: { article: 'cingolati', word: 'cingolati' },
+		date: new Date(2023, 7, 2), //next
+	},
+	237: {
+		word: 'circondate',
+		translation: 'opkoliti',
+		context: 'Si muove lentamente, su ruote cingolate, circondate da una ciambella di gommapiuma di protezione',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		gender: null,
+		singular: null,
+		plural: null,
+		infinitive: 'circondare',
+		date: new Date(2023, 7, 2), //next
+	},
+	238: {
+		word: 'ciambella',
+		translation: 'opkoliti',
+		context: 'Si muove lentamente, su ruote cingolate, circondate da una ciambella di gommapiuma di protezione',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'ciambella' },
+		plural: { article: 'le', word: 'ciambelle' },
+		date: new Date(2023, 7, 2), //next
+	},
+	239: {
+		word: 'gommapiuma',
+		translation: 'penasta guma',
+		context: 'Si muove lentamente, su ruote cingolate, circondate da una ciambella di gommapiuma di protezione',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'gommapiuma' },
+		plural: { article: 'le', word: 'gommapiume' },
+		date: new Date(2023, 7, 2), //next
+	},
+	240: {
+		word: 'paraboliche',
+		translation: 'parabolične',
+		context:
+			"Sulla testa ruotano piccole antenne paraboliche che l'aiutano ad analizzare costantemente l'ambiente circostante.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'parabolicha' },
+		plural: { article: 'le', word: 'paraboliche' },
+		date: new Date(2023, 7, 2), //next
+	},
+	241: {
+		word: 'circostante',
+		translation: 'okolni',
+		context:
+			"Sulla testa ruotano piccole antenne paraboliche che l'aiutano ad analizzare costantemente l'ambiente circostante.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'circostante' },
+		plural: { article: 'i', word: 'circostanti' },
+		date: new Date(2023, 7, 2), //next
+	},
 };
