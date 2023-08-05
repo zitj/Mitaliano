@@ -3213,12 +3213,229 @@ export const words = {
 	272: {
 		word: 'pulcino',
 		translation: 'pile',
-		context: 'Vai con questi signori, pulcino. Ti aiuteranno a trovare la tua mamma',
+		context:
+			'Vai con questi signori, pulcino. Ti aiuteranno a trovare la tua mamma - dice Robie consegnando la piccola alla sicurezza.',
 		source: 'Brutta giornata per le vendite',
 		type: 'sostantivo',
 		gender: 'M',
 		singular: { article: 'il', word: 'pulcino' },
 		plural: { article: 'i', word: 'pulcini' },
+		date: new Date(2023, 7, 5), //next
+	},
+	273: {
+		word: 'consegnando',
+		translation: 'isporučivajući',
+		context:
+			'Vai con questi signori, pulcino. Ti aiuteranno a trovare la tua mamma - dice Robie consegnando la piccola alla sicurezza.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'consegnare',
+		date: new Date(2023, 7, 5), //next
+	},
+	274: {
+		word: 'commosso',
+		translation: 'dirnut',
+		context: 'Segue un lungo applauso commosso del pubblico.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'commosso' },
+		plural: { article: 'i', word: 'commossi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	275: {
+		word: 'vigilanza',
+		translation: 'nadzor',
+		context:
+			'La sicurezza è la nostra priorità. Un efficiente servizio di vigilanza è sempre disponibile per garantire la serenità dei nostri clienti.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'vigilanza' },
+		plural: { article: 'le', word: 'vigilanze' },
+		date: new Date(2023, 7, 5), //next
+	},
+	276: {
+		word: 'spruzzano',
+		translation: 'prskaju',
+		context: 'Le finestre spruzzano fuoco bianco',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'spruzzare',
+		date: new Date(2023, 7, 5), //next
+	},
+	277: {
+		word: 'fiorisce',
+		translation: 'cveta',
+		context: 'Anche la folla intorno a Robie fiorisce.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'fiorire',
+		date: new Date(2023, 7, 5), //next
+	},
+	278: {
+		word: 'gonfiano',
+		translation: 'nadimaju',
+		context: 'Gli abiti si gonfiano in petali di fiamma.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'gonfiare',
+		date: new Date(2023, 7, 5), //next
+	},
+	279: {
+		word: 'petali',
+		translation: 'latice',
+		context: 'Gli abiti si gonfiano in petali di fiamma.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'petalo' },
+		plural: { article: 'i', word: 'petali' },
+		date: new Date(2023, 7, 5), //next
+	},
+	280: {
+		word: 'fiamma',
+		translation: 'plamen',
+		context: 'Gli abiti si gonfiano in petali di fiamma.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'fiamma' },
+		plural: { article: 'le', word: 'fiamme' },
+		date: new Date(2023, 7, 5), //next
+	},
+	281: {
+		word: 'torce',
+		translation: 'baklje',
+		context: 'I capelli diventano torce.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'torcia' },
+		plural: { article: 'le', word: 'torce' },
+		date: new Date(2023, 7, 5), //next
+	},
+	282: {
+		word: 'dismisura',
+		translation: 'nesrazmernost',
+		context: 'Il fiore di colore arancione cresce nel cielo a dismisura.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'dismisura' },
+		plural: { article: 'le', word: 'dismisure' },
+		date: new Date(2023, 7, 5), //next
+	},
+	283: {
+		word: 'onda',
+		translation: 'talas',
+		context: "Poi arriva l'onda d'urto",
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: "l'", word: 'onda' },
+		plural: { article: 'le', word: 'onde' },
+		date: new Date(2023, 7, 5), //next
+	},
+	284: {
+		word: 'urto',
+		translation: 'udar',
+		context: "Poi arriva l'onda d'urto",
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: "l'", word: 'urto' },
+		plural: { article: 'gli', word: 'urti' },
+		date: new Date(2023, 7, 5), //next
+	},
+	285: {
+		word: 'infiammano',
+		translation: 'zapale',
+		context: 'Le finestre si infiammano e fila dopo fila esplodono e si trasformano in buchi neri.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'infiammare',
+		date: new Date(2023, 7, 5), //next
+	},
+	286: {
+		word: 'fila',
+		translation: 'red',
+		context: 'Le finestre si infiammano e fila dopo fila esplodono e si trasformano in buchi neri.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'fila' },
+		plural: { article: 'le', word: 'file' },
+		date: new Date(2023, 7, 5), //next
+	},
+	287: {
+		word: 'buchi',
+		translation: 'rupe',
+		context: 'Le finestre si infiammano e fila dopo fila esplodono e si trasformano in buchi neri.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'buco' },
+		plural: { article: 'i', word: 'buchi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	288: {
+		word: 'si piegano',
+		translation: 'se savijaju',
+		context: 'Le pareti dei grattacieli si piegano, ondeggiano, crollano.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo riflessivo',
+		infinitive: 'piegarsi',
+		date: new Date(2023, 7, 5), //next
+	},
+	289: {
+		word: 'ondeggiano',
+		translation: 'njišu se',
+		context: 'Le pareti dei grattacieli si piegano, ondeggiano, crollano.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo riflessivo',
+		infinitive: 'ondeggiarsi',
+		date: new Date(2023, 7, 5), //next
+	},
+	290: {
+		word: 'crollano',
+		translation: 'urušavaju se',
+		context: 'Le pareti dei grattacieli si piegano, ondeggiano, crollano.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo riflessivo',
+		infinitive: 'crollarsi',
+		date: new Date(2023, 7, 5), //next
+	},
+	291: {
+		word: 'forfora',
+		translation: 'piljevina, perut',
+		context: 'Una forfora di pietre piove dai cornicioni.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'forfora' },
+		date: new Date(2023, 7, 5), //next
+	},
+	292: {
+		word: 'cornicioni',
+		translation: 'fasadni ukrasi',
+		context: 'Una forfora di pietre piove dai cornicioni.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'cornicione' },
+		plural: { article: 'i', word: 'cornicioni' },
+		date: new Date(2023, 7, 5), //next
+	},
+	293: {
+		word: 'scaraventato',
+		translation: 'bačen',
+		context: 'Robie viene scaraventato a dieci metri di distanza.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'lo', word: 'scaraventato' },
+		plural: { article: 'i', word: 'scaraventati' },
 		date: new Date(2023, 7, 5), //next
 	},
 };
