@@ -2894,4 +2894,331 @@ export const words = {
 		plural: { article: 'i', word: 'circostanti' },
 		date: new Date(2023, 7, 2), //next
 	},
+	242: {
+		word: 'costruttrice',
+		translation: 'graditeljka',
+		context:
+			"È solo un prototipo sperimentale, ma l’azienda costruttrice, la Robotron Advertising, confida in un grande successo dell'automa.",
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'una', word: 'costruttrice' },
+		plural: { article: 'costruttrici', word: 'costruttrici' },
+		date: new Date(2023, 7, 5), //next
+	},
+	243: {
+		word: 'dotato',
+		translation: 'opremljen',
+		context: 'È dotato di una rete neurale di intelligenza artificiale molto sofisticata.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'dotato' },
+		plural: { article: 'dotati', word: 'dotati' },
+		date: new Date(2023, 7, 5), //next
+	},
+	244: {
+		word: 'interagire',
+		translation: 'interagovati',
+		context:
+			'Oltre a pubblicizzare i prodotti, deve interagire con il pubblico, studiare e analizzare le reazioni, tracciare i profili psicologici e migliorare costantemente le strategie di vendita.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'interagire',
+		date: new Date(2023, 7, 5), //next
+	},
+	245: {
+		word: 'tracciare',
+		translation: 'pratiti',
+		context:
+			'Oltre a pubblicizzare i prodotti, deve interagire con il pubblico, studiare e analizzare le reazioni, tracciare i profili psicologici e migliorare costantemente le strategie di vendita.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'tracciare',
+		date: new Date(2023, 7, 5), //next
+	},
+	246: {
+		word: 'automi',
+		translation: 'automati, roboti',
+		context:
+			'Forse un giorno i suoi automi potranno sedere al tavolo del consiglio di amministrazione delle più grandi multinazionali.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'automa' },
+		plural: { article: 'gli', word: 'automi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	247: {
+		word: 'varco',
+		translation: 'prolaz',
+		context: 'Questa si apre e lascia un varco verso il quale il robot si dirige. ',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'varco' },
+		plural: { article: 'i', word: 'varchi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	248: {
+		word: 'sbarra',
+		translation: 'zaključa, zablokira',
+		context: 'Un bambino si mette nel centro del varco e gli sbarra la strada con un sorrisetto furbo.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'sbarrare',
+		date: new Date(2023, 7, 5), //next
+	},
+	249: {
+		word: 'scommetto',
+		translation: 'kladim se',
+		context: 'Scommetto che hai otto anni.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'scommettere',
+		date: new Date(2023, 7, 5), //next
+	},
+	250: {
+		word: 'anteriore',
+		translation: 'prednji',
+		context:
+			'Robie apre lo sportello anteriore, prende un lecca-lecca rosso e lo porge al bambino dicendo dolcemente: - Per te, Sam.',
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'anteriore' },
+		plural: { article: 'gli', word: 'anteriori' },
+		date: new Date(2023, 7, 5), //next
+	},
+	251: {
+		word: 'lecca-lecca',
+		translation: 'lizalica',
+		context:
+			'Robie apre lo sportello anteriore, prende un lecca-lecca rosso e lo porge al bambino dicendo dolcemente: - Per te, Sam.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'lecca-lecca' },
+		plural: { article: 'i', word: 'lecca-lecca' },
+		date: new Date(2023, 7, 5), //next
+	},
+	252: {
+		word: 'porge',
+		translation: 'prenosi, dodaje',
+		context:
+			'Robie apre lo sportello anteriore, prende un lecca-lecca rosso e lo porge al bambino dicendo dolcemente: - Per te, Sam.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'porgere',
+		date: new Date(2023, 7, 5), //next
+	},
+	253: {
+		word: 'leccarlo',
+		translation: 'liže je, lizati',
+		context: "Il bambino, un po' timoroso, prende il lecca-lecca dalle mani meccaniche e comincia a leccarlo.",
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'leccare',
+		date: new Date(2023, 7, 5), //next
+	},
+	254: {
+		word: 'reparto',
+		translation: 'odeljenje',
+		context: 'Ricordati che nel nostro reparto dolciumi ci sono caramelle, cioccolatini, biscotti e torte.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'reparto' },
+		plural: { article: 'i', word: 'reparti' },
+		date: new Date(2023, 7, 5), //next
+	},
+	255: {
+		word: 'dolciumi',
+		translation: 'slatkiši',
+		context: 'Ricordati che nel nostro reparto dolciumi ci sono caramelle, cioccolatini, biscotti e torte.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'dolciume' },
+		plural: { article: 'i', word: 'dolciumi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	256: {
+		word: 'fiordaliso',
+		translation: 'različak',
+		context: 'Sa che ha una splendida camicia color fiordaliso?',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'fiordaliso' },
+		plural: { article: 'i', word: 'fiordalisi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	257: {
+		word: 'nodo',
+		translation: 'čvor',
+		context: 'Io non sono capace di fare il nodo alle cravatte.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'nodo' },
+		plural: { article: 'i', word: 'nodi' },
+		date: new Date(2023, 7, 5), //next
+	},
+	258: {
+		word: 'consente',
+		translation: 'omogućava, dozvoljava',
+		context: 'Se mi consente, posso fare io il nodo. Si avvicini leggermente, per favore.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'consentire',
+		date: new Date(2023, 7, 5), //next
+	},
+	259: {
+		word: 'impaurito',
+		translation: 'uplašen',
+		context: "L'uomo, un po' impaurito, avvicina timidamente il collo alle mani di metallo e plastica",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'impaurito' },
+		plural: { article: 'gli', word: 'impauriti' },
+		date: new Date(2023, 7, 5), //next
+	},
+	260: {
+		word: 'impaurito',
+		translation: 'stidljivo',
+		context: "L'uomo, un po' impaurito, avvicina timidamente il collo alle mani di metallo e plastica",
+		source: 'Brutta giornata per le vendite',
+		type: 'avverbio',
+		date: new Date(2023, 7, 5), //next
+	},
+	261: {
+		word: 'agilmente',
+		translation: 'okretno',
+		context: "Robie muove agilmente le dita, con la velocità e l'eleganza di un pianista.",
+		source: 'Brutta giornata per le vendite',
+		type: 'avverbio',
+		date: new Date(2023, 7, 5), //next
+	},
+	262: {
+		word: 'annoda',
+		translation: 'vezuje',
+		context: 'In pochi istanti annoda perfettamente la cravatta al colletto della camicia.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'annodare',
+		date: new Date(2023, 7, 5), //next
+	},
+	263: {
+		word: 'panzone',
+		translation: 'debeljuškast',
+		context:
+			"Urla un giovane panzone sudato. Robie si avvicina: - Ti vedo piuttosto accaldato, caro giovanotto. Scommetto che non vedi l'ora di bere una bevanda fresca e dissetante.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'panzone' },
+		plural: { article: 'i', word: 'panzoni' },
+		date: new Date(2023, 7, 5), //next
+	},
+	264: {
+		word: 'sudato',
+		translation: 'znojav',
+		context:
+			"Urla un giovane panzone sudato. Robie si avvicina: - Ti vedo piuttosto accaldato, caro giovanotto. Scommetto che non vedi l'ora di bere una bevanda fresca e dissetante.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'sudato' },
+		plural: { article: 'i', word: 'sudati' },
+		date: new Date(2023, 7, 5), //next
+	},
+	265: {
+		word: 'accaldato',
+		translation: 'zagrejan',
+		context:
+			"Urla un giovane panzone sudato. Robie si avvicina: - Ti vedo piuttosto accaldato, caro giovanotto. Scommetto che non vedi l'ora di bere una bevanda fresca e dissetante.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'accaldato' },
+		plural: { article: 'i', word: 'accaldati' },
+		date: new Date(2023, 7, 5), //next
+	},
+	266: {
+		word: 'dissetante',
+		translation: 'osvežavajući',
+		context:
+			"Urla un giovane panzone sudato. Robie si avvicina: - Ti vedo piuttosto accaldato, caro giovanotto. Scommetto che non vedi l'ora di bere una bevanda fresca e dissetante.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'un', word: 'dissetante' },
+		plural: { article: 'i', word: 'dissetanti' },
+		date: new Date(2023, 7, 5), //next
+	},
+	267: {
+		word: 'ingordigia',
+		translation: 'pohlepa',
+		context: 'Grazie Robie... è buonissima. - dice il giovane mentre beve con ingordigia.',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'ingordigia' },
+		plural: { article: 'la', word: 'ingordigia' },
+		date: new Date(2023, 7, 5), //next
+	},
+	268: {
+		word: 'bibite',
+		translation: 'pića',
+		context:
+			"Il nostro reparto bibite offre un'ampia scelta di bevande alcoliche, analcoliche, gassate e non gassate, energetiche e biologiche.",
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'F',
+		singular: { article: 'la', word: 'bibita' },
+		plural: { article: 'le', word: 'bibite' },
+		date: new Date(2023, 7, 5), //next
+	},
+	269: {
+		word: 'ampia',
+		translation: 'prostran, širok',
+		context:
+			"Il nostro reparto bibite offre un'ampia scelta di bevande alcoliche, analcoliche, gassate e non gassate, energetiche e biologiche.",
+		source: 'Brutta giornata per le vendite',
+		type: 'aggettivo',
+		gender: 'F',
+		singular: { article: "un'", word: 'ampia' },
+		plural: { article: 'ampie', word: 'ampie' },
+		date: new Date(2023, 7, 5), //next
+	},
+	270: {
+		word: 'Improvvisamente',
+		translation: 'naglo',
+		context: "Improvvisamente l'attenzione di Robie si rivolge verso una bambina che piange.",
+		source: 'Brutta giornata per le vendite',
+		type: 'avverbio',
+		date: new Date(2023, 7, 5), //next
+	},
+	271: {
+		word: 'singhiozzando',
+		translation: 'jecajući',
+		context: 'Non trovo più la mamma. - risponde la bambina singhiozzando.',
+		source: 'Brutta giornata per le vendite',
+		type: 'verbo',
+		infinitive: 'singhiozzare',
+		date: new Date(2023, 7, 5), //next
+	},
+	272: {
+		word: 'pulcino',
+		translation: 'pile',
+		context: 'Vai con questi signori, pulcino. Ti aiuteranno a trovare la tua mamma',
+		source: 'Brutta giornata per le vendite',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'pulcino' },
+		plural: { article: 'i', word: 'pulcini' },
+		date: new Date(2023, 7, 5), //next
+	},
 };
