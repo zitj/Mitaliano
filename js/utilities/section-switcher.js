@@ -15,23 +15,23 @@ const randomiseWord = (modifiers) => {
 	});
 };
 
-const showSection = (type) => {
-	if (type === TEXT.WORDS) {
-		wrapper.style.height = '76vh';
-		verbSection.classList.add('hide');
-		wordSection.classList.add('show');
-	}
-	if (type === TEXT.VERBS) {
-		wrapper.style.height = '60vh';
-		wordSection.classList.remove('show');
-		wordSection.classList.add('hide');
-	}
+const showSection = (type, sections) => {
+	sections.forEach((section) => {
+		if (section.id.includes(type)) {
+			section.classList.add('show');
+		} else {
+			section.classList.add('hide');
+		}
+	});
+	if (type === TEXT.WORDS) wrapper.style.height = '76vh';
+	if (type === TEXT.VERBS) wrapper.style.height = '60vh';
 };
 
 const switchToSection = (type, modifiers) => {
+	console.log(modifiers);
 	modifiers.sectionModifier.type = type;
-	modifiers.sectionModifier.list = type === TEXT.WORDS ? listOfWords : listOfVerbs;
-	showSection(type);
+	modifiers.sectionModifier.list = type === TEXT.WORDS || type === TEXT.GAME ? listOfWords : listOfVerbs;
+	showSection(type, modifiers.sections);
 	if (type === TEXT.WORDS) {
 		if (
 			modifiers.filterModifier.passedWords == undefined ||
@@ -49,6 +49,7 @@ const switchSections = (modifiers) => {
 
 	if (modifiers.section.id === CLASSES.WORDS_SECTION_LINK) switchToSection(TEXT.WORDS, modifiers);
 	if (modifiers.section.id === CLASSES.VERBS_SECTION_LINK) switchToSection(TEXT.VERBS, modifiers);
+	if (modifiers.section.id === CLASSES.GAME_SECTION_LINK) switchToSection(TEXT.GAME, modifiers);
 };
 
 export { switchSections };

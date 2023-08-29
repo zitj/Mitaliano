@@ -6,6 +6,7 @@ const TEXT = {
 	VERBS: 'verbs',
 	VERBS_TO_CONJUNGATE: 'Verbi da coniugare',
 	WORDS: 'words',
+	GAME: 'game',
 };
 const CLASSES = {
 	FILTER_ICON: 'filter-icon',
@@ -17,6 +18,7 @@ const CLASSES = {
 	VERB_LINK: 'verb-link',
 	VERBS_SECTION_LINK: 'verbs-section-link',
 	WORDS_SECTION_LINK: 'words-section-link',
+	GAME_SECTION_LINK: 'game-section-link',
 };
 const IDs = {
 	FILTERS: {
