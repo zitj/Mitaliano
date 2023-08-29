@@ -22,6 +22,7 @@ const render = (modifiers) => {
 
 const returnRandomElements = (modifiers) => {
 	let randomElements = [];
+	console.log(modifiers);
 	modifiers.arrayOfRandomNumbers.forEach((number) => {
 		if (modifiers.sectionModifier.type === TEXT.VERBS) randomElements.push(verbs[number].name);
 		if (modifiers.sectionModifier.type === TEXT.WORDS) {
@@ -30,7 +31,11 @@ const returnRandomElements = (modifiers) => {
 			modifiers.filterModifier.passedWords[number] = modifiers.filterModifier.wordsObj[number];
 			randomElements.push(modifiers.filterModifier.wordsObj[number]);
 		}
+		if (modifiers.sectionModifier.type === TEXT.GAME) {
+			randomElements.push(words[number]);
+		}
 	});
+	console.log(randomElements);
 	return randomElements;
 };
 
