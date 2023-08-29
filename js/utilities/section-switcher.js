@@ -4,6 +4,12 @@ import { TEXT, CLASSES } from '../constants.js';
 import { verbSection, wordSection, listOfWords, wrapper, listOfVerbs, navigationLinks } from './html-elements.js';
 import { setDefaultFilter } from './filters.js';
 
+const randomiseListOfWords = (modifiers) => {
+	modifiers.filterModifier.passedWords = {}; // set logic where it remembers the passed words of words section
+	console.log('You will randomise list of words to match in this section!');
+	randomise(modifiers);
+};
+
 const randomiseWord = (modifiers) => {
 	setDefaultFilter();
 	modifiers.sectionModifier.filterName = TEXT.DEFAULT_FILTER;
@@ -28,7 +34,6 @@ const showSection = (type, sections) => {
 };
 
 const switchToSection = (type, modifiers) => {
-	console.log(modifiers);
 	modifiers.sectionModifier.type = type;
 	modifiers.sectionModifier.list = type === TEXT.WORDS || type === TEXT.GAME ? listOfWords : listOfVerbs;
 	showSection(type, modifiers.sections);
@@ -40,6 +45,7 @@ const switchToSection = (type, modifiers) => {
 			randomiseWord(modifiers);
 		}
 	}
+	if (type === TEXT.GAME) randomiseListOfWords(modifiers);
 };
 
 const switchSections = (modifiers) => {

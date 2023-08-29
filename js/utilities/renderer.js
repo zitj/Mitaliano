@@ -46,9 +46,9 @@ const hideAllElements = (elements) => {
 
 const returnArrayOfRandomNumbersBasedOnTotalNumberOfElements = (modifiers) => {
 	let totalNumberOfElements =
-		modifiers.sectionModifier.type === TEXT.VERBS
-			? modifiers.sectionModifier.totalNumberOfElements
-			: modifiers.filterModifier.wordsArray.length;
+		modifiers.sectionModifier.type === TEXT.WORDS
+			? modifiers.filterModifier.wordsArray.length
+			: modifiers.sectionModifier.totalNumberOfElements;
 
 	if (totalNumberOfElements > 1) {
 		while (modifiers.arrayOfRandomNumbers.length < modifiers.sectionModifier.wantedNumberToShow) {
@@ -121,10 +121,12 @@ const returnArrayOfRandomNumbers = (sectionModifier, filterModifier, arrayOfRand
 };
 
 const randomise = (modifiers) => {
+	console.log(modifiers.sectionModifier.type);
 	modifiers.sectionModifier.totalNumberOfElements =
 		modifiers.sectionModifier.type === TEXT.VERBS ? Object.keys(verbs).length : Object.keys(words).length;
-	modifiers.sectionModifier.wantedNumberToShow =
-		modifiers.sectionModifier.type === TEXT.VERBS ? +verbsInput.value : 1;
+	if (modifiers.sectionModifier.type === TEXT.WORDS) modifiers.sectionModifier.wantedNumberToShow = 1;
+	if (modifiers.sectionModifier.type === TEXT.VERBS) modifiers.sectionModifier.wantedNumberToShow = +verbsInput.value;
+	if (modifiers.sectionModifier.type === TEXT.GAME) modifiers.sectionModifier.wantedNumberToShow = 10;
 
 	showRandomisedElements(modifiers);
 };
