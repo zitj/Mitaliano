@@ -2,6 +2,7 @@ const wantedVerbsInput = document.querySelector('#wanted-verbs-input');
 const verbsContainer = document.querySelector('#verbs-container');
 const listOfVerbs = document.querySelector('#list-of-verbs');
 const listOfWords = document.querySelector('#list-of-words');
+const listOfGameWords = document.querySelector('#list-of-game-words');
 const heading = verbsContainer.children[0];
 const navigationLinks = document.querySelectorAll('.navigation-link');
 const sections = document.querySelectorAll('section');
@@ -25,10 +26,11 @@ export {
 	wantedVerbsInput,
 	verbsContainer,
 	listOfVerbs,
+	listOfWords,
+	listOfGameWords,
 	heading,
 	navigationLinks,
 	sections,
-	listOfWords,
 	textFilter,
 	filterOptions,
 	wordSection,

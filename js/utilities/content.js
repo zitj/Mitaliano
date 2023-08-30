@@ -26,6 +26,12 @@ const createContent = (modifiers, element) => {
         `;
 	}
 
+	if (type === TEXT.GAME) {
+		content += `
+				<h4 class="game-word">${element.word}</h4>
+		`;
+	}
+
 	return content;
 };
 

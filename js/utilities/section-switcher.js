@@ -1,7 +1,7 @@
 import { resetClassListFor } from './list.js';
 import { randomise } from './renderer.js';
 import { TEXT, CLASSES } from '../constants.js';
-import { verbSection, wordSection, listOfWords, wrapper, listOfVerbs, navigationLinks } from './html-elements.js';
+import { listOfWords, wrapper, listOfVerbs, listOfGameWords } from './html-elements.js';
 import { setDefaultFilter } from './filters.js';
 
 const randomiseListOfWords = (modifiers) => {
@@ -29,13 +29,17 @@ const showSection = (type, sections) => {
 			section.classList.add('hide');
 		}
 	});
-	if (type === TEXT.WORDS) wrapper.style.height = '76vh';
+	if (type === TEXT.WORDS || type === TEXT.GAME) wrapper.style.height = '76vh';
 	if (type === TEXT.VERBS) wrapper.style.height = '60vh';
 };
 
 const switchToSection = (type, modifiers) => {
 	modifiers.sectionModifier.type = type;
-	modifiers.sectionModifier.list = type === TEXT.WORDS || type === TEXT.GAME ? listOfWords : listOfVerbs;
+	// modifiers.sectionModifier.list = type === TEXT.WORDS || type === TEXT.GAME ? listOfWords : listOfVerbs;
+	if (type === TEXT.WORDS) modifiers.sectionModifier.list = listOfWords;
+	if (type === TEXT.VERBS) modifiers.sectionModifier.list = listOfWords;
+	if (type === TEXT.GAME) modifiers.sectionModifier.list = listOfGameWords;
+
 	showSection(type, modifiers.sections);
 	if (type === TEXT.WORDS) {
 		if (
