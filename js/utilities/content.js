@@ -34,12 +34,38 @@ const createContent = (modifiers, element) => {
 
 	return content;
 };
+const shuffleArray = (array) => {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]];
+	}
+};
 
-const returnContent = (modifiers) => {
-	let content = ``;
+const returnContentForEachElement = (content, modifiers) => {
 	modifiers.sectionModifier.randomElements.forEach((element) => {
 		content += createContent(modifiers, element);
 	});
+	return content;
+};
+
+const returnContent = (modifiers) => {
+	let content = ``;
+
+	if (modifiers.sectionModifier.type !== TEXT.GAME) {
+		content = returnContentForEachElement(content, modifiers);
+	}
+	if (modifiers.sectionModifier.type === TEXT.GAME) {
+		let listLeftContent = ``;
+		listLeftContent = returnContentForEachElement(listLeftContent, modifiers);
+
+		let listRightContent = ``;
+		shuffleArray(modifiers.sectionModifier.randomElements);
+		listRightContent = returnContentForEachElement(listRightContent, modifiers);
+		content = `
+		<div class="list-left">${listLeftContent}</div>
+		<div class="list-right">${listRightContent}</div>
+	`;
+	}
 
 	return content;
 };

@@ -290,4 +290,14 @@ header {
 			}
 		}
 	}
+
+	#game-section {
+		#list-of-game-words {
+			display: flex;
+			justify-content: space-between;
+			.list-left {
+				margin-right: 6em;
+			}
+		}
+	}
 }
