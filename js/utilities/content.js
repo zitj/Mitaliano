@@ -62,6 +62,7 @@ const returnContent = (modifiers) => {
 		content = returnContentForEachElement(modifiers);
 	}
 	if (modifiers.sectionModifier.type === TEXT.GAME) {
+		modifiers.sectionModifier.arrayShuffled = false;
 		content = `<div class="list-left">${returnContentForEachElement(modifiers)}</div>`;
 		shuffleArray(modifiers.sectionModifier.randomElements);
 		modifiers.sectionModifier.arrayShuffled = true;

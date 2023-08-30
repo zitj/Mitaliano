@@ -6,7 +6,6 @@ import { setDefaultFilter } from './filters.js';
 
 const randomiseListOfWords = (modifiers) => {
 	modifiers.filterModifier.passedWords = {}; // set logic where it remembers the passed words of words section
-	console.log('You will randomise list of words to match in this section!');
 	randomise(modifiers);
 };
 
@@ -35,7 +34,6 @@ const showSection = (type, sections) => {
 
 const switchToSection = (type, modifiers) => {
 	modifiers.sectionModifier.type = type;
-	// modifiers.sectionModifier.list = type === TEXT.WORDS || type === TEXT.GAME ? listOfWords : listOfVerbs;
 	if (type === TEXT.WORDS) modifiers.sectionModifier.list = listOfWords;
 	if (type === TEXT.VERBS) modifiers.sectionModifier.list = listOfWords;
 	if (type === TEXT.GAME) modifiers.sectionModifier.list = listOfGameWords;
