@@ -27,9 +27,15 @@ const createContent = (modifiers, element) => {
 	}
 
 	if (type === TEXT.GAME) {
-		content += `
-				<h4 class="game-word">${element.word}</h4>
-		`;
+		if (!modifiers.sectionModifier.arrayShuffled) {
+			content += `
+			<p class="game-word">${element.word}</p>
+			`;
+		} else {
+			content += `
+			<p class="game-word">${element.translation}</p>
+			`;
+		}
 	}
 
 	return content;
@@ -41,7 +47,8 @@ const shuffleArray = (array) => {
 	}
 };
 
-const returnContentForEachElement = (content, modifiers) => {
+const returnContentForEachElement = (modifiers) => {
+	let content = ``;
 	modifiers.sectionModifier.randomElements.forEach((element) => {
 		content += createContent(modifiers, element);
 	});
@@ -52,19 +59,13 @@ const returnContent = (modifiers) => {
 	let content = ``;
 
 	if (modifiers.sectionModifier.type !== TEXT.GAME) {
-		content = returnContentForEachElement(content, modifiers);
+		content = returnContentForEachElement(modifiers);
 	}
 	if (modifiers.sectionModifier.type === TEXT.GAME) {
-		let listLeftContent = ``;
-		listLeftContent = returnContentForEachElement(listLeftContent, modifiers);
-
-		let listRightContent = ``;
+		content = `<div class="list-left">${returnContentForEachElement(modifiers)}</div>`;
 		shuffleArray(modifiers.sectionModifier.randomElements);
-		listRightContent = returnContentForEachElement(listRightContent, modifiers);
-		content = `
-		<div class="list-left">${listLeftContent}</div>
-		<div class="list-right">${listRightContent}</div>
-	`;
+		modifiers.sectionModifier.arrayShuffled = true;
+		content += `<div class="list-right">${returnContentForEachElement(modifiers)}</div>`;
 	}
 
 	return content;
