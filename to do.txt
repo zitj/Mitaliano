@@ -8,7 +8,6 @@
 
 
     2. Create game in words section like matching words in duolingo
-     [a] -- BUG -- Sometimes array of randomElements has 5 instead of 6 words
     
      [b] -- REFACTOR -- Content.js complete refactoring needed
 

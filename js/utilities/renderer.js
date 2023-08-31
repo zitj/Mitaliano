@@ -22,7 +22,7 @@ const render = (modifiers) => {
 
 const returnRandomElements = (modifiers) => {
 	let randomElements = [];
-	console.log(modifiers);
+	console.log('arrayOfRandomNumbers', modifiers.arrayOfRandomNumbers);
 	modifiers.arrayOfRandomNumbers.forEach((number) => {
 		if (modifiers.sectionModifier.type === TEXT.VERBS) randomElements.push(verbs[number].name);
 		if (modifiers.sectionModifier.type === TEXT.WORDS) {
@@ -35,7 +35,7 @@ const returnRandomElements = (modifiers) => {
 			if (words[number]) randomElements.push(words[number]);
 		}
 	});
-	console.log(randomElements);
+	console.log('Array of randomElements', randomElements);
 	return randomElements;
 };
 

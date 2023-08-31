@@ -2410,6 +2410,17 @@ export const words = {
 		gender: 'M',
 		date: new Date(2023, 6, 22).getTime(), //next
 	},
+	200: {
+		word: 'vincoli',
+		translation: 'ograničenja',
+		context: 'I vincoli di budget hanno limitato le opzioni di progettazione.',
+		source: 'Freestyle',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'vincolo' },
+		plural: { article: 'i', word: 'vincoli' },
+		date: new Date(2023, 7, 31), //next
+	},
 	201: {
 		word: 'scendono',
 		translation: 'spuštaju se (spuštati se, silaziti)',
