@@ -2419,7 +2419,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'vincolo' },
 		plural: { article: 'i', word: 'vincoli' },
-		date: new Date(2023, 7, 31), //next
+		date: new Date(2023, 6, 22), //next
 	},
 	201: {
 		word: 'scendono',
