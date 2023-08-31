@@ -32,7 +32,7 @@ const returnRandomElements = (modifiers) => {
 			randomElements.push(modifiers.filterModifier.wordsObj[number]);
 		}
 		if (modifiers.sectionModifier.type === TEXT.GAME) {
-			randomElements.push(words[number]);
+			if (words[number]) randomElements.push(words[number]);
 		}
 	});
 	console.log(randomElements);

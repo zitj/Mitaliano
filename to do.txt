@@ -7,6 +7,11 @@
     [c] -- STYLE -- Add animation for filter menu
 
 
-2. Create game in words section like matching words in duolingo
+    2. Create game in words section like matching words in duolingo
+     [a] -- BUG -- Sometimes array of randomElements has 5 instead of 6 words
+    
+     [b] -- REFACTOR -- Content.js complete refactoring needed
+
+
 3. Reorganise certain files from utilities to services
 4. Install webpack, lodash etc. (learn how to use webpack)

@@ -28,18 +28,39 @@ const createContent = (modifiers, element) => {
 
 	if (type === TEXT.GAME) {
 		if (!modifiers.sectionModifier.arrayShuffled) {
+			let splittedClass = '';
+			if (element.word.length > 12) splittedClass = 'splitted';
 			content += `
-			<p class="game-word">${element.word}</p>
-			`;
+				<div class="game-word ${splittedClass}">${splitString(element.word)}</div>
+				`;
 		} else {
+			let translatedWord = element.translation;
+			let multipleWords = translatedWord.split(',');
+			if (multipleWords.length > 1) {
+				const randomIndex = Math.floor(Math.random() * multipleWords.length);
+				translatedWord = multipleWords[randomIndex];
+			}
+			let splittedClass = '';
+			if (translatedWord.length > 12) splittedClass = 'splitted';
 			content += `
-			<p class="game-word">${element.translation}</p>
-			`;
+				<div class="game-word ${splittedClass}">${splitString(translatedWord)}</div>
+				`;
 		}
 	}
 
 	return content;
 };
+
+const splitString = (word) => {
+	if (!word.includes(' ') && word.length > 12) {
+		let wordArray = word.split('');
+		wordArray.splice(word.length / 2, 0, '-\n');
+		return wordArray.join('');
+	} else {
+		return word;
+	}
+};
+
 const shuffleArray = (array) => {
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
