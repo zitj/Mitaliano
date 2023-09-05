@@ -45,6 +45,14 @@
     transform: translateX(1000px) rotate(360deg);
   }
 }
+@keyframes slide-in-from-right-to-left {
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 body {
   padding: 0;
   margin: 0;
@@ -64,6 +72,7 @@ body {
   height: 100%;
   position: absolute;
   z-index: -1;
+  transition: 0.1s;
 }
 #overlay.active {
   background: rgba(0, 0, 0, 0.224);
@@ -82,6 +91,7 @@ body {
 }
 #filter-menu.active {
   display: block;
+  animation: slide-in-from-right-to-left 0.2s ease-in;
 }
 #filter-menu #close-filters-button {
   position: absolute;
@@ -337,6 +347,11 @@ header nav span.visited {
   animation: throw-away-to-right 0.2s ease-out;
 }
 .wrapper #words-section #list-of-words .card .filter-icon {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   position: absolute;
   height: 30px;
   right: 30px;

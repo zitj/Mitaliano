@@ -46,3 +46,11 @@
 		transform: translateX(1000px) rotate(360deg);
 	}
 }
+@keyframes slide-in-from-right-to-left {
+	0% {
+		transform: translateX(500px);
+	}
+	100% {
+		transform: translateX(0px);
+	}
+}

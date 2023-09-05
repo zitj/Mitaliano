@@ -21,6 +21,7 @@ body {
 	height: 100%;
 	position: absolute;
 	z-index: -1;
+	transition: 0.1s;
 	&.active {
 		background: rgba(0, 0, 0, 0.224);
 		z-index: 2;
@@ -37,6 +38,7 @@ body {
 	right: 0;
 	&.active {
 		display: block;
+		animation: slide-in-from-right-to-left 0.2s ease-in;
 	}
 	#close-filters-button {
 		position: absolute;
@@ -241,6 +243,7 @@ header {
 					animation: throw-away-to-right 0.2s ease-out;
 				}
 				.filter-icon {
+					@include remove-blue-color-on-click();
 					position: absolute;
 					height: 30px;
 					right: 30px;
