@@ -9,8 +9,9 @@
 
     2. Create game in words section like matching words in duolingo
     
-     [b] -- REFACTOR -- Content.js complete refactoring needed
+     [a] -- REFACTOR -- Content.js complete refactoring needed
 
+     [b] -- STYLE -- Remove light blue color on touch of a word card 
 
 3. Reorganise certain files from utilities to services
 4. Install webpack, lodash etc. (learn how to use webpack)
