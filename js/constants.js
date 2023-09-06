@@ -19,6 +19,7 @@ const CLASSES = {
 	VERBS_SECTION_LINK: 'verbs-section-link',
 	WORDS_SECTION_LINK: 'words-section-link',
 	GAME_SECTION_LINK: 'game-section-link',
+	SPLITTED: 'splitted',
 };
 const IDs = {
 	FILTERS: {
@@ -30,6 +31,8 @@ const IDs = {
 	CLOSE_FILTERS_BUTTON: 'close-filters-button',
 	NEXT_BUTTON: 'next-btn',
 	OVERLAY: 'overlay',
+	ORIGINAL: 'original',
+	TRANSLATED: 'translated',
 };
 const WORD_BINDS = {
 	DATES: 'date',

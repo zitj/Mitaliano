@@ -305,6 +305,7 @@ header {
 			display: flex;
 			justify-content: space-between;
 			.game-word {
+				@include remove-blue-color-on-click();
 				background: $card-background;
 				padding: 1em;
 				border-radius: 0.6em;
@@ -313,9 +314,18 @@ header {
 				height: 30px;
 				width: 110px;
 				margin-bottom: 1.2em;
+				transition: 0.1s;
 				cursor: pointer;
 				&.splitted {
 					line-height: 17px;
+				}
+				&.clicked {
+					color: rgb(56 139 166);
+					background: rgb(115 180 255 / 5%);
+					box-shadow: 0px 1px 3px 1px rgb(115 180 255 / 41%);
+				}
+				&:active {
+					box-shadow: 0px 1px 3px 1px rgba(115, 180, 255, 0.105);
 				}
 			}
 

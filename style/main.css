@@ -413,6 +413,11 @@ header nav span.visited {
   justify-content: space-between;
 }
 .wrapper #game-section #list-of-game-words .game-word {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   background: rgba(255, 255, 255, 0.351);
   padding: 1em;
   border-radius: 0.6em;
@@ -421,10 +426,19 @@ header nav span.visited {
   height: 30px;
   width: 110px;
   margin-bottom: 1.2em;
+  transition: 0.1s;
   cursor: pointer;
 }
 .wrapper #game-section #list-of-game-words .game-word.splitted {
   line-height: 17px;
+}
+.wrapper #game-section #list-of-game-words .game-word.clicked {
+  color: rgb(56, 139, 166);
+  background: rgba(115, 180, 255, 0.05);
+  box-shadow: 0px 1px 3px 1px rgba(115, 180, 255, 0.41);
+}
+.wrapper #game-section #list-of-game-words .game-word:active {
+  box-shadow: 0px 1px 3px 1px rgba(115, 180, 255, 0.105);
 }
 .wrapper #game-section #list-of-game-words .list-left {
   margin-right: 1em;

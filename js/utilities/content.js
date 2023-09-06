@@ -1,4 +1,4 @@
-import { TEXT } from '../constants.js';
+import { CLASSES, IDs, TEXT } from '../constants.js';
 
 const returnContentForVerbsSection = (modifiers) => {
 	let word = modifiers.contentObj.element;
@@ -23,19 +23,23 @@ const returnContentForWordSection = (modifiers) => {
 	`;
 };
 
-const returnContentForGameWord = (word) => {
+const returnContentForGameWord = (modifiers) => {
+	let isArrayShuffled = modifiers.sectionModifier.arrayShuffled;
+	let wordID = modifiers.contentObj.element.word;
+	let word = !isArrayShuffled ? modifiers.contentObj.element.word : modifiers.contentObj.translatedWord;
 	let splittedClass = '';
-	if (word.length > 12) splittedClass = 'splitted';
+	let id = !isArrayShuffled ? IDs.ORIGINAL : IDs.TRANSLATED;
+	if (word.length > 12) splittedClass = CLASSES.SPLITTED;
+
 	return `
-			<div class="game-word ${splittedClass}">${splitString(word)}</div>
+			<div class="game-word ${splittedClass}" id="${id}" data=${wordID}>${splitString(word)}</div>
 			`;
 };
 
 const returnContentForGameSection = (modifiers) => {
-	let element = modifiers.contentObj.element;
-	let content = modifiers.contentObj.content;
+	let { element, content } = modifiers.contentObj;
 	if (!modifiers.sectionModifier.arrayShuffled) {
-		content += returnContentForGameWord(element.word);
+		content += returnContentForGameWord(modifiers);
 	} else {
 		let translatedWord = element.translation;
 		let synonyms = translatedWord.split(',');
@@ -43,7 +47,8 @@ const returnContentForGameSection = (modifiers) => {
 			const randomIndex = Math.floor(Math.random() * synonyms.length);
 			translatedWord = synonyms[randomIndex];
 		}
-		content += returnContentForGameWord(translatedWord);
+		modifiers.contentObj.translatedWord = translatedWord;
+		content += returnContentForGameWord(modifiers);
 	}
 	return content;
 };

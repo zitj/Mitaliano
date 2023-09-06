@@ -21,10 +21,14 @@ import {
 	navigationLinks,
 	sections,
 	listOfWords,
+	listOfGameWords,
 } from './utilities/html-elements.js';
 
 let randomWords = [];
 let randomVerbs = [];
+
+let clickedOriginalWord;
+let clickedTranslatedWord;
 
 let sectionModifier = {
 	type: TEXT.WORDS,
@@ -120,12 +124,29 @@ const setModifiers = (element) => {
 		sectionModifier,
 		elementClicked: element.target,
 		event: element,
+		matchingGameElements: { clickedOriginalWord, clickedTranslatedWord },
 	};
 };
 
 const clickLogic = (element) => {
+	console.log(element.srcElement.getAttribute('data'));
+	if (element.target.id === IDs.ORIGINAL) {
+		if (
+			(clickedOriginalWord == undefined && clickedTranslatedWord == undefined) ||
+			(clickedOriginalWord.getAttribute('data') !== element.srcElement.getAttribute('data') &&
+				clickedTranslatedWord == undefined)
+		) {
+			if (clickedOriginalWord && clickedOriginalWord.classList.contains('clicked')) {
+				clickedOriginalWord.classList.remove('clicked');
+			}
+			clickedOriginalWord = element.srcElement;
+			clickedOriginalWord.classList.add('clicked');
+		}
+	}
+	if (element.target.id === IDs.TRANSLATED) clickedTranslatedWord = element.srcElement;
 	setFilterModifier(element);
 	let modifiers = setModifiers(element);
+	console.log(modifiers.matchingGameElements);
 	fireFunctionBasedOnIDofElement(modifiers);
 	fireFunctionBasedOnClassOfElement(modifiers);
 };
