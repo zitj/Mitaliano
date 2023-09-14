@@ -31,8 +31,10 @@ const IDs = {
 	CLOSE_FILTERS_BUTTON: 'close-filters-button',
 	NEXT_BUTTON: 'next-btn',
 	OVERLAY: 'overlay',
-	ORIGINAL: 'original',
-	TRANSLATED: 'translated',
+	WORD: {
+		ORIGINAL: 'original',
+		TRANSLATED: 'translated',
+	},
 };
 const WORD_BINDS = {
 	DATES: 'date',

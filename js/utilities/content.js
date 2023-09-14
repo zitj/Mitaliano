@@ -28,7 +28,7 @@ const returnContentForGameWord = (modifiers) => {
 	let wordID = modifiers.contentObj.element.word;
 	let word = !isArrayShuffled ? modifiers.contentObj.element.word : modifiers.contentObj.translatedWord;
 	let splittedClass = '';
-	let id = !isArrayShuffled ? IDs.ORIGINAL : IDs.TRANSLATED;
+	let id = !isArrayShuffled ? IDs.WORD.ORIGINAL : IDs.WORD.TRANSLATED;
 	if (word.length > 12) splittedClass = CLASSES.SPLITTED;
 
 	return `

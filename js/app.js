@@ -90,6 +90,47 @@ const nextWord = (elementClicked) => {
 	});
 };
 
+const gameLogic = (modifiers) => {
+	let element = modifiers.event;
+	if (element.target.id === IDs.WORD.ORIGINAL) {
+		if (
+			(!clickedOriginalWord && !clickedTranslatedWord) ||
+			(clickedOriginalWord &&
+				clickedOriginalWord.getAttribute('data') !== element.srcElement.getAttribute('data') &&
+				!clickedTranslatedWord)
+		) {
+			if (clickedOriginalWord && clickedOriginalWord.classList.contains('clicked')) {
+				clickedOriginalWord.classList.remove('clicked');
+			}
+			clickedOriginalWord = element.srcElement;
+			clickedOriginalWord.classList.add('clicked');
+		}
+	}
+	if (element.target.id === IDs.WORD.TRANSLATED) {
+		if (
+			(!clickedOriginalWord && !clickedTranslatedWord) ||
+			(clickedTranslatedWord &&
+				clickedTranslatedWord.getAttribute('data') !== element.srcElement.getAttribute('data') &&
+				!clickedOriginalWord)
+		) {
+			if (clickedTranslatedWord && clickedTranslatedWord.classList.contains('clicked')) {
+				clickedTranslatedWord.classList.remove('clicked');
+			}
+			clickedTranslatedWord = element.srcElement;
+			clickedTranslatedWord.classList.add('clicked');
+		}
+		if (
+			clickedOriginalWord &&
+			clickedTranslatedWord &&
+			clickedTranslatedWord.getAttribute('data') !== clickedOriginalWord.getAttribute('data')
+		) {
+			clickedOriginalWord.classList.remove('clicked');
+			clickedOriginalWord = null;
+			clickedTranslatedWord = null;
+		}
+	}
+};
+
 const setFilterModifier = (element) => {
 	filterModifier.type = element.target.filterType;
 	filterModifier.htmlElements.filterWrappers = filterWrappers;
@@ -104,6 +145,7 @@ const fireFunctionBasedOnIDofElement = (modifiers) => {
 	if (id === IDs.FILTER_APPLY_BUTTON) applyFilters(modifiers);
 	if (id === IDs.CLOSE_FILTERS_BUTTON) closeFilterMenu(modifiers.filterModifier.htmlElements.filterOptionsLists);
 	if (id === IDs.OVERLAY) closeFilterMenu(modifiers.filterModifier.htmlElements.filterOptionsLists);
+	if (id === IDs.WORD.ORIGINAL || id === IDs.WORD.TRANSLATED) gameLogic(modifiers);
 };
 
 const fireFunctionBasedOnClassOfElement = (modifiers) => {
@@ -130,20 +172,7 @@ const setModifiers = (element) => {
 
 const clickLogic = (element) => {
 	console.log(element.srcElement.getAttribute('data'));
-	if (element.target.id === IDs.ORIGINAL) {
-		if (
-			(clickedOriginalWord == undefined && clickedTranslatedWord == undefined) ||
-			(clickedOriginalWord.getAttribute('data') !== element.srcElement.getAttribute('data') &&
-				clickedTranslatedWord == undefined)
-		) {
-			if (clickedOriginalWord && clickedOriginalWord.classList.contains('clicked')) {
-				clickedOriginalWord.classList.remove('clicked');
-			}
-			clickedOriginalWord = element.srcElement;
-			clickedOriginalWord.classList.add('clicked');
-		}
-	}
-	if (element.target.id === IDs.TRANSLATED) clickedTranslatedWord = element.srcElement;
+
 	setFilterModifier(element);
 	let modifiers = setModifiers(element);
 	console.log(modifiers.matchingGameElements);
