@@ -24,6 +24,8 @@ import {
 	listOfGameWords,
 } from './utilities/html-elements.js';
 
+let matchedWordsCounter = 0;
+
 let randomWords = [];
 let randomVerbs = [];
 
@@ -132,6 +134,20 @@ const gameLogic = (modifiers) => {
 		} else {
 			clickedOriginalWord.srcElement.classList.add('clicked-matched');
 			clickedTranslatedWord.srcElement.classList.add('clicked-matched');
+			matchedWordsCounter++;
+			setTimeout(() => {
+				clickedOriginalWord.srcElement.classList.add('clicked-disappear');
+				clickedTranslatedWord.srcElement.classList.add('clicked-disappear');
+				clickedOriginalWord = null;
+				clickedTranslatedWord = null;
+			}, 200);
+		}
+		console.log(matchedWordsCounter);
+		if (matchedWordsCounter === 6) {
+			setTimeout(() => {
+				matchedWordsCounter = 0;
+				randomise(modifiers);
+			}, 500);
 		}
 	}
 };
