@@ -95,7 +95,7 @@ const gameLogic = (modifiers) => {
 	let id = element.target.id;
 
 	if (id === IDs.WORD.ORIGINAL) {
-		let wordCards = document.querySelectorAll('.game-word-original');
+		let wordCards = document.querySelectorAll(`.game-word-${id}`);
 		if (clickedOriginalWord) {
 			wordCards.forEach((card) => card.classList.remove('clicked'));
 			clickedOriginalWord.srcElement.classList.add('clicked');
@@ -104,7 +104,7 @@ const gameLogic = (modifiers) => {
 		}
 	}
 	if (id === IDs.WORD.TRANSLATED) {
-		let wordCards = document.querySelectorAll('.game-word-translated');
+		let wordCards = document.querySelectorAll(`.game-word-${id}`);
 		if (clickedTranslatedWord) {
 			wordCards.forEach((card) => card.classList.remove('clicked'));
 			clickedTranslatedWord.srcElement.classList.add('clicked');
@@ -113,10 +113,26 @@ const gameLogic = (modifiers) => {
 		}
 	}
 	if (clickedOriginalWord && clickedTranslatedWord) {
-		console.log(
-			clickedOriginalWord.srcElement.getAttribute('data'),
-			clickedTranslatedWord.srcElement.getAttribute('data')
-		);
+		let wordCards = document.querySelectorAll(`.game-word`);
+
+		let clickedOriginalWordContent = clickedOriginalWord.srcElement.getAttribute('data');
+		let clickedTranslatedWordContent = clickedTranslatedWord.srcElement.getAttribute('data');
+		console.log(clickedOriginalWordContent, clickedTranslatedWordContent);
+		if (clickedOriginalWordContent !== clickedTranslatedWordContent) {
+			clickedOriginalWord.srcElement.classList.add('clicked-wrong');
+			clickedTranslatedWord.srcElement.classList.add('clicked-wrong');
+			clickedOriginalWord = null;
+			clickedTranslatedWord = null;
+			setTimeout(() => {
+				wordCards.forEach((card) => {
+					card.classList.remove('clicked');
+					card.classList.remove('clicked-wrong');
+				});
+			}, 500);
+		} else {
+			clickedOriginalWord.srcElement.classList.add('clicked-matched');
+			clickedTranslatedWord.srcElement.classList.add('clicked-matched');
+		}
 	}
 };
 
