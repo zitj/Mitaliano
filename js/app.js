@@ -186,6 +186,8 @@ const setMatchingGameElements = (element) => {
 		: null;
 	let lastWordClickedContent = element.srcElement.getAttribute('data');
 
+	if (element.srcElement.classList.contains('clicked-matched')) return;
+
 	if (id === IDs.WORD.ORIGINAL) {
 		if (clickedOriginalWordContent === lastWordClickedContent) {
 			clickedOriginalWord = null;
