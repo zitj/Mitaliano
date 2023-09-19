@@ -143,7 +143,7 @@ const gameLogic = (modifiers) => {
 			}, 200);
 		}
 		console.log(matchedWordsCounter);
-		if (matchedWordsCounter === 6) {
+		if (matchedWordsCounter === wordCards.length / 2) {
 			setTimeout(() => {
 				matchedWordsCounter = 0;
 				randomise(modifiers);

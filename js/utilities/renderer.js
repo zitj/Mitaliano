@@ -131,7 +131,7 @@ const randomise = (modifiers) => {
 		modifiers.sectionModifier.type === TEXT.VERBS ? Object.keys(verbs).length : Object.keys(words).length;
 	if (modifiers.sectionModifier.type === TEXT.WORDS) modifiers.sectionModifier.wantedNumberToShow = 1;
 	if (modifiers.sectionModifier.type === TEXT.VERBS) modifiers.sectionModifier.wantedNumberToShow = +verbsInput.value;
-	if (modifiers.sectionModifier.type === TEXT.GAME) modifiers.sectionModifier.wantedNumberToShow = 6;
+	if (modifiers.sectionModifier.type === TEXT.GAME) modifiers.sectionModifier.wantedNumberToShow = 5;
 
 	showRandomisedElements(modifiers);
 };
