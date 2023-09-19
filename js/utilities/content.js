@@ -32,7 +32,7 @@ const returnContentForGameWord = (modifiers) => {
 	if (word.length > 12) splittedClass = CLASSES.SPLITTED;
 
 	return `
-			<div class="game-word ${splittedClass}" id="${id}" data=${wordID}>${splitString(word)}</div>
+			<div class="game-word game-word-${id} ${splittedClass}" id="${id}" data=${wordID}>${splitString(word)}</div>
 			`;
 };
 

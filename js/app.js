@@ -92,42 +92,31 @@ const nextWord = (elementClicked) => {
 
 const gameLogic = (modifiers) => {
 	let element = modifiers.event;
-	if (element.target.id === IDs.WORD.ORIGINAL) {
-		if (
-			(!clickedOriginalWord && !clickedTranslatedWord) ||
-			(clickedOriginalWord &&
-				clickedOriginalWord.getAttribute('data') !== element.srcElement.getAttribute('data') &&
-				!clickedTranslatedWord)
-		) {
-			if (clickedOriginalWord && clickedOriginalWord.classList.contains('clicked')) {
-				clickedOriginalWord.classList.remove('clicked');
-			}
-			clickedOriginalWord = element.srcElement;
-			clickedOriginalWord.classList.add('clicked');
+	let id = element.target.id;
+
+	if (id === IDs.WORD.ORIGINAL) {
+		let wordCards = document.querySelectorAll('.game-word-original');
+		if (clickedOriginalWord) {
+			wordCards.forEach((card) => card.classList.remove('clicked'));
+			clickedOriginalWord.srcElement.classList.add('clicked');
+		} else {
+			wordCards.forEach((card) => card.classList.remove('clicked'));
 		}
 	}
-	if (element.target.id === IDs.WORD.TRANSLATED) {
-		if (
-			(!clickedOriginalWord && !clickedTranslatedWord) ||
-			(clickedTranslatedWord &&
-				clickedTranslatedWord.getAttribute('data') !== element.srcElement.getAttribute('data') &&
-				!clickedOriginalWord)
-		) {
-			if (clickedTranslatedWord && clickedTranslatedWord.classList.contains('clicked')) {
-				clickedTranslatedWord.classList.remove('clicked');
-			}
-			clickedTranslatedWord = element.srcElement;
-			clickedTranslatedWord.classList.add('clicked');
+	if (id === IDs.WORD.TRANSLATED) {
+		let wordCards = document.querySelectorAll('.game-word-translated');
+		if (clickedTranslatedWord) {
+			wordCards.forEach((card) => card.classList.remove('clicked'));
+			clickedTranslatedWord.srcElement.classList.add('clicked');
+		} else {
+			wordCards.forEach((card) => card.classList.remove('clicked'));
 		}
-		if (
-			clickedOriginalWord &&
-			clickedTranslatedWord &&
-			clickedTranslatedWord.getAttribute('data') !== clickedOriginalWord.getAttribute('data')
-		) {
-			clickedOriginalWord.classList.remove('clicked');
-			clickedOriginalWord = null;
-			clickedTranslatedWord = null;
-		}
+	}
+	if (clickedOriginalWord && clickedTranslatedWord) {
+		console.log(
+			clickedOriginalWord.srcElement.getAttribute('data'),
+			clickedTranslatedWord.srcElement.getAttribute('data')
+		);
 	}
 };
 
@@ -157,6 +146,30 @@ const fireFunctionBasedOnClassOfElement = (modifiers) => {
 	if (className === CLASSES.FILTER_OPTION) chooseFilterOption(filterModifier);
 };
 
+const setMatchingGameElements = (element) => {
+	let id = element.target.id;
+	let clickedOriginalWordContent = clickedOriginalWord ? clickedOriginalWord.srcElement.getAttribute('data') : null;
+	let clickedTranslatedWordContent = clickedTranslatedWord
+		? clickedTranslatedWord.srcElement.getAttribute('data')
+		: null;
+	let lastWordClickedContent = element.srcElement.getAttribute('data');
+
+	if (id === IDs.WORD.ORIGINAL) {
+		if (clickedOriginalWordContent === lastWordClickedContent) {
+			clickedOriginalWord = null;
+		} else {
+			clickedOriginalWord = element;
+		}
+	}
+	if (id === IDs.WORD.TRANSLATED) {
+		if (clickedTranslatedWordContent === lastWordClickedContent) {
+			clickedTranslatedWord = null;
+		} else {
+			clickedTranslatedWord = element;
+		}
+	}
+};
+
 const setModifiers = (element) => {
 	return {
 		section: element.target,
@@ -171,11 +184,9 @@ const setModifiers = (element) => {
 };
 
 const clickLogic = (element) => {
-	console.log(element.srcElement.getAttribute('data'));
-
 	setFilterModifier(element);
+	setMatchingGameElements(element);
 	let modifiers = setModifiers(element);
-	console.log(modifiers.matchingGameElements);
 	fireFunctionBasedOnIDofElement(modifiers);
 	fireFunctionBasedOnClassOfElement(modifiers);
 };
