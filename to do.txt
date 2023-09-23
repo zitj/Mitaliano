@@ -9,8 +9,8 @@
 
     2. Create game in words section like matching words in duolingo
 
-    *** gameLogic() develop logic and refactor when finished REFAKTORISAAANJEEEE!!!
     *** setMatchingGameElements() REFAKTORISANJEEEEE!!!
+    *** Move all methods for gameLogic in separate file!!!
     
      [a] -- REFACTOR -- Content.js complete refactoring needed
 
