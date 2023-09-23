@@ -3449,4 +3449,45 @@ export const words = {
 		plural: { article: 'i', word: 'scaraventati' },
 		date: new Date(2023, 7, 5), //next
 	},
+	294: {
+		word: 'percorso',
+		translation: 'putanja',
+		context: 'Il percorso attraverso la foresta era affascinante.',
+		source: 'Freestyle',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'percorso' },
+		plural: { article: 'i', word: 'percorsi' },
+		date: new Date(2023, 8, 21), //next
+	},
+	295: {
+		word: 'sommerso',
+		translation: 'potopljen',
+		context: "Il relitto della nave è stato trovato sommerso nelle profondità dell'oceano.",
+		source: 'Freestyle',
+		type: 'aggettivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'sommerso' },
+		plural: { article: 'i', word: 'sommerse' },
+		date: new Date(2023, 8, 21), //next
+	},
+	296: {
+		word: 'accesimento',
+		translation: 'davanje pristupa',
+		context: "L'accesimento al sistema è possibile solo con autorizzazione.",
+		source: 'Freestyle',
+		type: 'sostantivo',
+		gender: 'M',
+		singular: { article: 'il', word: 'accesimento' },
+		plural: { article: 'i', word: 'accesimenti' },
+		date: new Date(2023, 8, 21), //next
+	},
+	297: {
+		word: 'consegnare',
+		translation: 'isporučiti',
+		context: 'Devo consegnare il pacco al destinatario entro domani.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 8, 21), //next
+	},
 };
