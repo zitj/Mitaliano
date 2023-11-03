@@ -2915,7 +2915,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'una', word: 'costruttrice' },
 		plural: { article: 'costruttrici', word: 'costruttrici' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	243: {
 		word: 'dotato',
@@ -2926,7 +2926,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'dotato' },
 		plural: { article: 'dotati', word: 'dotati' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	244: {
 		word: 'interagire',
@@ -2936,7 +2936,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'interagire',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	245: {
 		word: 'tracciare',
@@ -2946,7 +2946,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'tracciare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	246: {
 		word: 'automi',
@@ -2958,7 +2958,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'automa' },
 		plural: { article: 'gli', word: 'automi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	247: {
 		word: 'varco',
@@ -2969,7 +2969,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'varco' },
 		plural: { article: 'i', word: 'varchi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	248: {
 		word: 'sbarra',
@@ -2978,7 +2978,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'sbarrare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	249: {
 		word: 'scommetto',
@@ -2987,7 +2987,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'scommettere',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	250: {
 		word: 'anteriore',
@@ -2999,7 +2999,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'anteriore' },
 		plural: { article: 'gli', word: 'anteriori' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	251: {
 		word: 'lecca-lecca',
@@ -3011,7 +3011,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'lecca-lecca' },
 		plural: { article: 'i', word: 'lecca-lecca' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	252: {
 		word: 'porge',
@@ -3021,7 +3021,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'porgere',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	253: {
 		word: 'leccarlo',
@@ -3030,7 +3030,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'leccare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	254: {
 		word: 'reparto',
@@ -3041,7 +3041,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'reparto' },
 		plural: { article: 'i', word: 'reparti' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	255: {
 		word: 'dolciumi',
@@ -3052,7 +3052,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'dolciume' },
 		plural: { article: 'i', word: 'dolciumi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	256: {
 		word: 'fiordaliso',
@@ -3063,7 +3063,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'fiordaliso' },
 		plural: { article: 'i', word: 'fiordalisi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	257: {
 		word: 'nodo',
@@ -3074,7 +3074,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'nodo' },
 		plural: { article: 'i', word: 'nodi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	258: {
 		word: 'consente',
@@ -3083,7 +3083,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'consentire',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	259: {
 		word: 'impaurito',
@@ -3094,7 +3094,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'impaurito' },
 		plural: { article: 'gli', word: 'impauriti' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	260: {
 		word: 'impaurito',
@@ -3102,7 +3102,7 @@ export const words = {
 		context: "L'uomo, un po' impaurito, avvicina timidamente il collo alle mani di metallo e plastica",
 		source: 'Brutta giornata per le vendite',
 		type: 'avverbio',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	261: {
 		word: 'agilmente',
@@ -3110,7 +3110,7 @@ export const words = {
 		context: "Robie muove agilmente le dita, con la velocità e l'eleganza di un pianista.",
 		source: 'Brutta giornata per le vendite',
 		type: 'avverbio',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	262: {
 		word: 'annoda',
@@ -3119,7 +3119,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'annodare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	263: {
 		word: 'panzone',
@@ -3131,7 +3131,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'panzone' },
 		plural: { article: 'i', word: 'panzoni' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	264: {
 		word: 'sudato',
@@ -3143,7 +3143,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'sudato' },
 		plural: { article: 'i', word: 'sudati' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	265: {
 		word: 'accaldato',
@@ -3155,7 +3155,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'accaldato' },
 		plural: { article: 'i', word: 'accaldati' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	266: {
 		word: 'dissetante',
@@ -3167,7 +3167,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'dissetante' },
 		plural: { article: 'i', word: 'dissetanti' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	267: {
 		word: 'ingordigia',
@@ -3178,7 +3178,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'ingordigia' },
 		plural: { article: 'la', word: 'ingordigia' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	268: {
 		word: 'bibite',
@@ -3190,7 +3190,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'bibita' },
 		plural: { article: 'le', word: 'bibite' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	269: {
 		word: 'ampia',
@@ -3202,7 +3202,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: "un'", word: 'ampia' },
 		plural: { article: 'ampie', word: 'ampie' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	270: {
 		word: 'Improvvisamente',
@@ -3210,7 +3210,7 @@ export const words = {
 		context: "Improvvisamente l'attenzione di Robie si rivolge verso una bambina che piange.",
 		source: 'Brutta giornata per le vendite',
 		type: 'avverbio',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	271: {
 		word: 'singhiozzando',
@@ -3219,7 +3219,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'singhiozzare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	272: {
 		word: 'pulcino',
@@ -3231,7 +3231,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'pulcino' },
 		plural: { article: 'i', word: 'pulcini' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	273: {
 		word: 'consegnando',
@@ -3241,7 +3241,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'consegnare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	274: {
 		word: 'commosso',
@@ -3252,7 +3252,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'un', word: 'commosso' },
 		plural: { article: 'i', word: 'commossi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	275: {
 		word: 'vigilanza',
@@ -3264,7 +3264,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'vigilanza' },
 		plural: { article: 'le', word: 'vigilanze' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	276: {
 		word: 'spruzzano',
@@ -3273,7 +3273,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'spruzzare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	277: {
 		word: 'fiorisce',
@@ -3282,7 +3282,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'fiorire',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	278: {
 		word: 'gonfiano',
@@ -3291,7 +3291,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'gonfiare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	279: {
 		word: 'petali',
@@ -3302,7 +3302,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'petalo' },
 		plural: { article: 'i', word: 'petali' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	280: {
 		word: 'fiamma',
@@ -3313,7 +3313,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'fiamma' },
 		plural: { article: 'le', word: 'fiamme' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	281: {
 		word: 'torce',
@@ -3324,7 +3324,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'torcia' },
 		plural: { article: 'le', word: 'torce' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	282: {
 		word: 'dismisura',
@@ -3335,7 +3335,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'dismisura' },
 		plural: { article: 'le', word: 'dismisure' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	283: {
 		word: 'onda',
@@ -3346,7 +3346,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: "l'", word: 'onda' },
 		plural: { article: 'le', word: 'onde' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	284: {
 		word: 'urto',
@@ -3357,7 +3357,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: "l'", word: 'urto' },
 		plural: { article: 'gli', word: 'urti' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	285: {
 		word: 'infiammano',
@@ -3366,7 +3366,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo',
 		infinitive: 'infiammare',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	286: {
 		word: 'fila',
@@ -3377,7 +3377,7 @@ export const words = {
 		gender: 'F',
 		singular: { article: 'la', word: 'fila' },
 		plural: { article: 'le', word: 'file' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	287: {
 		word: 'buchi',
@@ -3388,7 +3388,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'buco' },
 		plural: { article: 'i', word: 'buchi' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	288: {
 		word: 'si piegano',
@@ -3397,7 +3397,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo riflessivo',
 		infinitive: 'piegarsi',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	289: {
 		word: 'ondeggiano',
@@ -3406,7 +3406,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo riflessivo',
 		infinitive: 'ondeggiarsi',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	290: {
 		word: 'crollano',
@@ -3415,7 +3415,7 @@ export const words = {
 		source: 'Brutta giornata per le vendite',
 		type: 'verbo riflessivo',
 		infinitive: 'crollarsi',
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	291: {
 		word: 'forfora',
@@ -3425,7 +3425,7 @@ export const words = {
 		type: 'sostantivo',
 		gender: 'F',
 		singular: { article: 'la', word: 'forfora' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	292: {
 		word: 'cornicioni',
@@ -3436,7 +3436,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'il', word: 'cornicione' },
 		plural: { article: 'i', word: 'cornicioni' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	293: {
 		word: 'scaraventato',
@@ -3447,7 +3447,7 @@ export const words = {
 		gender: 'M',
 		singular: { article: 'lo', word: 'scaraventato' },
 		plural: { article: 'i', word: 'scaraventati' },
-		date: new Date(2023, 7, 5).getTime(), //next, //next
+		date: new Date(2023, 7, 5).getTime(), //next
 	},
 	294: {
 		word: 'percorso',
@@ -3489,5 +3489,61 @@ export const words = {
 		source: 'Freestyle',
 		type: 'verbo',
 		date: new Date(2023, 8, 21).getTime(), //next
+	},
+	298: {
+		word: 'assaporare',
+		translation: 'uživati',
+		context: 'Mi piace assaporare ogni momento della vita.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 11, 3).getTime(), //next
+	},
+	299: {
+		word: 'sguardo',
+		translation: 'pogled',
+		context: 'Il suo sguardo era intenso e profondo.',
+		source: 'Freestyle',
+		type: 'sostantivo',
+		date: new Date(2023, 11, 3).getTime(), //next
+	},
+	300: {
+		word: 'incappare',
+		translation: 'zapeti se',
+		context: 'Ho incappato in una pietra e sono caduto.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 11, 3).getTime(), //next
+	},
+	301: {
+		word: 'enfasi',
+		translation: 'naglasak',
+		context: "L'enfasi nelle sue parole era evidente.",
+		source: 'Freestyle',
+		type: 'sostantivo',
+		date: new Date(2023, 11, 3).getTime(), //next
+	},
+	302: {
+		word: 'essere in grado',
+		translation: 'biti u mogućnosti',
+		context: 'Devi essere in grado di risolvere questo problema.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 11, 3).getTime(), //next
+	},
+	303: {
+		word: 'smitizzare',
+		translation: 'demistifikovati',
+		context: "Questo film ha smitizzato la figura dell'eroe.",
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 11, 3).getTime(), //next
+	},
+	304: {
+		word: 'smontare',
+		translation: 'rastaviti',
+		context: 'Dovremo smontare il dispositivo per ripararlo.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 11, 3).getTime(), //next
 	},
 };
