@@ -3496,7 +3496,7 @@ export const words = {
 		context: 'Mi piace assaporare ogni momento della vita.',
 		source: 'Freestyle',
 		type: 'verbo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 	299: {
 		word: 'sguardo',
@@ -3504,7 +3504,7 @@ export const words = {
 		context: 'Il suo sguardo era intenso e profondo.',
 		source: 'Freestyle',
 		type: 'sostantivo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 	300: {
 		word: 'incappare',
@@ -3512,7 +3512,7 @@ export const words = {
 		context: 'Ho incappato in una pietra e sono caduto.',
 		source: 'Freestyle',
 		type: 'verbo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 	301: {
 		word: 'enfasi',
@@ -3520,7 +3520,7 @@ export const words = {
 		context: "L'enfasi nelle sue parole era evidente.",
 		source: 'Freestyle',
 		type: 'sostantivo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 	302: {
 		word: 'essere in grado',
@@ -3528,7 +3528,7 @@ export const words = {
 		context: 'Devi essere in grado di risolvere questo problema.',
 		source: 'Freestyle',
 		type: 'verbo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 	303: {
 		word: 'smitizzare',
@@ -3536,7 +3536,7 @@ export const words = {
 		context: "Questo film ha smitizzato la figura dell'eroe.",
 		source: 'Freestyle',
 		type: 'verbo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 	304: {
 		word: 'smontare',
@@ -3544,6 +3544,6 @@ export const words = {
 		context: 'Dovremo smontare il dispositivo per ripararlo.',
 		source: 'Freestyle',
 		type: 'verbo',
-		date: new Date(2023, 11, 3).getTime(), //next
+		date: new Date(2023, 10, 3).getTime(), //next
 	},
 };
