@@ -3546,4 +3546,92 @@ export const words = {
 		type: 'verbo',
 		date: new Date(2023, 10, 3).getTime(), //next
 	},
+	305: {
+		word: 'esaurire',
+		translation: 'iscrpeti',
+		context: 'La scorta di acqua potrebbe esaurire presto.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	306: {
+		word: 'appagamento',
+		translation: 'zadovoljstvo',
+		context: 'Il successo personale porta un grande appagamento.',
+		source: 'Freestyle',
+		type: 'sostantivo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	307: {
+		word: 'procurarsi',
+		translation: 'pribaviti',
+		context: 'Devo procurarmi i materiali necessari per il progetto.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	308: {
+		word: 'trascinare',
+		translation: 'vuci',
+		context: 'Ha trascinato la sedia attraverso la stanza.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	309: {
+		word: 'ubiquitario',
+		translation: 'sveprisutno',
+		context: 'Internet è diventato ubiquitario nella nostra vita quotidiana.',
+		source: 'Freestyle',
+		type: 'aggettivo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	310: {
+		word: 'sorprendentemente',
+		translation: 'iznenađujuće',
+		context: 'Sorprendentemente, ha risolto il problema in pochi minuti.',
+		source: 'Freestyle',
+		type: 'avverbio',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	311: {
+		word: 'sorprendente',
+		translation: 'iznenađujuće',
+		context: 'Il risultato è stato sorprendente per tutti.',
+		source: 'Freestyle',
+		type: 'aggettivo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	312: {
+		word: 'trascurare',
+		translation: 'zanemariti',
+		context: 'Non dovresti trascurare i dettagli importanti.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	313: {
+		word: 'distogliersi',
+		translation: 'odvratiti pažnju',
+		context: 'Cerco di non distogliermi dagli obiettivi principali.',
+		source: 'Freestyle',
+		type: 'verbo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	314: {
+		word: 'rinuncia',
+		translation: 'odricanje',
+		context: 'La rinuncia a certi piaceri può portare a una vita migliore.',
+		source: 'Freestyle',
+		type: 'sostantivo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
+	315: {
+		word: 'procedimento',
+		translation: 'postupak',
+		context: 'Il procedimento per risolvere il problema è ben definito.',
+		source: 'Freestyle',
+		type: 'sostantivo',
+		date: new Date(2023, 10, 16).getTime(), //next
+	},
 };
